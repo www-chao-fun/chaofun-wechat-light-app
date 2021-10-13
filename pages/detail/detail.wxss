@@ -1,0 +1,263 @@
+/* pages/detail/detail.wxss */
+.container{
+  padding-bottom: 210rpx;
+}
+.f_title{
+  padding: 0 0 10rpx;
+  font-size: 26rpx;
+}
+.form_icon{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+  /* background: #ddd; */
+}
+.time{
+  color: #999;
+  font-size: 22rpx;
+  float: right;
+}
+.b_item{
+  border-top: 1rpx solid #f7f7f7;
+  border-left: 1rpx solid #f7f7f7;
+}
+.item{
+  margin-bottom: 0rpx;
+  
+  padding: 10rpx 20rpx;
+}
+.weight{
+  font-weight: 600;
+}
+.real_title{
+  margin-bottom: 20rpx;
+}
+.posts{
+    padding: 20rpx;
+    
+}
+.posts .item_image image{
+  max-height: 1000rpx;
+}
+
+.bottom_tool{
+  padding: 10rpx 0rpx 0;
+  color: #666;
+  display: flex;
+  font-size: 22rpx;
+  justify-content: space-around;
+  /* margin-bottom: 30rpx; */
+}
+.tool_item{
+  flex: 0 0 20%;
+  text-align: center;
+}
+.bottom_tool image{
+  width: 34rpx;
+  height: 34rpx;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.twos{
+  flex: 0 0 25%;
+  display: flex;
+}
+.two_item{
+  flex: 0 0 33%;
+  text-align: center;
+}
+.val{
+  text-align: center;
+  flex: 0 0 24%;
+}
+
+.btn_zhuanfa{
+  padding: 0 !important;
+  font-weight: normal;
+  display: inline-block;
+  width: 40rpx;
+  line-height: 1;
+  height: 100%;
+  line-height: 100%;
+  vertical-align: middle;
+  background: none;
+  /* margin-top: -12rpx; */
+  color: #666;
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.btn_zhuanfa::after {
+  border: 0;
+  line-height: 26rpx;
+  font-size: 22rpx;
+}
+.btn_zhuanfa text{
+  font-size: 26rpx;
+}
+
+.comments{
+  padding: 20rpx 20rpx 120rpx;
+  margin-top: 20rpx;
+}
+.comment_title{
+  margin-bottom: 20rpx;
+}
+.item{
+  display: flex;
+
+}
+.right{
+  flex: 1;
+}
+.avatar{
+  flex: 0 0 70rpx;
+  height: 70rpx;
+  text-align: center;
+  margin-right: 20rpx;
+}
+.avatar image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  /* margin-top: 10rpx; */
+}
+.username{
+    margin-bottom: 10rpx;
+    font-size: 26rpx;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+}
+.bottom{
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10rpx 20rpx;
+    /* height: 100rpx; */
+    background: #f1f1f1;
+    left: 0;
+    bottom: 0;
+}
+.prevImg{
+  width: 140rpx;
+  height: 140rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+}
+.bottom input{
+    flex: 1;
+    height: 70rpx;
+    padding: 10rpx 20rpx;
+    border-radius: 60rpx;
+    border: 1rpx solid #f7f7f7;
+    background: #fff;
+    font-size: 28rpx;
+    box-sizing: border-box;
+}
+.bottom_con{
+    display: flex;
+}
+.b_btns text{
+    width: 120rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    background: #07c160;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20rpx;
+    font-size: 28rpx;
+    border-radius: 40rpx;
+}
+.choose{
+  width: 50rpx;
+  height: 44rpx;
+  vertical-align: middle;
+  margin-top: 10rpx;
+  margin-left: 14rpx;
+}
+.nothing{
+    line-height: 150rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #999;
+    border: 1rpx solid #f1f1f1;
+}
+
+.posts .item_article{
+  max-height: none;
+}
+.saves{
+  color: orangered;
+}
+
+.pus{
+  width: 70rpx;
+  height: 70rpx;
+  /* background: orangered; */
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  position: fixed;
+  right: 20rpx;
+  bottom: 150rpx;
+  font-size: 24rpx;
+}
+.pus image{
+  width: 64rpx;
+  height: 64rpx;
+}
+.comment_icon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 6rpx;
+}
+
+.tool_item_a{
+  position: relative;
+}
+.tool_item_a button{
+  position: absolute;
+  width: 100%;
+  height: 44rpx;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.nothings{
+  color: #999;
+  font-size: 28rpx;
+  height: 150rpx;
+  border: 1rpx solid #f1f1f1;
+  text-align: center;
+  line-height: 150rpx;
+  border-radius: 8rpx;
+}
+.comImage{
+  width: 120rpx;
+  height: 120rpx;
+}
+.comImage image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+}
+.comment_content{
+  font-size: 28rpx;
+  padding-bottom: 10rpx;
+  
+}
+.commentmain{
+  border-right: 1rpx solid #f7f7f7;
+  border-bottom: 1rpx solid #f7f7f7;
+}
+
+.par .child_item {background:red;padding-left:0;}

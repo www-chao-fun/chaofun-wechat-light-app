@@ -1,0 +1,75 @@
+<!--pages/message/message.wxml-->
+<view class="container">
+  <view wx:if="{{isLogin}}" class="container">
+  <view wx:for="{{datas}}" class="items" wx:key="index">
+    <view wx:if="{{item.type == 'upvote_post'}}" class="upvote">
+      <image bindtap="toUser" data-info="{{item.sender}}" wx:if="{{item.sender}}" src="{{imgOrigin+item.sender.icon}}" class="form_icon"></image>
+      <image wx:else class="form_icon" src="/assets/images/icon/default.jpg"></image>
+      <text bindtap="toUser" data-info="{{item.sender}}">{{item.sender?item.sender.userName:'未登录用户'}} </text> <text>点赞了你的帖子 -</text>
+      <text bindtap="toDetail" data-item="{{item.post}}" style="font-weight:600;">【{{item.post.title}}】</text>
+      <text class="time">{{item.rtime}}</text>
+      <!-- <view style="height:30rpx;"><text class="time">{{item.rtime}}</text></view> -->
+    </view>
+
+    <view wx:if="{{item.type == 'upvote_comment'}}" class="upvote">
+      <image bindtap="toUser" data-info="{{item.sender}}" wx:if="{{item.sender}}" src="{{imgOrigin+item.sender.icon}}" class="form_icon"></image>
+      <image wx:else class="form_icon" src="/assets/images/icon/default.jpg"></image>
+      <text bindtap="toUser" data-info="{{item.sender}}">{{item.sender?item.sender.userName:'未登录用户'}} </text> <text>点赞了你的评论的帖子 -</text>
+      <text bindtap="toDetail" data-item="{{item.post}}" style="font-weight:600;">【{{item.post.title}}】</text>
+      <text class="time">{{item.rtime}}</text>
+      <!-- <view style="height:30rpx;"><text class="time">{{item.rtime}}</text></view> -->
+    </view>
+    
+    <view wx:if="{{item.type == 'comment_post'}}" class="upvote">
+      <image bindtap="toUser" data-info="{{item.sender}}" src="{{imgOrigin+item.sender.icon}}" class="form_icon"></image>
+      <text bindtap="toUser" data-info="{{item.sender}}">{{item.sender.userName}} </text> <text>回复了你的评论 -</text>
+      <text bindtap="toDetail" data-item="{{item.post}}" style="font-weight:600;">【{{item.post.title}}】</text>
+      <text class="time">{{item.rtime}}</text>
+    </view>
+    <view wx:if="{{item.type == 'sub_comment'}}" class="upvote">
+      <image bindtap="toUser" data-info="{{item.sender}}" src="{{imgOrigin+item.sender.icon}}" class="form_icon"></image>
+      <text bindtap="toUser" data-info="{{item.sender}}">{{item.sender.userName}} </text> <text> 
+        <!-- <text style="color:blue;">@</text>  -->评论了你的帖子 -</text>
+      <text bindtap="toDetail" data-item="{{item.post}}" style="font-weight:600;">【{{item.post.title}}】</text>
+      <text class="time">{{item.rtime}}</text>
+    </view>
+    <view wx:if="{{item.type == 'text_notice'}}" class="upvote">
+      <text>{{item.text}}</text>
+    </view>
+    
+    <!-- <view class="cc">
+      <view bindtap="toDetail" data-item="{{item.post}}" class="tit">{{item.post.title}}</view>
+      <view bindtap="toDetail" data-item="{{item.post}}" class="f_title">
+          <image src="{{imgOrigin+item.post.forum.imageName}}" class="form_icon"></image>
+          <text class="weight">{{item.post.forum.name}}</text>
+          <text> 来自</text> 
+          <text class="weight"> {{item.post.userInfo.userName}}</text>
+          
+      </view>
+      <type-item wx:if="{{item.post.type!='link'&&item.post.type!='forward'&&item.post.type!='article'&&item.post.type!='video'}}" item="{{item.post}}"></type-item>
+      <link-item wx:if="{{item.post.type=='link'||item.post.type=='video'}}" item="{{item.post}}"></link-item>
+      <article-item wx:if="{{item.post.type=='article'}}" item="{{item.post}}"></article-item>
+      <forward-item wx:if="{{item.post.type=='forward'}}" item="{{item.post}}"></forward-item>
+    </view> -->
+    <view bindtap="toDetail" data-item="{{item.post}}" wx:if="{{item.type == 'comment_post'||item.type == 'sub_comment'}}" class="comment">
+      {{item.type == 'comment_post'?'评论说：':'回复说：'}}<text>{{item.comment.text}}</text>
+    </view>
+    <view wx:if="{{item.type == 'at'}}" class="upvote">
+      <image bindtap="toUser" data-info="{{item.sender}}" src="{{imgOrigin+item.sender.icon}}" class="form_icon"></image>
+      <text bindtap="toUser" data-info="{{item.sender}}">{{item.sender.userName}} </text> <text> 
+        <!-- <text style="color:blue;">@</text>  -->评论区@你 -</text>
+      <text bindtap="toDetail" data-item="{{item.post}}" style="font-weight:600;">【{{item.post.title}}】</text>
+      <text class="time">{{item.rtime}}</text>
+    </view>
+    <view bindtap="toDetail" data-item="{{item.post}}" wx:if="{{item.type == 'at'}}" class="comment">
+      {{'@你说：'}}<text>{{item.comment.text}}</text>
+    </view>
+    
+  </view>
+  
+</view>
+<view wx:if="{{!isLogin}}" class="container">
+  <view class="msg">你还未登录哦，登录后才能查看消息~</view>
+  <button bindtap="toLogin" type="primary">去登录</button>
+</view>
+</view>

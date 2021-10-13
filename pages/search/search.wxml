@@ -1,0 +1,13 @@
+<!--pages/search/search.wxml-->
+<view class='home-views' style="padding-top:{{statusBar.homeTop}}px;">
+  <header types="input" bind:toSearch="toSearch"></header>
+  <view class="his">
+    <view class="title">
+      <view>历史记录</view>
+      <view bindtap="clear">清除</view>
+    </view>
+    <view class="con">
+      <view wx:for="{{historySearch}}" bindtap="toList" data-item="{{item}}" wx:key="index" class="item">{{item}}</view>
+    </view>
+  </view>
+</view>

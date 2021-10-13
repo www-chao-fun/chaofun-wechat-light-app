@@ -1,0 +1,97 @@
+/* component/voteItem/voteItem.wxss */
+.content{
+  padding: 0 0 20rpx;
+}
+.choose_item{
+  position: relative;
+  /* line-height: 74rpx; */
+  border: 1rpx solid #f1f1f1;
+  margin-bottom: 10rpx;
+}
+.bg{
+  position: absolute;
+  background: #FbF5EC;
+  width: 0%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.c_item{
+  position: relative;
+  z-index: 1;
+  padding: 10rpx 10px;
+  padding-right: 0;
+  display: flex;
+  width: 100%;
+  /* height: 40px; */
+  box-sizing: border-box;
+}
+
+.left{
+  flex: 1;
+}
+.left text{
+  display: inline-block;
+  width: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.right{
+  flex: 0 0 40px;
+  text-align: center;
+  vertical-align: middle;
+}
+.right image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.radio-group {
+  /* border-bottom: 1px solid #ddd; */
+}
+.radio {
+  display: block;
+  border-top: 1px solid #ddd;
+  padding: 5px;
+}
+.weui-cell{
+  width: 100%;
+  display: flex;
+  line-height: 70rpx;
+}
+
+
+radio {
+  transform:scale(0.8);
+}
+.weui-cell__hd{
+  flex: 0 0 50rpx;
+}
+.vote_bottom{
+  display: flex;
+  margin-top: 20px !important;
+  
+}
+.toup,.weig{
+  flex: 0 0 100px;
+  line-height: 34px;
+  margin-right: 20px;
+  border: 1px solid #ddd;
+  text-align: center;
+  border-radius: 4px;
+}
+.toup{
+  background: #07c160;
+  color: #fff;
+}
+.vote_header{
+  display: flex;
+  
+}
+.vote_header view{
+  flex: 1;
+  line-height: 34px;
+  font-size: 14px;
+  color: #999;
+}

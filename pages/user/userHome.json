@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "content": "/component/content/content",
+    "attentionItem": "/component/attentionItem/attentionItem"
+  }
+}

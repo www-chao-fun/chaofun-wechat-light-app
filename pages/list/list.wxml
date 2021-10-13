@@ -1,0 +1,4 @@
+<!--pages/list/list.wxml-->
+<view class="container">
+  <content hasshare="{{false}}" pagedata="{{pagedata}}"></content>
+</view>

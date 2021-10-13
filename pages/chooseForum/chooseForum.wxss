@@ -1,0 +1,60 @@
+/* pages/chooseForum/chooseForum.wxss */
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.search{
+  padding: 30rpx;
+}
+.search input{
+  border: 1px solid #e7e7e7;
+  padding: 14rpx 30rpx;
+  border-radius: 40rpx;
+}
+.content{
+  flex: 1;
+  overflow-y: auto;
+  padding-left: 20rpx;
+  -webkit-overflow-scrolling: touch;
+}
+.item{
+  padding: 20rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+
+}
+.item image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+
+.hist{
+  font-size: 30rpx;
+  
+}
+.hist_ul{
+  display: flex;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  flex-wrap: wrap;
+}
+.hist_item{
+  border: 1px solid #999;
+  padding: 2rpx 24rpx;
+  border-radius: 30rpx;
+  color: #999;
+  margin-right: 20rpx;
+  margin-bottom: 10rpx;
+}
+.hist_ul{
+  max-height: 124rpx;
+  overflow: hidden;
+}
+.clear{
+  float: right;
+  padding-right: 20rpx;
+  font-size: 26rpx;
+  color: #999;
+}

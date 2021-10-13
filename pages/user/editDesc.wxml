@@ -1,0 +1,7 @@
+<!--pages/user/editDesc.wxml-->
+<view class="container">
+  <view class="item">
+    <textarea bindinput="bindDesc" value="{{desc}}" maxlength="60" placeholder="在这里输入你的个性签名哟~"></textarea>
+  </view>
+  <button bindtap="tosubmit" type="primary">保存</button>
+</view>

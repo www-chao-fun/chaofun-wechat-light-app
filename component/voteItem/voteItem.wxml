@@ -1,0 +1,48 @@
+<!--component/voteItem/voteItem.wxml-->
+<view class="container">
+
+  <view wx:if="{{item.chooseOption != null}}" class="content">
+    <view class="vote_header">
+        <view>投票：{{item.optionVoteCount}}人</view>
+        <view>围观：{{item.circuseeCount}}人</view>
+    </view>  
+    <view wx:for="{{item.options}}" wx:for-item="it" wx:for-index="index" class="choose_item">
+      <view class="bg" style="width: {{it.width}}%"></view>
+      <view class="c_item">
+        <view class="left">
+          <text>{{it.optionVote}}</text>
+          {{it.optionName}}
+        </view>
+        <view wx:if="{{item.chooseOption != null &&(item.chooseOption==index+1)}}" class="right">
+          <image  src="../../assets/images/icon/success.png"></image>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+
+  <view wx:if="{{item.chooseOption == null}}" class="content">
+     <view class="vote_header">
+        <view>投票：{{item.optionVoteCount}}人</view>
+        <view>围观：{{item.circuseeCount}}人</view>
+     </view> 
+      <radio-group class="radio-group" bindchange="radioChange" value="{{1}}">
+        <label class="weui-cell weui-check__label" wx:for="{{item.options}}" wx:for-item="it" wx:for-index="index" wx:key="{{it.optionName}}">
+
+          <view class="weui-cell__hd">
+            <radio value="{{index+1}}"/>
+          </view>
+          <view class="weui-cell__bd">{{it.optionName}}</view>
+        </label>
+      </radio-group>
+      <view wx:if="{{item.chooseOption == null}}" class="vote_bottom">
+        <view bindtap="toToup" class="toup">投票</view>
+        <view bindtap="circusee" class="weig">围观</view>
+      </view>
+  </view>
+
+
+
+
+</view>

@@ -1,0 +1,81 @@
+/* pages/user/userHome.wxss */
+.container{
+  min-height: 100vh;
+  background: #f1f1f1;
+}
+.userInfo{
+  display: flex;
+  padding: 30rpx;
+  /* text-align: center; */
+  border-bottom: 1rpx solid #ddd;
+  background: #fff;
+}
+.tx{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.u_name{
+  font-size: 32rpx;
+}
+.u_title{
+  background: #fff;
+  line-height: 80rpx;
+  padding-left: 24rpx;
+  font-size: 28rpx;
+  flex: 1;
+}
+.uuu{
+  flex: 1;
+}
+.attBtn{
+  background: orangered;
+  color: #fff;
+  padding: 10rpx 20rpx;
+  border-radius: 40rpx;
+  font-size: 26rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+  float: right;
+}
+.attBtn2{
+  background: #ccc;
+}
+.navs{
+  margin-top: 10rpx;
+  display: flex;
+  background: #fff;
+}
+
+
+.fixed_top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.fixed_top .userInfo{
+  padding: 4rpx 14rpx;
+  border-bottom: none;
+}
+.fixed_top .tx{
+  width: 80rpx;
+  height: 80rpx;
+}
+.fixed_top .navs{
+  margin-top: 0;
+  border-bottom: 1rpx solid #ddd;
+}
+.fixed_top .u_title{
+  line-height: 60rpx;
+}
+.fixed_top {}
+.fixed_top {}
+.fixed_top {}
+.fixed_top {}
+
+.container .u_title_active{
+  color: orangered;
+}

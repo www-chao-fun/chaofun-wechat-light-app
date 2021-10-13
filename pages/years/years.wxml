@@ -1,0 +1,146 @@
+<!--pages/years/years.wxml-->
+<view class="container">
+  <!-- <canvas canvas-id='share' style='width:375px;height:580px'  hidden='{{canvasHidden}}'></canvas> -->
+  <!-- <view class="bg">
+    <image mode="widthFix" src="../../assets/images/bg2.jpg"></image>
+    <view class="content">
+      <view class="headImg">
+        <view class="abc">
+          <image mode="aspectFill" src="{{imgOrigin+userInfo.icon+'?x-oss-process=image/resize,h_100'}}"></image>
+        </view>
+        <view class="username">{{userInfo.userName}}家收到货</view>
+        <view class="username username2">{{userInfo.userId}}111</view>
+      </view>
+    </view>
+  </view> -->
+  <view wx:if="{{islogin}}" class="cons">
+    <view class="item">
+      <view class="title">旅程的开始</view>
+      <view class="contents">
+        <view class="line">
+          <view class="label">
+            <image class="hhh" mode="aspectFill" src="{{imgOrigin+userInfo.icon+'?x-oss-process=image/resize,h_100'}}"></image>
+            <text class="userName">{{userInfo.userName}}</text>
+          </view>
+          <view class="label register">注册于{{pagedata.register_time}}，是炒饭第{{pagedata.user_id}}个注册用户，成为炒饭{{pagedata.total_users}}名注册用户中的一员，开启了炒饭旅程!</view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{pagedata.total_shows&&pagedata.most_be_like_user&&pagedata.most_like_forum}}">
+      <view class="item">
+          <view class="title">我在炒饭</view>
+          <view class="contents">
+            <view class="line">
+              <view class="label">炒饭陪伴了我{{pagedata.days}}天</view>
+              <view class="label">我在炒饭逛了{{pagedata.minutes}}分钟</view>
+            </view>
+          </view>
+        </view>
+        <view class="item">
+          <view class="title">我的炒饭生活</view>
+          <view class="contents">
+            <view class="line">
+              <view class="label">这一年里，我浏览了{{pagedata.total_shows}}个帖子</view>
+              <view class="label">这一年里，我发布了{{pagedata.posts}}个帖子</view>
+              <view class="label">这一年里，我发表了{{pagedata.comments}}条评论</view>
+              <view class="label">这一年里，我点赞了{{pagedata.total_upvotes}}次</view>
+              <view class="label">这一年里，我收藏了{{pagedata.total_saves}}个帖子</view>
+              <view class="label">这一年里我过得很快乐！</view>
+            </view>
+          </view>
+        </view>
+        <view class="item">
+          <view class="title">我的收获</view>
+          <view class="contents">
+            <view class="line">
+              <view class="label">2020年里，我收获了{{pagedata.total_ups}}个点赞</view>
+              <view class="label">2020年里，取得全站排名第{{pagedata.total_ups_rank}}名的好成绩</view>
+              <view class="label">在2020年里，我收获了热情</view>
+            </view>
+          </view>
+        </view>
+        <view class="item">
+          <view class="title">我最喜欢的板块</view>
+          <view class="contents">
+            <view class="line">
+              <view class="label">最喜欢的板块是----
+                <image bindtap="toForum" data-id="{{pagedata.most_like_forum.id}}" class="hhh hhh2" mode="aspectFill" src="{{imgOrigin+pagedata.most_like_forum.imageName+'?x-oss-process=image/resize,h_100'}}"></image>
+                <text bindtap="toForum" data-id="{{pagedata.most_like_forum.id}}">{{pagedata.most_like_forum.name}}</text>
+                
+              </view>
+              <view class="label">在这里，我浏览了{{pagedata.most_like_forum_shows}}条 
+                <text wx:if="{{pagedata.most_like_forum_upvotes}}">，点赞了{{pagedata.most_like_forum_upvotes}}次</text>
+                <text wx:if="{{pagedata.most_like_forum_comments}}">，评论了{{pagedata.most_like_forum_comments}}个</text>
+                <text wx:if="{{pagedata.most_like_forum_saves}}">，收藏了{{pagedata.most_like_forum_saves}}个</text>
+              </view>
+              <view class="label">在这里，我找到了我的兴趣</view>
+            </view>
+          </view>
+        </view>
+        <view class="item">
+          <view class="title">我最关注的用户</view>
+          <view class="contents">
+            <view class="line">
+              <view class="label">最关注的用户是---- 
+                <image bindtap="toUser" data-id="{{pagedata.most_like_user.userId}}" class="hhh hhh2" mode="aspectFill" src="{{imgOrigin+pagedata.most_like_user.icon+'?x-oss-process=image/resize,h_100'}}"></image>
+                <text bindtap="toUser" data-id="{{pagedata.most_like_user.userId}}">{{pagedata.most_like_user.userName}}</text>
+                
+              </view>
+              <view class="label">
+                <text wx:if="{{pagedata.most_like_user_shows}}">我浏览了他{{pagedata.most_like_user_shows}}次帖子</text>
+                <text wx:if="{{pagedata.most_like_user_upvotes}}">，点赞了他{{pagedata.most_like_user_upvotes}}次</text>
+                <text wx:if="{{pagedata.most_like_user_comments}}">，评论了他{{pagedata.most_like_user_comments}}次</text>
+                <text wx:if="{{pagedata.most_like_user_saves}}">，收藏了{{pagedata.most_like_user_saves}}次</text>
+              </view>
+              <view class="label">在这里，我找到了我的兴趣</view>
+            </view>
+          </view>
+        </view>
+        <view class="item">
+          <view class="title">谁最关注我？</view>
+          <view class="contents">
+            <view class="line">
+              <view class="label">最关注我的---- 
+                <image bindtap="toUser" data-id="{{pagedata.most_be_like_user.userId}}" class="hhh hhh2" mode="aspectFill" src="{{imgOrigin+pagedata.most_be_like_user.icon+'?x-oss-process=image/resize,h_100'}}"></image> 
+                
+                <text bindtap="toUser" data-id="{{pagedata.most_be_like_user.userId}}">{{pagedata.most_be_like_user.userName}}</text>
+              </view>
+              <view class="label">
+                <text wx:if="{{pagedata.most_be_like_user_shows}}">他浏览了你{{pagedata.most_be_like_user_shows}}次帖子</text>
+                <text wx:if="{{pagedata.most_be_like_user_upvotes}}">，点赞了我{{pagedata.most_be_like_user_upvotes}}次</text>
+                <text wx:if="{{pagedata.most_be_like_user_comments}}">，评论了我{{pagedata.most_be_like_user_comments}}次</text>
+                <text wx:if="{{pagedata.most_be_like_user_saves}}">，收藏了我{{pagedata.most_be_like_user_saves}}次</text>
+              </view>
+              
+            </view>
+          </view>
+        </view>
+
+        <view class="imgss">
+          <image src="https://i.chao.fun/biz/1a36fc13fa5e65418595d4b09b5c1147.png"></image>
+          
+        </view>
+        <button wx:if="{{islogin}}" bindtap="toSave" class="btn" type="primary">保存海报</button>
+    </view>
+    <view wx:else class="nologin">
+      <view class="p1">还没有您的总结报告哦~</view>
+      <button bindtap="backto" class="btn2" type="primary">逛一逛</button>
+    </view>
+  </view>
+  <view wx:if="{{islogin!=null&&islogin==false}}" class="nologin">
+    <view class="p1">还没有您的总结报告哦~</view>
+    <button bindtap="backto" class="btn2" type="primary">逛一逛</button>
+  </view>
+  
+  <painter 
+    wx:if="{{islogin}}"
+    customActionStyle="{{customActionStyle}}"
+    palette="{{paintPallette}}"
+    bind:imgOK="onImgOK" 
+    bind:touchEnd="touchEnd" 
+    action="{{action}}"
+    widthPixels="750"
+  />
+  <!-- <image src="{{image}}" style="width: 750rpx; height: 2200rpx;"/> -->
+  
+</view>

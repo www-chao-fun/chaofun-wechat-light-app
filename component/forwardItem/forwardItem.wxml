@@ -1,0 +1,12 @@
+<!--component/forwardItem/forwardItem.wxml-->
+<view>
+  <view bindtap="toDetail" data-item="{{item}}" class="real_title">
+    {{item.title}}
+  </view>
+  <view class="msg">
+    转发来自 <image class="aaa" src="{{imgOrigin+item.sourcePost.forum.imageName+'?x-oss-process=image/resize,h_80'}}"></image> <text>{{item.sourcePost.forum.name}}</text>
+  </view>
+  <type-item wx:if="{{item.sourcePost.type!='link'&&item.sourcePost.type!='forward'&&item.sourcePost.type!='article'}}" item="{{item.sourcePost}}"></type-item>
+      <link-item wx:if="{{item.sourcePost.type=='link'}}" item="{{item.sourcePost}}"></link-item>
+      <article-item wx:if="{{item.sourcePost.type=='article'}}" item="{{item.sourcePost}}"></article-item>
+</view>

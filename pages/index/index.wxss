@@ -1,0 +1,124 @@
+/**index.wxss**/
+page {
+  background: #f2f2f2;
+}
+
+.shop-view-top {
+  display: flex;
+  width: 92%;
+  height: 160rpx;
+  flex-direction: row;
+  align-items: center;
+  margin: 60rpx 0rpx 0rpx 0rpx;
+}
+.shop-view-top_new{
+  width: 92%;
+  height: 218rpx;
+  flex-direction: row;
+  align-items: center;
+  margin: 60rpx 0rpx 0rpx 0rpx;
+}
+.shop-view-top-l {
+  display: flex;
+  width: 92%;
+  height: 80rpx;
+  flex-direction: row;
+  align-items: center;
+  /* margin: 40rpx 0rpx 0rpx 0rpx; */
+}
+
+
+.sort{
+  padding: 20rpx;
+  margin-top: 10rpx;
+  background: #fff;
+}
+
+
+
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    padding: 0px 0px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    padding: 0;
+    width: 0px;
+    height: 0px;
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0;
+    background-color: red;
+  }
+
+.nav{
+  height: 80rpx;
+  /* display: flex; */
+  width: 100%;
+  overflow-x: scroll;
+  box-sizing: border-box;
+  background: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+/* .nav_item{
+  line-height: 60rpx;
+  margin: 0 10rpx;
+  flex: 1;
+  float: left;
+  width: auto;
+} */
+.classify-view {
+  height: 80rpx;
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: 24rpx;
+  padding: 0rpx 0 0;
+  overflow-y: hidden;
+}
+
+.classify-item {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: 22%; */
+  margin: 10rpx 0;
+  font-size: 30rpx;
+  
+}
+.classify-item view{
+  padding: 10rpx 30rpx;
+  border-radius: 10rpx;
+}
+.classify-item:last-child{
+  padding-right: 20px;
+}
+
+.active{
+  color: #fff;
+  background: orange;
+}
+.nothing{
+  text-align: center;
+  padding-top: 200rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.btn{
+  padding: 10rpx 20rpx;
+  border: 1px solid #07c160;
+  border-radius: 10rpx;
+  width: 100rpx;
+  font-size: 24rpx;
+  margin: 20rpx auto;
+  color: #07c160;
+}

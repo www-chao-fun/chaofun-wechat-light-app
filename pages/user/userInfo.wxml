@@ -1,0 +1,25 @@
+<!--pages/user/userInfo.wxml-->
+<view class="container">
+  <view bindtap="chooseImg" class="item">
+    <view class="label avatar_label">头像</view>
+    <view class="value avatar">
+      <image src="{{imgOrigin+userInfo.icon}}"></image>
+      <text class="arrow_right"></text>
+    </view>
+  </view>
+  <view class="item">
+    <view class="label">用户名</view>
+    <view class="value">
+      <text>{{userInfo.userName}}</text>
+      <text style="padding-left:20rpx;"></text>
+      <!-- <text class="arrow_right"></text> -->
+    </view>
+  </view>
+  <view bindtap="toEdit" data-desc="{{userInfo.desc}}" class="item">
+    <view class="label">个性签名</view>
+    <view class="value">
+      <text class="texts">{{userInfo.desc||'还没有设置签名哦~'}}</text>
+      <text class="arrow_right"></text>
+    </view>
+  </view>
+</view>

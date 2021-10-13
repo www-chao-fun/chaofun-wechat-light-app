@@ -1,0 +1,201 @@
+/* c3动效汇总 */
+
+/* 遮罩出现 */
+
+.maskShow {
+  animation: maskShow 500ms forwards;
+  -webkit-animation: maskShow 500ms forwards;
+}
+
+/* 遮罩消失 */
+
+.maskHidden {
+  animation: maskHidden 500ms forwards;
+  -webkit-animation: maskHidden 500ms forwards;
+}
+
+/* 上滑 */
+
+.boxShow {
+  animation: boxShow 500ms forwards;
+  -webkit-animation: boxShow 500ms forwards;
+}
+
+/* 下滑 */
+
+.boxHidden {
+  animation: boxHidden 500ms forwards;
+  -webkit-animation: boxHidden 500ms forwards;
+}
+
+/* 横向展开 */
+
+.boxUnfold-w {
+  animation: boxUnfold-w 500ms forwards;
+  -webkit-animation: boxUnfold-w 500ms forwards;
+}
+
+/* 横向收起 */
+
+.boxFold-w {
+  animation: boxFold-w 500ms forwards;
+  -webkit-animation: boxFold-w 500ms forwards;
+}
+
+/* 显示 */
+
+.mainShow {
+  animation: mainShow 500ms forwards;
+  -webkit-animation: mainShow 500ms forwards;
+}
+
+/* 隐藏 */
+
+.mainHidden {
+  animation: mainHidden 500ms forwards;
+  -webkit-animation: mainHidden 500ms forwards;
+}
+
+@-webkit-keyframes maskShow {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+@keyframes maskShow {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+@-webkit-keyframes maskHidden {
+  from {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  to {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes maskHidden {
+  from {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  to {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+@-webkit-keyframes boxShow {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes boxShow {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes boxHidden {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes boxHidden {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@-webkit-keyframes boxUnfold-w {
+  from {
+    width: 0;
+  }
+  to {
+    width: 88%;
+  }
+}
+
+@keyframes boxUnfold-w {
+  from {
+    width: 0;
+  }
+  to {
+    width: 88%;
+  }
+}
+
+@-webkit-keyframes boxFold-w {
+  from {
+    width: 88%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes boxFold-w {
+  from {
+    width: 88%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes mainShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mainShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes mainHidden {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mainHidden {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

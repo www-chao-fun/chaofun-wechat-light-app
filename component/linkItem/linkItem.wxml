@@ -1,0 +1,13 @@
+<!--component/linkItem/linkItem.wxml-->
+<view>
+  <view bindtap="toDetail" data-item="{{item}}" class="link_item">
+    <view class="left_img">
+      <image class="image" lazy-load="{{true}}" mode="aspectFill" wx:if="{{item.cover}}" src="{{imgOrigin+item.cover}}"></image>
+      <image class="image" wx:else src="/assets/images/icon/link.png"></image>
+      
+    </view>
+    <view  class="right_link">
+      <view>{{item.title}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,29 @@
+<!--pages/chooseForum/chooseForum.wxml-->
+<view class="container">
+  <view class="search">
+    <input focus="{{true}}" bindinput="bindInput" confirm-type="search" bindconfirm="search" placeholder="搜索板块"></input>
+  </view>
+  
+  <view class="content">
+    <view wx:if="{{histArr.length}}" class="hist">
+      <view class="hist_desc">最近发布 <view bindtap="clearHist" class="clear">清除记录</view></view>
+      <view class="hist_ul">
+          <view wx:for="{{histArr}}" wx:key="index" bindtap="choose2" data-item="{{item}}" class="hist_item">
+            {{item.name}}
+          </view>
+      </view>
+    </view>
+    <view wx:if="{{!keyword}}">
+      <view wx:for="{{datas}}" wx:key="index" bindtap="choose" data-item="{{item}}" class="item">
+        <image  src="{{imgOrigin+item.imageName+'?x-oss-process=image/resize,h_80'}}"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+    <view wx:if="{{keyword}}">
+      <view wx:for="{{datas}}" wx:key="index" bindtap="choose" data-item="{{item}}" class="item">
+        <image  src="{{imgOrigin+item.icon+'?x-oss-process=image/resize,h_80'}}"></image>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</view>

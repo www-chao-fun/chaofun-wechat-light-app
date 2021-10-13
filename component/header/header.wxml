@@ -1,0 +1,17 @@
+<!--component/header/header.wxml-->
+<view class='home-view'>
+  <view class="{{'search-top scroll-fixed'}}" style="height: {{statusBar.homeTop}}px;{{'padding-top:'+(statusBar.statusBarHeight)+'px;'}}" >
+    <view bindtap="toHome">
+      <image style="width: {{statusBar.height}}px;height:{{statusBar.height}}px" class="back_home" src="/assets/images/back_home.png"></image>
+    </view>
+    <view wx:if="{{types=='view'}}" bindtap='toSearch' class="search-view">
+      <!-- <image class='search-view-image' src='/img/search.png'></image> -->
+      <view>{{keyword?keyword:'输入搜索内容'}}</view>
+    </view>
+    <view wx:if="{{types=='input'}}" class="search-view">
+      <!-- <image class='search-view-image' src='/img/search.png'></image> -->
+      <input focus="{{true}}" confirm-type="search" bindconfirm="search" placeholder="请输入搜索内容"></input>
+    </view>
+    <view style="width:{{statusBar.paddingRight}}px" class="right"></view>
+  </view>
+</view>

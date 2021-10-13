@@ -1,0 +1,3 @@
+<!--pages/test/test.wxml-->
+<button bindtap="toMini" data-appid="wxeb39b10e39bf6b54" type="primary">跳转京东</button>
+<button bindtap="toWebView" data-url="https://www.zhihu.com/">知乎</button>

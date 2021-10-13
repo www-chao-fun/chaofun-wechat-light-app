@@ -1,0 +1,49 @@
+<!--component/typeItem/typeItem.wxml-->
+<view>
+  <view bindtap="toDetail" data-item="{{item}}" class="real_title">
+    {{item.title}}
+  </view>
+  <view class="main">
+    <view class="item_image">
+      <image wx:if="{{item.type=='image'&&item.imageNums==1}}" class="image" class="{{dClass?'detail':''}}" lazy-load="{{true}}" bindtap="showImg" data-item="{{item}}" mode="aspectFit" style="width:{{item.rw}};height:{{item.rh}}" src="{{imgOrigin+item.imageName+'?x-oss-process=image/resize,h_512'}}"></image>
+      <view wx:if="{{item.type=='image'&&item.imageNums>1&&(item.imageNums==2||item.imageNums==4)}}" class="double">
+        <view wx:for="{{item.images}}" wx:key="index" wx:for-item="it" wx:for-index="idx" class="imgs_two">
+          <image  
+            class="image" class="{{dClass?'detail':''}}" 
+            lazy-load="{{true}}" bindtap="showImgMore" 
+            data-item="{{item}}" 
+            data-index="{{idx}}"
+            wx:if="{{item.type=='image'}}"
+            mode="aspectFill"
+            src="{{imgOrigin+it+'?x-oss-process=image/resize,h_512'}}">
+          </image>
+        </view>
+      </view>
+      <view wx:if="{{item.type=='image'&&item.imageNums>1&&(item.imageNums!=2&&item.imageNums!=4)}}" class="three">
+        <view wx:for="{{item.images}}" wx:for-item="it" wx:for-index="idx" class="imgs_three">
+          <image  
+            class="image" class="{{dClass?'detail':''}}" 
+            lazy-load="{{true}}" bindtap="showImgMore" 
+            data-item="{{item}}"
+            data-index="{{idx}}" 
+            wx:if="{{item.type=='image'}}"
+            mode="aspectFill"
+            src="{{imgOrigin+it+'?x-oss-process=image/resize,h_512'}}">
+          </image>
+        </view>
+      </view>
+      
+      
+      <video wx:if="{{canShowVideo&&item.type=='gif'}}" autoplay="{{true}}" custom-cache="{{false}}" muted="{{true}}" show-mute-btn="{{true}}" show-center-play-btn="{{false}}" controls="{{true}}" style="width:100%;" src="{{imgOrigin+item.imageName}}"></video>
+      <view style="height:230px;" wx:if="{{canShowVideo&&item.type=='inner_video'}}">
+        <view wx:if="{{!item.isplay}}" class="image_con" bindtap="toPlay">
+          <image src="{{imgOrigin+item.video+'?x-oss-process=video/snapshot,t_0,h_500'}}" class="vimg" mode="aspectFill"></image>
+          <image class="play_img" src="../../assets/images/icon/play.png"></image>
+        </view>
+        <video wx:if="{{item.isplay}}" autoplay="{{true}}" custom-cache="{{false}}" show-center-play-btn="{{false}}" controls="{{true}}" style="width:100%;" src="{{imgOrigin+item.video}}"></video>
+      </view>
+  
+      <!-- http://video.699pic.com/videos/88/25/52/h9D53c4MiNRV1512882552_10s.mp4 -->
+    </view>
+  </view>
+</view>

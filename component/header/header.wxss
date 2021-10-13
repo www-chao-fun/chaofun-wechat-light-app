@@ -1,0 +1,67 @@
+/* component/header/header.wxss */
+.home-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.home-view-bg {
+  position: absolute;
+  top: 0rpx;
+  width: 100%;
+  height: 394rpx;
+  z-index: -1;
+}
+.home-view-bg image{
+  width: 100%;
+  height: 100%;
+}
+.search-top{
+  display: flex;
+  width: 100%;
+  transition: all .02s linear;
+  box-sizing: border-box;
+  background: #fff;
+  padding-bottom: 20rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+.search-top view{
+  box-sizing: content-box;
+}
+.back_home{
+  width: 70rpx;
+  height: 70rpx;
+  margin: 0 20rpx;
+  vertical-align: middle;
+}
+.search-view {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 92%;
+  height: 60rpx;
+  /* height: 100%; */
+  font-size: 26rpx;
+  /* background: rgba(242, 242, 242, 1); */
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  /* margin-top: 20rpx; */
+  border-radius: 32rpx;
+  padding-left: 30px;
+}
+
+.search-view-image {
+  width: 27rpx;
+  height: 27rpx;
+  margin: 0rpx 10rpx 0rpx 26rpx;
+}
+input{
+  border: none;
+  outline: none;
+}

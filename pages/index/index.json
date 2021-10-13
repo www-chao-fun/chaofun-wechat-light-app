@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "content": "/component/content/content",
+    "contentOther": "/component/contentOther/contentOther",
+    "header": "/component/header/header"
+  },
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 400,
+  "navigationStyle": "custom",
+  "backgroundTextStyle": "dark"
+}

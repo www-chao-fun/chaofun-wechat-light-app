@@ -1,0 +1,10 @@
+<!--pages/user/myattent.wxml-->
+<view class="container">
+  <view class="att_nav">
+    <view bindtap="checkout" data-item="listFocus" class="att_item {{whichOne=='listFocus'?'active':''}}">我关注的</view>
+    <view bindtap="checkout" data-item="listFans" class="att_item {{whichOne=='listFans'?'active':''}}">关注我的</view>
+  </view>
+  <view>
+    <attentionItem wx:for="{{focusData}}" userId="{{userId}}" item="{{item}}" wx:key="index"></attentionItem>
+  </view>
+</view>

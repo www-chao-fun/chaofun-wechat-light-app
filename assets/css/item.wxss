@@ -1,0 +1,65 @@
+/* component/typeItem/typeItem.wxss */
+
+.content{
+  padding: 20rpx;
+}
+.item{
+  background: #fff;
+  padding: 20rpx;
+}
+.f_title{
+  padding: 0 0 10rpx;
+  font-size: 26rpx;
+}
+.form_icon{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+  /* background: #ddd; */
+}
+.time{
+  color: #999;
+}
+.item{
+  margin-bottom: 20rpx;
+}
+.weight{
+  font-weight: 600;
+}
+.real_title{
+  margin-bottom: 10rpx;
+}
+.item_image{
+  /* max-height: 540rpx;
+  min-height: 440rpx; */
+}
+.item_image .image{
+  /* background: #ddd; */
+  width: 100%;
+  vertical-align: middle;
+  max-height: 540rpx;
+}
+
+
+.link_item{
+  display: flex;
+  border: 1px solid #f1f1f1;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  align-items: center;
+}
+.left_img{
+  flex: 0 0 100rpx;
+  height: 100rpx;
+}
+.left_img .image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.right_link{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 20rpx;
+}

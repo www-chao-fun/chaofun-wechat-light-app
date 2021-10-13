@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class='home-views' style="padding-top:{{statusBar.homeTop}}px;">
+  <header></header>
+  <view class="nav">
+    <!-- <view wx:for="{{navList}}" wx:item="item" class="nav_item">
+      {{item.name}}
+    </view> -->
+    <scroll-view scroll-x scroll-top="0">
+      <view class='classify-view'>
+        <block wx:for="{{navList}}" wx:key="category_id">
+          <view class='classify-item' bindtap="skip" data-item="{{item}}">
+            <view class="{{choose==item.id?'active':''}}">
+              {{item.title}}
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <view style="display: flex;hight:90px;margin-top:10rpx;background:#fff;">
+  <picker wx:if="{{choose!='recommend'&&choose!='trends'}}" bindchange="bindOrderChange" value="{{orderIndex}}" range="{{orders}}" range-key="label">
+    <view class="sort">排序： {{nsorts}} <view class="arrow_right"></view></view>
+  </picker>
+  <picker wx:if="{{choose!='recommend'&&choose!='trends'&&nsorts==='最赞'}}" bindchange="bindRangeChange" value="{{rangeIndex}}" range="{{ranges}}" range-key="label">
+    <view class="sort">时间范围： {{range}} <view class="arrow_right"></view></view>
+  </picker>
+  </view>
+  <view></view>
+  <view wx:if="{{choose!='trends'&&pagedata.length}}">
+    <content bindchangeVoteData="changeVoteData" pagedata="{{pagedata}}"></content>
+  </view>
+  <view class="nothing" wx:if="{{choose=='home'&&hasJoin!==null&&choose!='trends'&&!pagedata.length}}">
+    {{!hasJoin?'还没有加入板块哦~':'请等待服务端计算排序（预计5分钟）' }}
+    <view bindtap="toForum" class="btn">添加板块</view>
+  </view>
+  <view wx:if="{{choose=='trends'&&userdata.length}}">
+    <contentOther bindchangeVoteData="changeVoteData" pagedata="{{userdata}}"></contentOther>
+  </view>
+  <view class="nothing" wx:if="{{choose=='trends'&&!userdata.length}}">
+    还没有添加关注哦~
+    <!-- {{!hasJoin?'还没有加入板块哦~':'请等待服务端计算排序（预计5分钟）' }} -->
+    <!-- <view bindtap="toForum" class="btn">添加板块</view> -->
+  </view>
+</view>

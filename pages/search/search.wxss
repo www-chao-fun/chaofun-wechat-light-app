@@ -1,0 +1,24 @@
+/* pages/search/search.wxss */
+.his{
+  padding: 50rpx 30rpx;
+}
+.his .title{
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.con{
+  display: flex;
+  flex-flow: wrap;
+}
+.item{
+  padding: 6rpx 30rpx;
+  font-size: 26rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 30rpx;
+  margin-right: 30rpx;
+  color: #666;
+}

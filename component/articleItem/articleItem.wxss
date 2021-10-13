@@ -1,0 +1,24 @@
+/* component/articleItem/articleItem.wxss */
+@import '/assets/css/item.wxss';
+@import "../../wxParse/wxParse.wxss";
+.main{
+  padding-bottom: 20rpx;
+}
+.wxParse-p{
+  font-size: 28rpx;
+  color: #666;
+  display: flex;
+  margin: 10rpx 0;
+}
+.item_article{
+  max-height: 300rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  padding-bottom: 20rpx;
+}
+.posts .item_article_detail{
+  max-height: auto !important;
+  margin-bottom: 20rpx;
+}

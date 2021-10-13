@@ -1,0 +1,65 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view wx:if="{{showWhich==1}}" class="shouquan">
+    <view>
+      <image class="logo" src="https://chao.fun/img/chao.13437c59.jpeg"></image>
+      <view class="descs">炒饭将获取你的微信头像、昵称等基本信息</view>
+      <view>
+        <button open-type="getUserInfo" bind:getuserinfo="getUserInfo" type="primary">授权登录</button>
+      </view>
+      <view>
+        <button class="cancel" type="default">取消</button>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{showWhich==2}}" class="shouquan shouquan2">
+    <view class="cons"> 
+      <view class="logos">
+        <image class="logo" src="/assets/images/chaofan.jpg"></image>
+      </view>
+      <view class="item">
+        <view class="label">账号</view>
+        <view class="input">
+          <input bindinput="userName" placeholder="请输入用户名/手机号"></input>
+        </view>
+      </view>
+      <view class="item item2">
+        <view class="label">密码</view>
+        <view class="input">
+          <input bindinput="password" type="password" placeholder="请输入密码"></input>
+        </view>
+      </view>
+      <button bindtap="login" type="primary">登录</button>
+      <button bindtap="cancellogin" type="default">取消</button>
+      <view bindtap="checkout" data-ins="register" class="lor">去注册</view>
+    </view>
+  </view>
+  <view wx:if="{{showWhich==3}}" class="shouquan shouquan2">
+    <view class="cons">
+      <view class="logos">
+        <image class="logo" src="/assets/images/chaofan.jpg"></image>
+      </view>
+      <view class="item">
+        <view class="label">用户名</view>
+        <view class="input">
+          <input bindinput="userName" placeholder="请输入用户名"></input>
+        </view>
+      </view>
+      <view class="item">
+        <view class="label">密码</view>
+        <view class="input">
+          <input bindinput="password" value="{{params.password}}" type="password" placeholder="请输入密码"></input>
+        </view>
+      </view>
+      <view class="item item2">
+        <view class="label">确认密码</view>
+        <view class="input">
+          <input bindinput="repassword" type="password" value="{{params.repassword}}" placeholder="请再次输入密码"></input>
+        </view>
+      </view>
+      <button bindtap="register" type="primary">注册</button>
+      <button bindtap="cancellogin" type="default">取消</button>
+      <view bindtap="checkout" data-ins="login" class="lor">去登录</view>
+    </view>
+  </view>
+</view>

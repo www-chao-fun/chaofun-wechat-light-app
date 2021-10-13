@@ -1,0 +1,18 @@
+<!--component/attentionItem/attentionItem.wxml-->
+ <view bindtap="toUser" data-info="{{item}}" class="item">
+    <view class="img">
+        <image src="{{imgOrigin+item.icon}}"></image>
+    </view>
+    <view class="center">
+        <view class="name">
+            <text style="font-weight:600;">{{item.userName}} </text>
+            <view catchtap="doFoucs" data-focused="{{item.focused}}" wx:if="{{userId!=item.userId}}" class="btn {{item.focused?'btn2':''}}">{{item.focused?'取消关注':'+关注'}}</view>
+            <!-- <view @click="toAttention(item.focused,item.userId)" class="btn">+关注</view> -->
+        </view>
+        <view class="zan">获赞：{{item.ups}}</view>
+        <view class="desc">{{item.desc||'Ta有点懒，居然没有签名~'}}</view>
+    </view>
+    <view class="right">
+        
+    </view>
+ </view>

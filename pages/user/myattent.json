@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "attentionItem": "/component/attentionItem/attentionItem"
+  },
+  "navigationBarTitleText": "关注"
+}

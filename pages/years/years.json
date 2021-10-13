@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "painter":"/component/painter/painter"
+  },
+  "navigationBarTitleText": "我的炒饭2020年度总结"
+}

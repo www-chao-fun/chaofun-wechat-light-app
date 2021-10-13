@@ -1,0 +1,68 @@
+<!--pages/push/push.wxml-->
+<view class="container">
+    <view class="page-section">
+        <view class="page-section-title">帖子分类</view>
+        <view class="radios">
+          <radio-group class="aaa" bindchange="radioChange">
+              <label wx:for="{{items}}" wx:key="index">
+                <view class="">
+                    <radio value="{{item.value}}" checked="{{item.checked}}"/>
+                </view>
+                <view class="">{{item.name}}</view>
+              </label>
+          </radio-group>
+        </view>
+    </view>
+    <view class="page-section page-section2">
+        <view class="page-section-title">发布板块</view>
+        <view bindtap="toChooseForum" class="page-section-title bankuai"> {{forumInfo.name?forumInfo.name:'请选择'}} <view class="arrow_right"></view></view>
+    </view>
+    <view class="page-section">
+        <view class="page-section-title">帖子标题</view>
+        <view class="title">
+          <textarea bindinput="bindTitle" value="{{forms.title}}" class="weui-textarea" rows="2" placeholder="请输入标题"></textarea>
+        </view>
+    </view>
+    <view wx:if="{{checked==2}}" class="page-section">
+        <view class="page-section-title">帖子内容</view>
+        <view class="title">
+          <textarea bindinput="bindArticle" class="weui-textarea" rows="2" placeholder="请输入帖子内容."></textarea>
+        </view>
+    </view>
+    <view wx:if="{{checked==3}}" class="page-section">
+        <view class="page-section-title">链接地址 <text bindtap="zhantie" class="zhantie">粘贴地址</text></view>
+        <view class="title">
+          <textarea bindinput="bindLink" value="{{forms.link}}" class="weui-textarea" rows="2" placeholder="请输入链接地址."></textarea>
+        </view>
+    </view>
+    <view wx:if="{{checked==1}}" class="page-section">
+        <view class="page-section-title">
+          图片 <text style="font-size:24rpx;color:#999;">(app、pc端支持多图发布)</text>
+          <view bindtap="chooseImage" class="conAdd">添加图片</view>
+        </view>
+        <view  class="title">
+        <!-- bindtap="chooseImage" -->
+          <view bindtap="chooseImage" wx:if="{{checked==1&&!datas.length}}" class="img_icon">+</view>
+          <view class="imgLists">
+            <view wx:for="{{datas}}" wx:key="index"  class="imgItem">
+              <image mode="aspectFill" wx:if="{{checked==1&&forms.ossName}}" src="{{item}}"></image>
+              <view bindtap="toDelete" data-index="{{index}}" class="dele">删除</view>
+            </view>
+          </view>
+          <!-- <image class="preImg" mode="aspectFit" wx:if="{{checked==1&&forms.ossName}}" src="{{forms.ossName}}"></image> -->
+        </view>
+    </view>
+    <view wx:if="{{checked==4}}" class="page-section">
+        <view class="page-section-title">选项 <text bindtap="addVote" class="add_btn">+新增选项</text></view>
+        <view class="title" style="position:relative;">
+          <view  wx:for="{{voteList}}" wx:for-item="item" wx:for-index="index" wx:key="{{item}}" style="position:relative;">
+            <input bindinput="inputVote" data-index="{{index}}"  value="{{item.optionName}}" class="weui-input" placeholder="选项{{index+1}}"/>
+            <image bindtap="deletes" data-index="{{index}}" wx:if="{{showDelete}}" class="delete" src="../../assets/images/icon/delete.png"></image>
+          </view>
+          
+        </view>
+    </view>
+    <view style="padding-top:20rpx;">
+        <button disabled="{{disablePush}}" bindtap="toSub" type="primary">发布</button>
+    </view>
+</view>

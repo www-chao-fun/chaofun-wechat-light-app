@@ -1,0 +1,38 @@
+/* pages/user/userInfo.wxss */
+.container{
+  
+}
+.item{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+  border-bottom: 1rpx solid #ddd;
+  margin: 0 20rpx;
+  line-height: 80rpx;
+}
+.label{
+  line-height: 80rpx;
+}
+.avatar_label{
+  line-height: 80rpx;
+}
+.avatar image{
+  width: 80rpx;
+  height: 80rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.arrow_right{
+  margin-top: 35rpx;
+  margin-left: 10rpx;
+}
+.texts{
+  display: inline-block;
+  width: 400rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+  vertical-align: middle;
+  text-align: right;
+}

@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/login/login",
+    "pages/list/list",
+    "pages/detail/detail",
+    "pages/forum/forum",
+    "pages/forumList/forumList",
+    "pages/push/push",
+    "pages/chooseForum/chooseForum",
+    "pages/search/search",
+    "pages/search/searchResult",
+    "pages/test/test",
+    "pages/test/view",
+    "pages/message/message",
+    "pages/user/userInfo",
+    "pages/user/userHome",
+    "pages/user/editDesc",
+    "pages/user/myattent",
+    "pages/years/years"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FF9300",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "selectedIconPath": "/assets/images/012.png",
+        "iconPath": "/assets/images/011.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "/assets/images/022.png",
+        "iconPath": "/assets/images/021.png",
+        "pagePath": "pages/forum/forum",
+        "text": "全部板块"
+      },
+      {
+        "selectedIconPath": "/assets/images/push.png",
+        "iconPath": "/assets/images/push.png",
+        "pagePath": "pages/push/push",
+        "text": "发布"
+      },
+      {
+        "selectedIconPath": "/assets/images/032.png",
+        "iconPath": "/assets/images/031.png",
+        "pagePath": "pages/message/message",
+        "text": "消息"
+      },
+      {
+        "selectedIconPath": "/assets/images/042.png",
+        "iconPath": "/assets/images/041.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

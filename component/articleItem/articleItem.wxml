@@ -1,0 +1,13 @@
+<!--component/articleItem/articleItem.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view bindtap="toDetail" data-item="{{item}}">
+  <view class="real_title">
+    {{item.title}}
+  </view>
+  <view class="main">
+    <view class="{{detail?'item_article_detail':'item_article'}}">
+      <template wx:if="{{isHtml}}" is="wxParse"  data="{{wxParseData:intro.nodes}}" />
+      <text wx:else>{{item.article.slice(0, 10000)}}{{item.article}}</text>
+    </view>
+  </view>
+</view>

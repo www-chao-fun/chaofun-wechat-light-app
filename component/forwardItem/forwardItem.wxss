@@ -1,0 +1,11 @@
+/* component/forwardItem/forwardItem.wxss */
+.msg{
+    font-size: 24rpx;
+    color: #666;
+}
+.msg .aaa{
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+    margin-right: 10rpx;
+}

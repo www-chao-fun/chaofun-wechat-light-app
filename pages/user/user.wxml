@@ -1,0 +1,50 @@
+<!--logs.wxml-->
+<view class="container">
+  <view wx:if="{{isLogin}}" class="info">
+    <view bindtap="toInfo" class="info_img">
+      <image  src="{{imgOrigin+userInfo.icon+'?x-oss-process=image/resize,h_100'}}"></image>
+    </view>
+    <view class="info_right">
+      <view class="user_name">
+        <text bindtap="toInfo">{{userInfo.userName}} </text>
+        
+      </view>
+      <view bindtap="toInfo" class="zan">
+        {{userInfo.ups}}点赞
+        
+      </view>
+      <view bindtap="toInfo" wx:if="{{userInfo.desc}}" class="desc">{{userInfo.desc}}</view>
+    </view>
+  </view> 
+  <view bindtap="toLogin" wx:if="{{!isLogin}}" class="info">
+    <view class="info_img">
+      <image src="/assets/images/icon/default.jpg"></image>
+    </view>
+    <view class="info_right">
+      <view style="line-height:120rpx;padding-left:20rpx;font-size: 32rpx;">点击登录</view>
+    </view>
+  </view>
+  <view style="height:10rpx;background:#f1f1f1;"></view>
+  <view>
+    <view class="title">我的管理</view>
+    <view class="ul">
+      <view wx:for="{{ulData}}" bindtap="toList" wx:key="value" data-item="{{item}}" class="li">
+        <image src="{{item.icon}}"></image>
+        <view>{{item.label}}</view>
+        <view wx:if="{{item.value == 4 && readMessage.hasNewMessage}}" class="pointer"></view>
+      </view>
+      <view bindtap="out" wx:if="{{isLogin}}" class="li">
+        <image src="/assets/images/icon/exit.png"></image>
+        <text  class="out">退出登录</text>
+        
+      </view>
+    </view>
+  </view>
+  <view>
+    <!-- <view class="zongjie">2020年度总结</view> -->
+    <!-- <view bindtap="toYear" class="b_c">
+      <image mode="heightFix" class="aaa" src="../../assets/images/banner4.png"></image>
+    </view> -->
+    
+  </view>
+</view>

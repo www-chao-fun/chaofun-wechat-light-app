@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "content": "/component/content/content"
+  },
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 300
+}

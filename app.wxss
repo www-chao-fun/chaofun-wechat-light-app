@@ -1,0 +1,25 @@
+/**app.wxss**/
+@import '/assets/css/weui.wxss';
+.fr{
+  float: right;
+}
+.arrow_right{
+  float: right;
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  transform: rotate(45deg);
+  margin-top: 15rpx;
+  margin-right: 10rpx;
+}
+.home-views {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+image{
+  vertical-align: middle;
+  
+}

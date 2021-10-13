@@ -1,0 +1,50 @@
+/* component/typeItem/typeItem.wxss */
+@import '/assets/css/item.wxss';
+.item_image .detail{
+  max-height: 1000rpx;
+}
+.three,.double{
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+.imgs_two{
+  flex: 0 0 345rpx;
+  height: 260rpx;
+  margin-bottom: 6rpx;
+}
+.imgs_two image{
+  width: 100%;
+  height: 100%;
+}
+.imgs_three{
+  flex: 0 0 228rpx;
+  height: 180rpx;
+  margin-bottom: 6rpx;
+}
+
+.imgs_three image{
+  width: 100%;
+  height: 100%;
+}
+.three::after{
+  content: '';
+  display: block;
+  flex: 0 0 228rpx;
+}
+.vimg{
+  height: 225px;
+  width: 100%;
+}
+.image_con{
+  height: 225px;
+  position: relative;
+}
+.play_img{
+  position: absolute;
+  left: 30rpx;
+  bottom: 30rpx;
+  width: 100rpx;
+  height: 100rpx;
+}

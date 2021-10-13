@@ -1,0 +1,24 @@
+<!--pages/forum/forum.wxml-->
+<view class="container">
+    <view class="left">
+        <view wx:for="{{tagsData}}" bindtap="checkout" data-item="{{item}}" wx:key="id" class="left_item {{chooseId==item.id?'left_item_active':''}}">
+            {{item.name}}
+        </view>
+    </view>
+    <view class="right">
+        <view wx:if="{{chooseId==0}}" class="inputs">
+          <view class="ii">
+            <input bindinput="searchForum" value="{{search}}" type="text" confirm-type="search" placeholder="请输入搜索板块"></input>
+            <icon wx:if="{{search}}" bindtap="toClear" class="icon-box-img clear" type="clear" size="20"></icon>
+          </view>
+          
+        </view>
+        <view class="right_con">
+            <view wx:for="{{tagsLists}}" bindtap="toForum" data-item="{{item}}" wx:key="id" class="right_item">
+                <image src="{{imgOrigin+item.imageName+'?x-oss-process=image/resize,h_20'}}"></image>
+                <text>{{item.name}}</text>
+            </view>
+        </view>
+        
+    </view>
+</view>

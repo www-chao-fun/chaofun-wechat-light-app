@@ -1,0 +1,138 @@
+/* component/content/content.wxss */
+.content{
+  padding: 20rpx 0;
+}
+.item{
+  background: #fff;
+  padding: 30rpx;
+  border-radius: 12rpx;
+}
+.f_title{
+  padding: 0 0 10rpx;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: space-between;
+  height: 44rpx;
+  overflow: hidden;
+}
+.form_icon{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+  /* background: #ddd; */
+}
+.time{
+  color: #999;
+}
+.item{
+  margin-bottom: 20rpx;
+}
+.weight{
+  font-weight: 600;
+}
+.real_title{
+  margin-bottom: 20rpx;
+}
+.item_image{
+  /* max-height: 540rpx;
+  min-height: 440rpx; */
+}
+.item_image image{
+  /* background: #ddd; */
+  width: 100%;
+  vertical-align: middle;
+  max-height: 540rpx;
+}
+.bottom_tool{
+  padding: 14rpx 0rpx 0;
+  color: #666;
+  display: flex;
+  font-size: 24rpx;
+  border-top: 1rpx solid #f1f1f1;
+  justify-content: space-around;
+}
+.tool_item{
+  flex: 0 0 20%;
+  text-align: center;
+}
+.bottom_tool image{
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  margin: 0 4px;
+}
+.twos{
+  flex: 0 0 25%;
+  display: flex;
+}
+.two_item{
+  flex: 0 0 33%;
+  text-align: center;
+}
+.val{
+  text-align: center;
+  flex: 0 0 25%;
+}
+
+
+.btn_zhuanfa{
+  padding: 0 !important;
+  font-weight: normal;
+  display: inline-block;
+  width: 40rpx;
+  line-height: 26rpx;
+  vertical-align: middle;
+  background: none;
+  margin-top: -12rpx;
+  color: #666;
+  z-index: 10;
+  /* background: #000; */
+}
+.btn_zhuanfa::after {
+  border: 0;
+  line-height: 26rpx;
+  font-size: 22rpx;
+}
+.btn_zhuanfa text{
+  font-size: 26rpx;
+}
+
+.to_top{
+  position: fixed;
+  right: 20rpx;
+  bottom: 60rpx;
+  width: 60rpx;
+  height: 60rpx;
+  z-index: 99;
+}
+.to_top image{
+  width: 100%;
+  height: 100%;
+}
+.more{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: -6rpx;
+  margin-left: 20rpx;
+}
+.tool_item_a{
+  position: relative;
+}
+.tool_item_a button{
+  position: absolute;
+  width: 100%;
+  height: 44rpx;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+.nothing{
+  color: #999;
+  font-size: 28rpx;
+  height: 150rpx;
+  border: 1rpx solid #ddd;
+  text-align: center;
+  line-height: 150rpx;
+  border-radius: 8rpx;
+}

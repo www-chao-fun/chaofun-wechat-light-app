@@ -1,0 +1,6 @@
+<!--pages/search/searchResult.wxml-->
+<view class='home-views' style="padding-top:{{statusBar.homeTop}}px;">
+  <header types="view" keyword="{{params.keyword}}" bind:toSearch="toSearch"></header>
+  <content pagedata="{{datas}}"></content>
+</view>
+

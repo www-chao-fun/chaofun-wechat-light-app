@@ -1,0 +1,51 @@
+<!--pages/user/userHome.wxml-->
+<view class="container">
+  <view>
+    <view class="userInfo">
+      <image src="{{imgOrigin+userInfo.icon}}" class="tx"></image>
+      <view class="uuu">
+        <view wx:if="{{userInfo.userId}}" class="u_name">
+          <text>{{userInfo.userName}}</text>
+          <text bindtap="doFoucs" wx:if="{{userId!=userInfo.userId&&!userInfo.focused}}" class="attBtn">+关注</text>
+          <text bindtap="doFoucs" wx:if="{{userId!=userInfo.userId&&userInfo.focused}}" class="attBtn attBtn2">取消关注</text>
+        </view>
+        <view style="font-size:28rpx;color:#999;">获赞：{{userInfo.ups}}</view>
+        <view style="font-size:28rpx;color:#999;" class="desc">{{userInfo.desc?userInfo.desc:'Ta有点懒，啥也没写~'}}</view>
+      </view>
+    </view>
+    <view class="navs">
+      <view bindtap="checkout" data-item="pub" class="u_title {{whichOne=='pub'?'u_title_active':''}}">Ta发布的</view>
+      <view bindtap="checkout" data-item="love" class="u_title {{whichOne=='love'?'u_title_active':''}}">Ta赞过的</view>
+      <view bindtap="checkout" data-item="listFocus" class="u_title {{whichOne=='listFocus'?'u_title_active':''}}">Ta关注的</view>
+      <view bindtap="checkout" data-item="listFans" class="u_title {{whichOne=='listFans'?'u_title_active':''}}">关注Ta的</view>
+    </view>
+  </view>
+  
+  <view wx:if="{{showTop}}" class="fixed_top">
+    <view class="userInfo">
+      <image src="{{imgOrigin+userInfo.icon}}" class="tx"></image>
+      <view class="uuu">
+        <view class="u_name">
+          <text>{{userInfo.userName}}</text>
+          <text bindtap="doFoucs" wx:if="{{!userInfo.focused}}" class="attBtn">+关注</text>
+          <text bindtap="doFoucs" wx:else class="attBtn attBtn2">取消关注</text>
+        </view>
+        <view style="font-size:26rpx;color:#999;">获赞：{{userInfo.ups}}</view>
+      </view>
+    </view>
+    <view class="navs">
+      <view bindtap="checkout" data-item="pub" class="u_title {{whichOne=='pub'?'u_title_active':''}}">Ta发布的</view>
+      <view bindtap="checkout" data-item="love" class="u_title {{whichOne=='love'?'u_title_active':''}}">Ta赞过的</view>
+      <view bindtap="checkout" data-item="listFocus" class="u_title {{whichOne=='listFocus'?'u_title_active':''}}">Ta关注的</view>
+      <view bindtap="checkout" data-item="listFans" class="u_title {{whichOne=='listFans'?'u_title_active':''}}">关注Ta的</view>
+    </view>
+  </view>
+  
+  <view class="list">
+    <content wx:if="{{whichOne=='pub'||whichOne=='love'}}" pagedata="{{datas}}"></content>
+    <view wx:else>
+      <attentionItem wx:for="{{focusData}}" userId="{{userId}}" item="{{item}}" wx:key="index"></attentionItem>
+    </view>
+    
+  </view>
+</view>

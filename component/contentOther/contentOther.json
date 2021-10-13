@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "type-item": "/component/typeItem/typeItem",
+    "link-item": "/component/linkItem/linkItem",
+    "article-item": "/component/articleItem/articleItem",
+    "forward-item": "/component/forwardItem/forwardItem"
+  }
+}
