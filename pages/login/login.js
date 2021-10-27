@@ -31,6 +31,9 @@ Page({
         console.log(res.code);
         if (res.code) {
           //发起网络请求
+          // wx.getPhoneNumber(resOk=>{
+          //   console.log(res)
+          // })
           let params = {
             authCode: res.code,
             phoneInfoEncryptedData: e.detail.encryptedData,

@@ -141,13 +141,19 @@ const indexapi = {
     return http.post(api.submitVote, params);
   },
   weChatLightAppPhoneLogin: params => {
-    return http.post(api.weChatLightAppPhoneLogin+'?'+json2Form(params), {},
-    {});
+    // return http.post(api.weChatLightAppPhoneLogin+'?'+json2Form(params), {},
+    // {});
+    // return http.post(api.weChatLightAppPhoneLogin, params,
+    // {'Content-Type':'multipart/form-data'});
+    return http.request(api.weChatLightAppPhoneLogin, params,'post',{'Content-Type': 'application/x-www-form-urlencoded'});
     // return http.request(api.weChatLightAppPhoneLogin, params,'post',{},{});
   },
   weChatLightAppRegister: params => {
     // return http.request(api.weChatLightAppRegister, {},'post',{},{params: params});
-    return http.post(api.weChatLightAppRegister+'?'+json2Form(params), {});//`?userName=${params.userName}&password=${params.password}`
+    // return http.post(api.weChatLightAppRegister+'?'+json2Form(params), {});//`?userName=${params.userName}&password=${params.password}`
+    // return http.post(api.weChatLightAppRegister, params,
+    //   {'Content-Type':'multipart/form-data'});
+    return http.request(api.weChatLightAppRegister, params,'post',{'Content-Type': 'application/x-www-form-urlencoded'});
   },
   
 };

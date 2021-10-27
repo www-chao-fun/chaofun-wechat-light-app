@@ -8,7 +8,7 @@ const http = {
     let [that, header] = [this, { ...this.header, ..._header }];
     header.cookie = wx.getStorageSync('cookie');
     header['fun-device'] = 'light-app';
-    // header['Content-Type'] = header['Content-Type']||'application/x-www-form-urlencoded'
+    header['Content-Type'] = header['Content-Type']||'application/x-www-form-urlencoded'
     try {
       header.Authorization = (await wechat.api("getStorage", {
         key: "accessToken"
@@ -308,7 +308,7 @@ const http = {
   header: {
     Authorization: CONFIG.test_token || wx.getStorageSync("accessToken"),
     app: "wechat-app",
-    "content-type": "application/x-www-form-urlencoded",
+    // "content-type": "application/x-www-form-urlencoded",
     channel: "XCX",
     version: "2.2.12"
   },
