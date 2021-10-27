@@ -20,48 +20,77 @@ Page({
       options: {}
     },
     wechatAuth: false,
+    authCode: ''
   },
   async getPhoneNumber (e) {
     console.log(e.detail.errMsg)
     console.log(e.detail.iv)
     console.log(e.detail.encryptedData)
-    let that = this;
-    wx.login({
-      success (res) {
-        console.log(res.code);
-        if (res.code) {
-          //发起网络请求
-          // wx.getPhoneNumber(resOk=>{
-          //   console.log(res)
-          // })
-          let params = {
-            authCode: res.code,
-            phoneInfoEncryptedData: e.detail.encryptedData,
-            phoneInfoEncryptedDataIV: e.detail.iv,
-          }
-          req.weChatLightAppPhoneLogin(params).then(res1=>{
-            if(res1.success){
-              console.log(res1);
-              that.doLoginSuccess(res1);
-            }else if(res1.errorCode=='need_register'){
-              that.setData({
-                wechatAuth: true,
-                showWhich: '3'
-              })
-            }else{
-              wx.showToast({
-                icon: 'none',
-                title: res1.errorMessage+'，请重试'
-              })
-            }
-            
-          });
-          
-        } else {
-          console.log('登录失败！' + res.errMsg)
-        }
-      }
+    wx.showLoading({
+      title: '',
     })
+    let that = this;
+    let params = {
+      authCode: this.data.authCode,//res.code,
+      phoneInfoEncryptedData: e.detail.encryptedData,
+      phoneInfoEncryptedDataIV: e.detail.iv,
+    }
+    req.weChatLightAppPhoneLogin(params).then(res1=>{
+      wx.hideLoading({
+        success: (res) => {},
+      })
+      if(res1.success){
+        console.log(res1);
+        that.doLoginSuccess(res1);
+      }else if(res1.errorCode=='need_register'){
+        that.setData({
+          wechatAuth: true,
+          showWhich: '3'
+        })
+      }else{
+        wx.showToast({
+          icon: 'none',
+          title: res1.errorMessage+'，请重试'
+        })
+      }
+      
+    });
+    // wx.login({
+    //   success (res) {
+    //     console.log(res.code);
+    //     if (res.code) {
+    //       //发起网络请求
+    //       // wx.getPhoneNumber(resOk=>{
+    //       //   console.log(res)
+    //       // })
+    //       let params = {
+    //         authCode: this.data.authCode,//res.code,
+    //         phoneInfoEncryptedData: e.detail.encryptedData,
+    //         phoneInfoEncryptedDataIV: e.detail.iv,
+    //       }
+    //       req.weChatLightAppPhoneLogin(params).then(res1=>{
+    //         if(res1.success){
+    //           console.log(res1);
+    //           that.doLoginSuccess(res1);
+    //         }else if(res1.errorCode=='need_register'){
+    //           that.setData({
+    //             wechatAuth: true,
+    //             showWhich: '3'
+    //           })
+    //         }else{
+    //           wx.showToast({
+    //             icon: 'none',
+    //             title: res1.errorMessage+'，请重试'
+    //           })
+    //         }
+            
+    //       });
+          
+    //     } else {
+    //       console.log('登录失败！' + res.errMsg)
+    //     }
+    //   }
+    // })
   },
   password(e){
     this.setData({
@@ -146,6 +175,7 @@ Page({
       },1500)
   },
   async register(){
+    
     let params = {
       userName: this.data.params.userName,
       password: this.data.params.password,
@@ -168,11 +198,12 @@ Page({
       })
       return 
     }
+    let res;
     if(this.data.wechatAuth){
       delete params.repassword;
-      let res = await req.weChatLightAppRegister(params);
+      res = await req.weChatLightAppRegister(params);
     }else{
-      let res = await req.register(params);
+      res = await req.register(params);
     }
     // let res = await req.register(params);
     console.log(res)
@@ -216,6 +247,17 @@ Page({
     this.setData({
       options: options
     })
+    // let that = this;
+    // wx.login({
+    //   success (res) {
+    //     console.log(res.code);
+    //     if (res.code) {
+    //       that.setData({
+    //         authCode: res.code
+    //       })
+    //     }
+    //   }
+    // })
   },
   toLogin(){
 
@@ -243,7 +285,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let that = this;
+    wx.login({
+      success (res) {
+        console.log(res.code);
+        if (res.code) {
+          that.setData({
+            authCode: res.code
+          })
+        }
+      }
+    })
   },
 
   /**

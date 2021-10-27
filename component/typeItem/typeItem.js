@@ -39,7 +39,7 @@ Component({
   ready(){
     
     var now = new Date().getTime();
-    var real = new Date('2021-10-18 18:59:00').getTime();
+    var real = new Date('2021-10-27 17:10:00').getTime();
     if(now<real){
       this.setData({
         canShowVideo: false

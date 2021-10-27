@@ -17,6 +17,7 @@
       <view class="logos">
         <image class="logo" src="/assets/images/chaofan.jpg"></image>
       </view>
+      <view class="bindTitle">账号密码登录</view>
       <view class="item">
         <view class="label">账号</view>
         <view class="input">
