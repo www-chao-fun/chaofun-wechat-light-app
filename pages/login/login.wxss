@@ -9,11 +9,11 @@
 .logo{
   width: 160rpx;
   height: 160rpx;
-  margin: 0 auto 30rpx;
+  margin: 0 auto 0rpx;
   border: 1px solid #f1f1f1;
 }
 .logos .logo{
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   border: none;
   width: 240rpx;
   height: 240rpx;
@@ -75,4 +75,34 @@
   font-size: 24rpx;
   color: #666;
   margin-top: 60rpx;
+}
+.icons{
+  width: 40rpx;
+  height: 40rpx;
+}
+.wxbtn{
+
+}
+.wxbtn {
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+  position: static;
+  font-weight: normal;
+  font-size: 28rpx;
+}
+
+.wxbtn:after {
+  content: none;
+}
+
+.wxbtn::after {
+  border: none;
+}
+.bindTitle{
+  text-align: left;
+  padding-bottom: 10rpx;
+  padding-left: 60rpx;
+  font-size: 32rpx;
+  font-weight: bold;
 }

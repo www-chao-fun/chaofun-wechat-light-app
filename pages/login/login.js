@@ -1,3 +1,5 @@
+// import { delete } from "request";
+
 // pages/login/login.js
 const app = getApp();
 const {
@@ -16,7 +18,47 @@ Page({
       password: '',
       repassword: '',
       options: {}
-    }
+    },
+    wechatAuth: false,
+  },
+  async getPhoneNumber (e) {
+    console.log(e.detail.errMsg)
+    console.log(e.detail.iv)
+    console.log(e.detail.encryptedData)
+    let that = this;
+    wx.login({
+      success (res) {
+        console.log(res.code);
+        if (res.code) {
+          //发起网络请求
+          let params = {
+            authCode: res.code,
+            phoneInfoEncryptedData: e.detail.encryptedData,
+            phoneInfoEncryptedDataIV: e.detail.iv,
+          }
+          req.weChatLightAppPhoneLogin(params).then(res1=>{
+            if(res1.success){
+              console.log(res1);
+              that.doLoginSuccess(res1);
+            }else if(res1.errorCode=='need_register'){
+              that.setData({
+                wechatAuth: true,
+                showWhich: '3'
+              })
+            }else{
+              wx.showToast({
+                icon: 'none',
+                title: res1.errorMessage+'，请重试'
+              })
+            }
+            
+          });
+          
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
   },
   password(e){
     this.setData({
@@ -45,6 +87,8 @@ Page({
       a = 3
     }else if(ins=='login'){
       a = 2
+    }else if(ins=='bind'){
+      a = 4
     }
     this.setData({
       showWhich: a
@@ -67,12 +111,21 @@ Page({
       wx.showToast({
         title: '登录成功',
       })
-      wx.setStorageSync('cookie', `${res.data.name}=${res.data.value};`)
+      this.doLoginSuccess(res);
+    }else{
+      wx.showToast({
+        icon: 'none',
+        title: res.errorMessage
+      })
+    }
+  },
+  doLoginSuccess(res){
+    wx.setStorageSync('cookie', `${res.data.name}=${res.data.value};`)
       app.globalData.isLogin = true
       app.globalData.refresh = true
       setTimeout(()=>{
         let url = (this.data.options.from ? this.data.options.from : '/pages/index/index')
-        if (url.includes('/pages/user/user')||url.includes('/pages/push/push')||url.includes('/pages/message/message')){
+        if (url.includes('/pages/user/user')||url.includes('/pages/push/push')||url.includes('/pages/message/message')||url.includes('/pages/index/index')){
           wx.switchTab({
             url: url,
           })
@@ -86,15 +139,8 @@ Page({
               url: url,
             })
           }
-          
         }
       },1500)
-    }else{
-      wx.showToast({
-        icon: 'none',
-        title: res.errorMessage
-      })
-    }
   },
   async register(){
     let params = {
@@ -119,8 +165,13 @@ Page({
       })
       return 
     }
-
-    let res = await req.register(params);
+    if(this.data.wechatAuth){
+      delete params.repassword;
+      let res = await req.weChatLightAppRegister(params);
+    }else{
+      let res = await req.register(params);
+    }
+    // let res = await req.register(params);
     console.log(res)
     if (res.success){
       wx.showToast({

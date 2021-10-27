@@ -16,12 +16,13 @@
       <view bindtap="toInfo" wx:if="{{userInfo.desc}}" class="desc">{{userInfo.desc}}</view>
     </view>
   </view> 
-  <view bindtap="toLogin" wx:if="{{!isLogin}}" class="info">
+  <view wx:if="{{!isLogin}}" class="info">
     <view class="info_img">
       <image src="/assets/images/icon/default.jpg"></image>
     </view>
     <view class="info_right">
-      <view style="line-height:120rpx;padding-left:20rpx;font-size: 32rpx;">点击登录</view>
+      <!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">点击登录</button> -->
+      <view bindtap="toLogin" style="line-height:120rpx;padding-left:20rpx;font-size: 32rpx;">点击登录</view>
     </view>
   </view>
   <view style="height:10rpx;background:#f1f1f1;"></view>

@@ -25,8 +25,7 @@ Component({
       this.setData({
         'node': this.data.node
       })
-      console.log('8989');
-      console.log(this.data.node);
+      
     },
     attached: function() {
       // 在组件实例进入页面节点树时执行
@@ -59,7 +58,7 @@ Component({
     showImg(e){
       let item = e.currentTarget.dataset.item;
       let arr = [];
-      console.log(item);
+      
       if(item.imageNames.length){
         // var t = item.imageNames.split(',')
         item.imageNames.forEach(it=>{

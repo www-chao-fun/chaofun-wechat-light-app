@@ -140,7 +140,24 @@ const indexapi = {
   submitVote: params => {
     return http.post(api.submitVote, params);
   },
+  weChatLightAppPhoneLogin: params => {
+    return http.post(api.weChatLightAppPhoneLogin+'?'+json2Form(params), {},
+    {});
+    // return http.request(api.weChatLightAppPhoneLogin, params,'post',{},{});
+  },
+  weChatLightAppRegister: params => {
+    // return http.request(api.weChatLightAppRegister, {},'post',{},{params: params});
+    return http.post(api.weChatLightAppRegister+'?'+json2Form(params), {});//`?userName=${params.userName}&password=${params.password}`
+  },
+  
 };
+function json2Form(json) { 
+  var str = []; 
+  for(var p in json){ 
+    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(json[p])); 
+  } 
+  return str.join("&"); 
+}
 const wxapi = {
   getWxToken: params => {
     return http.get(api.getWxToken, params);

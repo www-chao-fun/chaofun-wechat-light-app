@@ -8,8 +8,7 @@ const http = {
     let [that, header] = [this, { ...this.header, ..._header }];
     header.cookie = wx.getStorageSync('cookie');
     header['fun-device'] = 'light-app';
-    console.log(header,_header)
-    header['Content-Type'] = 'application/x-www-form-urlencoded'
+    // header['Content-Type'] = header['Content-Type']||'application/x-www-form-urlencoded'
     try {
       header.Authorization = (await wechat.api("getStorage", {
         key: "accessToken"
@@ -27,9 +26,11 @@ const http = {
         } catch (e) { }
       }
       try {
+        console.log('reqArg',reqArg)
         const arg = await this.Debounce({ url, data, method, header, ...reqArg });
         wechat.api("showNavigationBarLoading");
         try {
+          console.log('arg',arg)
           const { data, statusCode,header } = await wechat.api("request", { ...arg });
           if (statusCode === 200) {
             let cookie = wx.getStorageSync('cookie')?wx.getStorageSync('cookie'):'';
@@ -235,9 +236,10 @@ const http = {
   },
 
   // POST请求
-  post(url, data) {
-    return this.request(url, data, "POST");
+  post(url, data,reqArg = {}) {
+    return this.request(url, data, "POST",{},reqArg);
   },
+  
 
   /**
    * POST请求 - 参数JSON格式

@@ -34,7 +34,7 @@ Component({
       })
     },
     search(e){
-      console.log(e)
+      
       let val = e.detail.value;
       this.triggerEvent('toSearch',val)
     },

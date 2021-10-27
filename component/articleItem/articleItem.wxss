@@ -7,7 +7,7 @@
 .wxParse-p{
   font-size: 28rpx;
   color: #666;
-  display: flex;
+  /* display: flex; */
   margin: 10rpx 0;
 }
 .item_article{

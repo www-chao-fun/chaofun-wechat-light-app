@@ -42,6 +42,7 @@ Page({
       url: '/pages/years/years?userId='+this.data.userInfo.userId,
     })
   },
+  
   onReady(){
     if (wx.getStorageSync('cookie')) {
       this.setData({

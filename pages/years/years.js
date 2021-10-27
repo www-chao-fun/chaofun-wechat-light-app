@@ -45,7 +45,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    
     this.setData({
       userId: options.userId
     });
@@ -61,7 +61,7 @@ Page({
   async getUserInfo(){
     // let res = await req.userinfo({userId: this.data.userId}); 
     let res = await req.getProfile();
-    console.log(res.data)
+    
     if(res.data){
       this.setData({
         islogin: true,

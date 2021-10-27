@@ -20,7 +20,7 @@
         </view>
       </view>
       <view wx:if="{{item.type=='image'&&item.imageNums>1&&(item.imageNums!=2&&item.imageNums!=4)}}" class="three">
-        <view wx:for="{{item.images}}" wx:for-item="it" wx:for-index="idx" class="imgs_three">
+        <view wx:for="{{item.images}}" wx:key="index" wx:for-item="it" wx:for-index="idx" class="imgs_three">
           <image  
             class="image" class="{{dClass?'detail':''}}" 
             lazy-load="{{true}}" bindtap="showImgMore" 

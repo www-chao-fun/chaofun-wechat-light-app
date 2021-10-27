@@ -15,20 +15,18 @@ Component({
       
       let article = this.data.item.article
       WxParse.wxParse("intro", "html", article, this, 10);
-      console.log(this.data.intro)
       this.setData({
         intro: this.data.intro
       })
     },
     attached: function () {
       // 在组件实例进入页面节点树时执行
-      console.log(this.data.item)
       let article = this.data.item.article
       let that = this;
-      console.log(777)
-      console.log(this.data.item)
+      
+      
       WxParse.wxParse("intro", "html", article, that, 10);
-      console.log(this.data.intro)
+      
       this.setData({
         intro: this.data.intro,
         isHtml: (this.data.item.article.substring(0,2)=='<p'||this.data.item.article.substring(0,3)=='<ol'||this.data.item.article.substring(0,3)=='<ul'||this.data.item.article.substring(0,4)=='<div')

@@ -37,9 +37,9 @@ Component({
     canShowVideo: true,
   },
   ready(){
-    console.log('11111111111111111111')
+    
     var now = new Date().getTime();
-    var real = new Date('2021-10-12 17:00:00').getTime();
+    var real = new Date('2021-10-18 18:59:00').getTime();
     if(now<real){
       this.setData({
         canShowVideo: false
@@ -64,12 +64,12 @@ Component({
       
       let item = e.currentTarget.dataset.item;
       let index = e.currentTarget.dataset.index;
-      console.log(index)
+      
       var a = item.images
       var b = item.images.map(it=>{
         return this.data.imgOrigin+it;
       })
-      console.log(b)
+      
       wx.previewImage({
         current: `${this.data.imgOrigin + item.images[index]}`, // 当前显示图片的http链接
         urls: b // 需要预览的图片http链接列表

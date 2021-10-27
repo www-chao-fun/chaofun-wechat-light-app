@@ -49,11 +49,11 @@ Component({
    */
   methods: {
     fixed(e) {
-      console.log('1231231231')
+      
       return e.toFixed(2)
     },
     radioChange(e){
-      console.log(e);
+      
       this.setData({
         index: e.detail.value
       })

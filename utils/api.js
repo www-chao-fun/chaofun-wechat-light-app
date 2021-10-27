@@ -58,6 +58,9 @@ const indexapi = {
   toVote: `${host}/api/v0/post/vote`,
   toCircusee: `${host}/api/v0/post/circusee`,
   submitVote: `${host}/api/v0/submit_vote`,
+  weChatLightAppPhoneLogin: `${host}/api/v0/account/weChatLightAppPhoneLogin`,
+  weChatLightAppRegister: `${host}/api/v0/account/weChatLightAppRegister`,
+  
 }
 
 const ARRAY = [indexapi];

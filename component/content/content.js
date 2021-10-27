@@ -29,8 +29,7 @@ Component({
    */
   methods: {
     playvideo(e){
-      console.log(e);
-      console.log('执行程序');
+      
       let kindex = e.detail.kindex;
       let ks = this.data.pagedata[kindex];
       ks.isplay = true;
@@ -65,10 +64,10 @@ Component({
           if (res.tapIndex == 0) {
             _this.deletes(item, index)
           }
-          console.log(res.tapIndex)
+          
         },
         fail(res) {
-          console.log(res.errMsg)
+          
         }
       })
     },

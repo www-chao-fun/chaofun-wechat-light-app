@@ -31,14 +31,19 @@
       </view>
       <button bindtap="login" type="primary">登录</button>
       <button bindtap="cancellogin" type="default">取消</button>
-      <view bindtap="checkout" data-ins="register" class="lor">去注册</view>
+      <view bindtap="checkout" data-ins="register" class="lor">没有账号？点击注册</view>
     </view>
+    <button class="wxbtn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> 
+      <image class="icons" src="/assets/images/wechat.png"></image>
+     微信登录
+    </button>
   </view>
   <view wx:if="{{showWhich==3}}" class="shouquan shouquan2">
     <view class="cons">
       <view class="logos">
         <image class="logo" src="/assets/images/chaofan.jpg"></image>
       </view>
+      <view class="bindTitle">{{wechatAuth?'绑定账号-':''}}快速注册</view>
       <view class="item">
         <view class="label">用户名</view>
         <view class="input">
@@ -59,7 +64,38 @@
       </view>
       <button bindtap="register" type="primary">注册</button>
       <button bindtap="cancellogin" type="default">取消</button>
-      <view bindtap="checkout" data-ins="login" class="lor">去登录</view>
+      <view wx:if="{{!wechatAuth}}" bindtap="checkout" data-ins="login" class="lor">已有账号，点击登录</view>
+      <!-- <view wx:if="{{wechatAuth}}" bindtap="checkout" data-ins="bind" class="lor">已有账号，点击绑定</view> -->
     </view>
+    <!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信登录</button> -->
   </view>
+
+  <view wx:if="{{showWhich==4}}" class="shouquan shouquan2">
+    <view class="cons"> 
+      <view class="logos">
+        <image class="logo" src="/assets/images/chaofan.jpg"></image>
+      </view>
+      <view class="bindTitle">绑定炒饭账号</view>
+      <view class="item">
+        <view class="label">账号</view>
+        <view class="input">
+          <input bindinput="userName" placeholder="请输入用户名/手机号"></input>
+        </view>
+      </view>
+      <view class="item item2">
+        <view class="label">密码</view>
+        <view class="input">
+          <input bindinput="password" type="password" placeholder="请输入密码"></input>
+        </view>
+      </view>
+      <button bindtap="login" type="primary">确定</button>
+      <!-- <button bindtap="cancellogin" type="default">取消</button> -->
+      <view bindtap="checkout" data-ins="register" class="lor">没有账号？点击注册</view>
+    </view>
+    <!-- <button class="wxbtn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> 
+      <image class="icons" src="/assets/images/wechat.png"></image>
+     微信登录
+    </button> -->
+  </view>
+  
 </view>

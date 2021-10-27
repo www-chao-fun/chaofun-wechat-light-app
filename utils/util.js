@@ -36,7 +36,7 @@ export function pickImage(callback,val,size){
 
   var v = 'image'?9:1;
   var now = new Date().getTime();
-  var real = new Date('2021-10-12 17:00:00').getTime();
+  var real = new Date('2021-10-18 18:59:00').getTime();
   if(now<real){
     wx.chooseImage({
       count: 9, // 默认9

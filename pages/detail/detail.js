@@ -41,7 +41,7 @@ Page({
   pushImage(res) {
     let that = this;
     wx.hideLoading()
-    console.log(res)
+    
 
     if (res.success) {
       var data = "";
@@ -58,7 +58,7 @@ Page({
     })
   },
   sendMsg(item) {
-    console.log(item.detail)
+    
     this.setData({
       replays: item.detail
     })
