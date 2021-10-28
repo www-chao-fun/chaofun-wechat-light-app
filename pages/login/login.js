@@ -26,35 +26,42 @@ Page({
     console.log(e.detail.errMsg)
     console.log(e.detail.iv)
     console.log(e.detail.encryptedData)
+    console.log(e)
     wx.showLoading({
       title: '',
     })
-    let that = this;
-    let params = {
-      authCode: this.data.authCode,//res.code,
-      phoneInfoEncryptedData: e.detail.encryptedData,
-      phoneInfoEncryptedDataIV: e.detail.iv,
-    }
-    req.weChatLightAppPhoneLogin(params).then(res1=>{
-      wx.hideLoading({
-        success: (res) => {},
-      })
-      if(res1.success){
-        console.log(res1);
-        that.doLoginSuccess(res1);
-      }else if(res1.errorCode=='need_register'){
-        that.setData({
-          wechatAuth: true,
-          showWhich: '3'
-        })
-      }else{
-        wx.showToast({
-          icon: 'none',
-          title: res1.errorMessage+'，请重试'
-        })
+    if(e.currentTarget.dataset.name=='register'){
+      this.register(e);
+    }else{
+      let that = this;
+      let params = {
+        authCode: this.data.authCode,//res.code,
+        phoneInfoEncryptedData: e.detail.encryptedData,
+        phoneInfoEncryptedDataIV: e.detail.iv,
       }
-      
-    });
+      req.weChatLightAppPhoneLogin(params).then(res1=>{
+        wx.hideLoading({
+          success: (res) => {},
+        })
+        if(res1.success){
+          console.log(res1);
+          that.doLoginSuccess(res1);
+        }else if(res1.errorCode=='need_register'){
+          that.setData({
+            wechatAuth: true,
+            showWhich: '3'
+          })
+        }else{
+          wx.showToast({
+            icon: 'none',
+            title: res1.errorMessage+'，请重试'
+          })
+        }
+        
+      });
+    }
+    
+    
     // wx.login({
     //   success (res) {
     //     console.log(res.code);
@@ -174,7 +181,7 @@ Page({
         }
       },1500)
   },
-  async register(){
+  async register(e){
     
     let params = {
       userName: this.data.params.userName,
@@ -203,7 +210,11 @@ Page({
       delete params.repassword;
       res = await req.weChatLightAppRegister(params);
     }else{
-      res = await req.register(params);
+      params.authCode = this.data.authCode;
+      params.phoneInfoEncryptedData = e.detail.encryptedData;
+      params.phoneInfoEncryptedDataIV = e.detail.iv;
+      // res = await req.register(params);
+      res = await req.weChatLightAppRegister(params);
     }
     // let res = await req.register(params);
     console.log(res)
@@ -232,6 +243,7 @@ Page({
         }
       },1500)
     }else{
+      this.refreshCode();
       wx.showToast({
         icon: 'none',
         title: res.errorMessage
@@ -285,6 +297,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.refreshCode();
+  },
+  refreshCode(){
     let that = this;
     wx.login({
       success (res) {

@@ -63,7 +63,7 @@
           <input bindinput="repassword" type="password" value="{{params.repassword}}" placeholder="请再次输入密码"></input>
         </view>
       </view>
-      <button bindtap="register" type="primary">注册</button>
+      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" data-name="register" type="primary">注册</button>
       <button bindtap="cancellogin" type="default">取消</button>
       <view wx:if="{{!wechatAuth}}" bindtap="checkout" data-ins="login" class="lor">已有账号，点击登录</view>
       <!-- <view wx:if="{{wechatAuth}}" bindtap="checkout" data-ins="bind" class="lor">已有账号，点击绑定</view> -->

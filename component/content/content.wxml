@@ -7,6 +7,7 @@
           <text catchtap="toForum" data-id="{{item.forum.id}}"  class="weight">{{item.forum.name}}</text>
           <text> 来自</text> 
           <text catchtap="toUser" data-info="{{item.userInfo}}" class="weight"> {{item.userInfo.userName}}</text>
+          <text wx:if="{{item.userInfo.userTag&&item.userInfo.userTag.type=='text'}}" class="userTag">{{item.userInfo.userTag.data}}</text>
         </view>
         <view>
           <text class="time">{{item.rtime}}</text>

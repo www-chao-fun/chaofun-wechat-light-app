@@ -136,3 +136,10 @@
   line-height: 150rpx;
   border-radius: 8rpx;
 }
+.userTag{
+  background: #ddd;
+  padding: 2rpx 10rpx;
+  margin-left: 10rpx;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+}
