@@ -16,7 +16,6 @@ Page({
     params: {
       userName: '',
       password: '',
-      repassword: '',
       options: {}
     },
     wechatAuth: false,
@@ -104,11 +103,6 @@ Page({
       'params.password': e.detail.value
     })
   },
-  repassword(e){
-    this.setData({
-      'params.repassword': e.detail.value
-    })
-  },
   userName(e){
     this.setData({
       'params.userName': e.detail.value
@@ -186,28 +180,17 @@ Page({
     let params = {
       userName: this.data.params.userName,
       password: this.data.params.password,
-      repassword: this.data.params.repassword
     };
-    if(!params.userName||!params.password||!params.repassword){
+    if(!params.userName||!params.password){
       wx.showToast({
         icon: 'none',
         title: '请填写完整'
       })
       return 
-    }else if(params.password!=params.repassword){
-      wx.showToast({
-        icon: 'none',
-        title: '两次填写的密码不一致'
-      })
-      this.setData({
-        'params.password': '',
-        'params.repassword': ''
-      })
-      return 
     }
     let res;
     if(this.data.wechatAuth){
-      delete params.repassword;
+      
       res = await req.weChatLightAppRegister(params);
     }else{
       params.authCode = this.data.authCode;

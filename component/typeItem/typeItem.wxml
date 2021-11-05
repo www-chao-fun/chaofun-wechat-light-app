@@ -35,7 +35,7 @@
       </view>
       
       
-      <video wx:if="{{canShowVideo&&item.type=='gif'}}" autoplay="{{true}}" custom-cache="{{false}}" muted="{{true}}" show-mute-btn="{{true}}" show-center-play-btn="{{false}}" controls="{{true}}" style="width:100%;" src="{{imgOrigin+item.imageName}}"></video>
+      <video wx:if="{{canShowVideo&&item.type=='gif'}}" loop="{{true}}" autoplay="{{true}}" custom-cache="{{false}}" muted="{{true}}" show-mute-btn="{{true}}" show-center-play-btn="{{false}}" controls="{{true}}" style="width:100%;" src="{{imgOrigin+item.imageName}}"></video>
       <view style="height:230px;" wx:if="{{canShowVideo&&item.type=='inner_video'}}">
         <view wx:if="{{!item.isplay}}" class="image_con" bindtap="toPlay">
           <image src="{{imgOrigin+item.video+'?x-oss-process=video/snapshot,t_0,h_500'}}" class="vimg" mode="aspectFill"></image>

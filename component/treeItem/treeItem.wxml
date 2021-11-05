@@ -9,6 +9,7 @@
             <view class="username">
               <view catchtap="toUser" data-info="{{item.userInfo}}">
                 {{item.userInfo.userName}}
+                <text wx:if="{{item.userInfo.userTag&&item.userInfo.userTag.type=='text'}}" class="userTag">{{item.userInfo.userTag.data}}</text>
               </view>
               <view class="time">
                 <!-- <image bindtap="toReplay" data-item="{{item}}" class="comment_icon" src="/assets/images/icon/comment.png"></image> -->

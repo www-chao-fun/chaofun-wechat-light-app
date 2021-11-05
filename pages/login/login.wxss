@@ -72,8 +72,8 @@
   margin-bottom: 80rpx;
 }
 .lor{
-  font-size: 24rpx;
-  color: #666;
+  font-size: 28rpx;
+  color: #07c160;
   margin-top: 60rpx;
 }
 .icons{

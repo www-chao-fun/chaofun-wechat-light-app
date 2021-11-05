@@ -122,7 +122,7 @@ Page({
         default: imageUrl = 'biz/9563cdd828d2b674c424b79761ccb4c0.png';break;
       }
       return {
-        title: item.title,
+        title: '【'+item.forum.name+'】'+item.title,
         imageUrl: app.globalData.imgOrigin + imageUrl,
         path: `/pages/detail/detail?postId=${item.postId}`
       }

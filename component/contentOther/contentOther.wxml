@@ -11,6 +11,7 @@
           <text bindtap="toForum" data-id="{{item.postInfo.forum.id}}"  class="weight">{{item.postInfo.forum.name}}</text>
           <text> 来自</text> 
           <text catchtap="toUser" data-info="{{item.postInfo.userInfo}}" class="weight"> {{item.postInfo.userInfo.userName}}</text>
+          <text wx:if="{{item.postInfo.userInfo.userTag&&item.postInfo.userInfo.userTag.type=='text'}}" class="userTag">{{item.postInfo.userInfo.userTag.data}}</text>
         </view>
         <view>
           <text class="time">{{item.postInfo.rtime}}</text>

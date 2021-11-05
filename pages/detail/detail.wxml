@@ -6,6 +6,7 @@
             <text bindtap="toForum" data-id="{{postData.forum.id}}" class="weight">{{postData.forum.name}}</text>
             <text> 来自</text> 
             <text catchtap="toUser" data-info="{{postData.userInfo}}" class="weight"> {{postData.userInfo.userName}}</text>
+            <text wx:if="{{postData.userInfo.userTag&&postData.userInfo.userTag.type=='text'}}" class="userTag">{{postData.userInfo.userTag.data}}</text>
             <!-- <text class="time fr">{{postData.rtime}}</text> -->
         </view>
         <view wx:if="{{postData.type!='link'&&postData.type!='forward'&&postData.type!='article'&&postData.type!='video'}}" style="padding:0 10rpx;">

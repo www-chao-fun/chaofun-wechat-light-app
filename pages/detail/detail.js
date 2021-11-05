@@ -417,7 +417,7 @@ Page({
       imageUrl = this.data.postData.imageName
     }
     return {
-      title: this.data.postData.title,
+      title: '【'+this.data.postData.forum.name+'】'+this.data.postData.title,
       imageUrl: `${(imageUrl && !imageUrl.includes('.mp4')) ? (this.data.imgOrigin + imageUrl):''}`,
       path: `/pages/detail/detail?postId=${this.data.postId}`
     }

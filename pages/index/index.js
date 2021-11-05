@@ -54,7 +54,7 @@ Page({
         value: 'hot'
       },
       {
-        label: '热评',
+        label: '新评',
         value: 'comment'
       },
       {
@@ -484,7 +484,7 @@ Page({
         imageUrl = item.imageName
       }
       return {
-        title: item.title,
+        title: '【'+item.forum.name+'】'+item.title,
         imageUrl: `${(imageUrl && !imageUrl.includes('.mp4')) ? (this.data.imgOrigin + imageUrl) : ''}`,
         path: `/pages/detail/detail?postId=${item.postId}`
       }

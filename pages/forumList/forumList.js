@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isLogin: true,
     orderIndex: 1,
     rangeIndex: 1,
     options: {},
@@ -33,7 +34,7 @@ Page({
         value: 'hot'
       },
       {
-        label: '热评',
+        label: '新评',
         value: 'comment'
       },
       {
@@ -80,6 +81,7 @@ Page({
     wx.switchTab({
       url: '/pages/push/push?forumId='+forumId,
     });
+    
   },
   async getForumInfo(){
     let res = await req.getForumInfo({forumId: this.data.options.forumId});
@@ -118,12 +120,18 @@ Page({
     })
   },
   async joinForum(){
-    let res = await req.joinForum({forumId: this.data.options.forumId});
-    if(res.success){
-      this.setData({
-        'forumInfo.joined': true
-      })
-    }
+    
+      let res = await req.joinForum({forumId: this.data.options.forumId});
+      if(res.success){
+        this.setData({
+          'forumInfo.joined': true
+        })
+      }else{
+        wx.navigateTo({
+          url: '/pages/login/login',
+        })
+      }
+    
   },
   async leaveForum(){
     let res = await req.leaveForum({forumId: this.data.options.forumId});
@@ -177,6 +185,15 @@ Page({
     })
     this.getForumInfo()
     this.getPosts()
+    if (wx.getStorageSync('cookie')) {
+      this.setData({
+        isLogin: true
+      })
+    } else {
+      this.setData({
+        isLogin: false
+      })
+    }
   },
 
   onPageScroll: function (e) {
@@ -195,7 +212,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
@@ -259,7 +276,7 @@ Page({
         imageUrl = item.imageName
       }
       return {
-        title: item.title,
+        title: '【'+item.forum.name+'】'+item.title,
         imageUrl: `${(imageUrl && !imageUrl.includes('.mp4')) ? (this.data.imgOrigin + imageUrl) : ''}`,
         path: `/pages/detail/detail?postId=${item.postId}`
       }
