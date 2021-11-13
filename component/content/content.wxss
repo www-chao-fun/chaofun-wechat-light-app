@@ -1,6 +1,6 @@
 /* component/content/content.wxss */
 .content{
-  padding: 20rpx 0;
+  padding: 0rpx 0rpx 20rpx;
 }
 .item{
   background: #fff;

@@ -131,6 +131,22 @@ Page({
     })
 
   },
+  checkoutRange(e){
+    console.log(e)
+    let params = e.detail;
+      this.setData({
+        pagedata: [],
+        'params.marker': '',
+        'params.key': '',
+        'params.order': params.order,
+        'params.range': params.range,
+        'homeParams.marker': '',
+        'homeParams.key': '',
+        'homeParams.order': params.order,
+        'homeParams.range': params.range,
+      })
+      this.getLists()
+  },
   changeVoteData(e){
     let params = e.detail.params;
     let item;
@@ -390,7 +406,18 @@ Page({
   onLoad: function () {
     this.getProfile();
     console.log('app.globalData.isLogin',app.globalData.isLogin)
-    this.inits();
+    this.inits();//wx.setStorageSync('order', item.value)
+    let order = wx.getStorageSync('order');
+    let range = wx.getStorageSync('range');
+    let params = {
+      order,range
+    }
+    this.setData({
+      'params.order': params.order,
+      'params.range': params.range.value,
+      'homeParams.order': params.order,
+      'homeParams.range': params.range.value,
+    })
   },
   doWidthAndHeight(w,h){
     var systemInfo = wx.getSystemInfoSync();

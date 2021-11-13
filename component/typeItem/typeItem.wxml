@@ -6,7 +6,7 @@
   </view>
   <view class="main">
     <view class="item_image">
-      <image wx:if="{{item.type=='image'&&item.imageNums==1}}" class="image" class="{{dClass?'detail':''}}" lazy-load="{{true}}" bindtap="showImg" data-item="{{item}}" mode="aspectFit" style="width:{{item.rw}};height:{{item.rh}}" src="{{imgOrigin+item.imageName+'?x-oss-process=image/resize,h_512'}}"></image>
+      <image wx:if="{{item.type=='image'&&item.imageNums==1}}" class="image" class="{{dClass?'detail':''}}" lazy-load="{{true}}" bindtap="showImg" data-item="{{item}}" mode="aspectFill" style="width:{{item.rw}};height:{{item.rh}}" src="{{imgOrigin+item.imageName}}"></image>
       <view wx:if="{{item.type=='image'&&item.imageNums>1&&(item.imageNums==2||item.imageNums==4)}}" class="double">
         <view wx:for="{{item.images}}" wx:key="index" wx:for-item="it" wx:for-index="idx" class="imgs_two">
           <image  
@@ -16,7 +16,7 @@
             data-index="{{idx}}"
             wx:if="{{item.type=='image'}}"
             mode="aspectFill"
-            src="{{imgOrigin+it+'?x-oss-process=image/resize,h_512'}}">
+            src="{{imgOrigin+it+'?x-oss-process=image/resize,h_750'}}">
           </image>
         </view>
       </view>
@@ -29,7 +29,7 @@
             data-index="{{idx}}" 
             wx:if="{{item.type=='image'}}"
             mode="aspectFill"
-            src="{{imgOrigin+it+'?x-oss-process=image/resize,h_512'}}">
+            src="{{imgOrigin+it+'?x-oss-process=image/resize,h_750'}}">
           </image>
         </view>
       </view>

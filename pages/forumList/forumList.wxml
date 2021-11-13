@@ -20,14 +20,15 @@
             </view>
         </view>
     </view>
-    <view style="display: flex;hight:100px;background:#fff;margin-top:10rpx;">
-  <picker wx:if="{{choose!='recommend'&&choose!='trends'}}" bindchange="bindOrderChange" value="{{orderIndex}}" range="{{orders}}" range-key="label">
-    <view class="sort">排序： {{nsorts}} <view class="arrow_right"></view></view>
-  </picker>
-  <picker wx:if="{{choose!='recommend'&&choose!='trends'&&nsorts==='最赞'}}" bindchange="bindRangeChange" value="{{rangeIndex}}" range="{{ranges}}" range-key="label">
-    <view class="sort">时间范围： {{range}} <view class="arrow_right"></view></view>
-  </picker>
-  </view>
+    <view>
+      <orders bindcheckoutRange="checkoutRange" params="{{params}}"></orders>
+      <!-- <picker wx:if="{{choose!='recommend'&&choose!='trends'}}" bindchange="bindOrderChange" value="{{orderIndex}}" range="{{orders}}" range-key="label">
+        <view class="sort">排序： {{nsorts}} <view class="arrow_right"></view></view>
+      </picker>
+      <picker wx:if="{{choose!='recommend'&&choose!='trends'&&nsorts==='最赞'}}" bindchange="bindRangeChange" value="{{rangeIndex}}" range="{{ranges}}" range-key="label">
+        <view class="sort">时间范围： {{range}} <view class="arrow_right"></view></view>
+      </picker> -->
+    </view>
 
     <view wx:if="{{showTop}}" class="fixed_top">
       <view class="fixed_left_img">

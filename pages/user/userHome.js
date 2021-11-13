@@ -104,11 +104,24 @@ Page({
     this.getLists()
   },
   doFoucs(){
+    if (wx.getStorageSync('cookie')) {
+      this.setData({
+        isLogin: true
+      })
+    } else {
+      this.setData({
+        isLogin: false
+      })
+    }
     if(this.data.userInfo.focused){
       req.toUnfocus({focusId: this.data.params.userId}).then(res=>{
         if(res.success){
           this.setData({
             'userInfo.focused': !this.data.userInfo.focused
+          })
+        }else{
+          wx.navigateTo({
+            url: '/pages/login/login',
           })
         }
       })
@@ -117,6 +130,10 @@ Page({
         if(res.success){
           this.setData({
             'userInfo.focused': !this.data.userInfo.focused
+          })
+        }else{
+          wx.navigateTo({
+            url: '/pages/login/login',
           })
         }
       })

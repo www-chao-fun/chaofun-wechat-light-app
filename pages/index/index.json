@@ -2,7 +2,8 @@
   "usingComponents": {
     "content": "/component/content/content",
     "contentOther": "/component/contentOther/contentOther",
-    "header": "/component/header/header"
+    "header": "/component/header/header",
+    "orders": "/component/orders/orders"
   },
   "enablePullDownRefresh": true,
   "onReachBottomDistance": 400,

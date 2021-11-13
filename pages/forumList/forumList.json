@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "content": "/component/content/content"
+    "content": "/component/content/content",
+    "orders": "/component/orders/orders"
   },
   "enablePullDownRefresh": true,
   "onReachBottomDistance": 300

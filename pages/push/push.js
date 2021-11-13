@@ -509,7 +509,7 @@ Page({
    */
   onReady: function () {
     var now = new Date().getTime();
-    var real = new Date('2021-11-05 21:00:00').getTime();
+    var real = new Date('2021-11-13 18:30:00').getTime();
     if(now<real){
       this.setData({
         canShowVideo: false,

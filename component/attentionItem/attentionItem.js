@@ -46,6 +46,10 @@ Component({
               icon: 'none',
               title: '已取消关注',
             })
+          }else{
+            wx.navigateTo({
+              url: '/pages/login/login',
+            })
           }
         })
       }else{
@@ -57,6 +61,10 @@ Component({
             wx.showToast({
               icon: 'none',
               title: '已关注',
+            })
+          }else{
+            wx.navigateTo({
+              url: '/pages/login/login',
             })
           }
         })

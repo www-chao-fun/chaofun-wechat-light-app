@@ -17,15 +17,16 @@
       </view>
     </scroll-view>
   </view>
-  <view style="display: flex;hight:90px;margin-top:10rpx;background:#fff;">
-  <picker wx:if="{{choose!='recommend'&&choose!='trends'}}" bindchange="bindOrderChange" value="{{orderIndex}}" range="{{orders}}" range-key="label">
-    <view class="sort">排序： {{nsorts}} <view class="arrow_right"></view></view>
-  </picker>
-  <picker wx:if="{{choose!='recommend'&&choose!='trends'&&nsorts==='最赞'}}" bindchange="bindRangeChange" value="{{rangeIndex}}" range="{{ranges}}" range-key="label">
-    <view class="sort">时间范围： {{range}} <view class="arrow_right"></view></view>
-  </picker>
+  <view wx:if="{{choose!='recommend'&&choose!='trends'}}">
+    <orders bindcheckoutRange="checkoutRange" params="{{params}}"></orders>
+    <!-- <picker wx:if="{{choose!='recommend'&&choose!='trends'}}" bindchange="bindOrderChange" value="{{orderIndex}}" range="{{orders}}" range-key="label">
+      <view class="sort">排序： {{nsorts}} <view class="arrow_right"></view></view>
+    </picker>
+    <picker wx:if="{{choose!='recommend'&&choose!='trends'&&nsorts==='最赞'}}" bindchange="bindRangeChange" value="{{rangeIndex}}" range="{{ranges}}" range-key="label">
+      <view class="sort">时间范围： {{range}} <view class="arrow_right"></view></view>
+    </picker> -->
   </view>
-  <view></view>
+  <view wx:else style="height: 10rpx;"></view>
   <view wx:if="{{choose!='trends'&&pagedata.length}}">
     <content bindchangeVoteData="changeVoteData" pagedata="{{pagedata}}"></content>
   </view>

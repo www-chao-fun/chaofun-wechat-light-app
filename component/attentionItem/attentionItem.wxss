@@ -22,7 +22,7 @@
 }
 .name{
   font-size: 15px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .zan,.desc{

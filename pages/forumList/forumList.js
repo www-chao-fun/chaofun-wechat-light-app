@@ -72,6 +72,18 @@ Page({
     nsorts: '最热',
     range: '一天',
   },
+  checkoutRange(e){
+    console.log(e)
+    let params = e.detail;
+      this.setData({
+        datas: [],
+        'params.marker': '',
+        'params.key': '',
+        'params.order': params.order,
+        'params.range': params.range||'',
+      })
+      this.getPosts()
+  },
   toPub(e){
     let forumId = e.currentTarget.dataset.id;
     app.globalData.forumInfo = {
@@ -179,12 +191,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      options: options,
-      'params.forumId': options.forumId
-    })
-    this.getForumInfo()
-    this.getPosts()
+    
+    
     if (wx.getStorageSync('cookie')) {
       this.setData({
         isLogin: true
@@ -194,6 +202,21 @@ Page({
         isLogin: false
       })
     }
+    let order = wx.getStorageSync('order');
+    let range = wx.getStorageSync('range');
+    let params = {
+      order,range
+    }
+    this.setData({
+      options: options,
+      'params.forumId': options.forumId,
+      'params.order': params.order,
+      'params.range': params.range.value,
+      'homeParams.order': params.order,
+      'homeParams.range': params.range.value,
+    })
+    this.getForumInfo()
+    this.getPosts()
   },
 
   onPageScroll: function (e) {
