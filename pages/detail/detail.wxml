@@ -9,16 +9,21 @@
             <text wx:if="{{postData.userInfo.userTag&&postData.userInfo.userTag.type=='text'}}" class="userTag">{{postData.userInfo.userTag.data}}</text>
             <!-- <text class="time fr">{{postData.rtime}}</text> -->
         </view>
-        <view wx:if="{{postData.type!='link'&&postData.type!='forward'&&postData.type!='article'&&postData.type!='video'}}" style="padding:0 10rpx;">
-          <type-item detail="{{true}}" bindplayvideo="playvideo"  item="{{postData}}" dClass="{{true}}"></type-item>
-        </view>
-        <link-item detail="{{true}}" wx:if="{{postData.type=='link'||postData.type=='video'}}" item="{{postData}}"></link-item>
-        <article-item detail="{{true}}" wx:if="{{postData.type=='article'}}" item="{{postData}}"></article-item>
-        <forward-item wx:if="{{postData.type=='forward'}}" item="{{postData}}"></forward-item>
-        <vote-item wx:if="{{postData.type=='vote'}}" item="{{postData}}"></vote-item>
-        <view wx:if="{{postData.type!='link'&&postData.type!='forward'&&postData.type!='article'&&postData.type!='video'&&postData.type!='forward'&&postData.type!='image'&&postData.type!='gif'&&postData.type!='vote'&&postData.type!='inner_video'}}" class="nothing">
-          此版本暂不支持的帖子类型
-        </view>
+        <block wx:if="{{postData.type == undefined}}">
+          <view class="nothing">加载中......</view>
+        </block>
+        <block wx:else>
+          <view wx:if="{{postData.type!='link'&&postData.type!='forward'&&postData.type!='article'&&postData.type!='video'}}" style="padding:0 10rpx;">
+            <type-item detail="{{true}}" bindplayvideo="playvideo"  item="{{postData}}" dClass="{{true}}"></type-item>
+          </view>
+          <link-item detail="{{true}}" wx:if="{{postData.type=='link'||postData.type=='video'}}" item="{{postData}}"></link-item>
+          <article-item detail="{{true}}" wx:if="{{postData.type=='article'}}" item="{{postData}}"></article-item>
+          <forward-item wx:if="{{postData.type=='forward'}}" item="{{postData}}"></forward-item>
+          <vote-item wx:if="{{postData.type=='vote'}}" item="{{postData}}"></vote-item>
+          <view wx:if="{{postData.type!='link'&&postData.type!='forward'&&postData.type!='article'&&postData.type!='video'&&postData.type!='forward'&&postData.type!='image'&&postData.type!='gif'&&postData.type!='vote'&&postData.type!='inner_video'}}" class="nothing">
+            此版本暂不支持的帖子类型
+          </view>
+        </block>
         <view wx:if="{{postData.postId}}" class="bottom_tool">
           <!-- <view bindtap="upvotePost" data-item="{{postData}}" data-index="{{index}}" class="tool_item">
             <image wx:if="{{postData.vote!=1}}" src="/assets/images/icon/zan.png"></image>
