@@ -26,7 +26,7 @@
     <view wx:if="{{checked==2}}" class="page-section">
         <view class="page-section-title">帖子内容</view>
         <view class="title">
-          <textarea bindinput="bindArticle" class="weui-textarea" rows="2" placeholder="请输入帖子内容."></textarea>
+          <textarea bindinput="bindArticle" class="weui-textarea" rows="2" maxlength="{{-1}}" placeholder="请输入帖子内容."></textarea>
         </view>
     </view>
     <view wx:if="{{checked==3}}" class="page-section">
@@ -59,7 +59,7 @@
             <input bindinput="inputVote" data-index="{{index}}"  value="{{item.optionName}}" class="weui-input" placeholder="选项{{index+1}}"/>
             <image bindtap="deletes" data-index="{{index}}" wx:if="{{showDelete}}" class="delete" src="../../assets/images/icon/delete.png"></image>
           </view>
-          
+
         </view>
     </view>
     <view style="padding-top:20rpx;">
