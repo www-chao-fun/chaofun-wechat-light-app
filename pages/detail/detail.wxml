@@ -4,10 +4,10 @@
         <view bindtap="toDetail" data-item="{{item}}" class="f_title">
             <image bindtap="toForum" data-id="{{postData.forum.id}}" src="{{imgOrigin+postData.forum.imageName}}" class="form_icon"></image>
             <text bindtap="toForum" data-id="{{postData.forum.id}}" class="weight">{{postData.forum.name}}</text>
-            <text> 来自</text> 
+            <text> 来自</text>
             <text catchtap="toUser" data-info="{{postData.userInfo}}" class="weight"> {{postData.userInfo.userName}}</text>
             <text wx:if="{{postData.userInfo.userTag&&postData.userInfo.userTag.type=='text'}}" class="userTag">{{postData.userInfo.userTag.data}}</text>
-            <!-- <text class="time fr">{{postData.rtime}}</text> -->
+            <text class="time fr">{{postData.rtime}}</text>
         </view>
         <block wx:if="{{postData.type == undefined}}">
           <view class="nothing">加载中......</view>
@@ -91,7 +91,7 @@
               </view>
             </view>
           </view>
-          
+
           <tree bind:sendMsg="sendMsg" wx:if="{{item.children.length}}" node="{{item.children}}"></tree>
         </view> -->
       </view>
@@ -112,6 +112,6 @@
         <view>
           <image mode="aspectFill" class="prevImg" wx:if="{{imageNames}}" src="{{imgOrigin+imageNames+'?x-oss-process=image/resize,h_300'}}"></image>
         </view>
-        
+
     </view>
 </view>
