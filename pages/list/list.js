@@ -110,26 +110,26 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function (res) {
-    console.log(res)
-    if(res.from=="button"){
-      let item = res.target.dataset.item;
-      let imageUrl;
-      switch (item.type){
-        case 'image': imageUrl = item.imageName;break;
-        case 'gif': imageUrl = item.cover;break;
-        case 'link': imageUrl = item.cover;break;
-        default: imageUrl = 'biz/9563cdd828d2b674c424b79761ccb4c0.png';break;
-      }
-      return {
-        title: '【'+item.forum.name+'】'+item.title,
-        imageUrl: app.globalData.imgOrigin + imageUrl,
-        path: `/pages/detail/detail?postId=${item.postId}`
-      }
-    }else{
-      return {
-        path: `/pages/index/index`
-      }
-    }
-  }
+  // onShareAppMessage: function (res) {
+  //   console.log(res)
+  //   if(res.from=="button"){
+  //     let item = res.target.dataset.item;
+  //     let imageUrl;
+  //     switch (item.type){
+  //       case 'image': imageUrl = item.imageName;break;
+  //       case 'gif': imageUrl = item.cover;break;
+  //       case 'link': imageUrl = item.cover;break;
+  //       default: imageUrl = 'biz/9563cdd828d2b674c424b79761ccb4c0.png';break;
+  //     }
+  //     return {
+  //       title: '【'+item.forum.name+'】'+item.title,
+  //       imageUrl: app.globalData.imgOrigin + imageUrl,
+  //       path: `/pages/detail/detail?postId=${item.postId}`
+  //     }
+  //   }else{
+  //     return {
+  //       path: `/pages/index/index`
+  //     }
+  //   }
+  // }
 })
