@@ -148,6 +148,7 @@ function html2json(html, bindName) {
             if (node.tag === 'img') {
                 node.imgIndex = results.images.length;
                 var imgUrl = node.attr.src;
+                try {
                 if (imgUrl[0] == '') {
                     imgUrl.splice(0, 1);
                 }
@@ -156,6 +157,9 @@ function html2json(html, bindName) {
                 node.from = bindName;
                 results.images.push(node);
                 results.imageUrls.push(imgUrl);
+            } catch (ex) {
+                
+            }
             }
             
             // 处理font标签样式属性

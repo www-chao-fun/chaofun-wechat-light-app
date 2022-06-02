@@ -1,222 +1,223 @@
 {
-  "description": "项目配置文件",
-  "packOptions": {
-    "ignore": []
-  },
-  "setting": {
-    "urlCheck": true,
-    "es6": true,
-    "enhance": true,
-    "postcss": true,
-    "preloadBackgroundData": false,
-    "minified": true,
-    "newFeature": true,
-    "coverView": true,
-    "nodeModules": false,
-    "autoAudits": false,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
-    "uglifyFileName": false,
-    "checkInvalidKey": true,
-    "checkSiteMap": true,
-    "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "lazyloadPlaceholderEnable": false,
-    "useMultiFrameRuntime": false,
-    "useApiHook": false,
-    "useApiHostProcess": false,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
+    "description": "项目配置文件",
+    "packOptions": {
+        "ignore": []
     },
-    "enableEngineNative": false,
-    "useIsolateContext": false,
-    "userConfirmedBundleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "disableUseStrict": false,
-    "showES6CompileOption": false,
-    "useCompilerPlugins": false
-  },
-  "compileType": "miniprogram",
-  "libVersion": "2.10.3",
-  "appid": "wxa6d675a8c6b78145",
-  "projectname": "chaofan_mini",
-  "debugOptions": {
-    "hidedInDevtools": []
-  },
-  "isGameTourist": false,
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
-  "condition": {
-    "search": {
-      "list": []
+    "setting": {
+        "urlCheck": true,
+        "es6": true,
+        "enhance": true,
+        "postcss": true,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "newFeature": true,
+        "coverView": true,
+        "nodeModules": false,
+        "autoAudits": false,
+        "showShadowRootInWxmlPanel": true,
+        "scopeDataCheck": false,
+        "uglifyFileName": false,
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "compileHotReLoad": false,
+        "lazyloadPlaceholderEnable": false,
+        "useMultiFrameRuntime": false,
+        "useApiHook": false,
+        "useApiHostProcess": false,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "useIsolateContext": false,
+        "userConfirmedBundleSwitch": false,
+        "packNpmManually": false,
+        "packNpmRelationList": [],
+        "minifyWXSS": true,
+        "disableUseStrict": false,
+        "minifyWXML": true,
+        "showES6CompileOption": false,
+        "useCompilerPlugins": false,
+        "ignoreUploadUnusedFiles": true
     },
-    "conversation": {
-      "list": []
+    "compileType": "miniprogram",
+    "libVersion": "2.10.3",
+    "appid": "wxa6d675a8c6b78145",
+    "projectname": "chaofun-wechat-light-app",
+    "debugOptions": {
+        "hidedInDevtools": []
     },
-    "plugin": {
-      "list": []
-    },
-    "game": {
-      "currentL": -1,
-      "list": []
-    },
-    "gamePlugin": {
-      "list": []
-    },
-    "miniprogram": {
-      "list": [
-        {
-          "id": -1,
-          "name": "pages/login/login",
-          "pathName": "pages/login/login",
-          "query": "",
-          "scene": null
+    "isGameTourist": false,
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "condition": {
+        "search": {
+            "list": []
         },
-        {
-          "id": -1,
-          "name": "pages/user/user",
-          "pathName": "pages/user/user",
-          "query": "",
-          "scene": null
+        "conversation": {
+            "list": []
         },
-        {
-          "id": 2,
-          "name": "pages/detail/detail",
-          "pathName": "pages/detail/detail",
-          "query": "postId=949551",
-          "scene": null
+        "plugin": {
+            "list": []
         },
-        {
-          "id": -1,
-          "name": "pages/forum/forum",
-          "pathName": "pages/forum/forum",
-          "query": "postId=232272",
-          "scene": null
+        "game": {
+            "currentL": -1,
+            "list": []
         },
-        {
-          "id": 4,
-          "name": "pages/forumList/forumList",
-          "pathName": "pages/forumList/forumList",
-          "query": "forumId=64",
-          "scene": null
+        "gamePlugin": {
+            "list": []
         },
-        {
-          "id": -1,
-          "name": "pages/push/push",
-          "pathName": "pages/push/push",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/chooseForum/chooseForum",
-          "pathName": "pages/chooseForum/chooseForum",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/search/search",
-          "pathName": "pages/search/search",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/chooseForum/chooseForum",
-          "pathName": "pages/chooseForum/chooseForum",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/detail/detail",
-          "pathName": "pages/detail/detail",
-          "query": "postId=112026",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/list/list",
-          "pathName": "pages/list/list",
-          "query": "v=1&n=%E6%88%91%E7%9A%84%E5%8F%91%E5%B8%83",
-          "scene": null
-        },
-        {
-          "id": 11,
-          "name": "pages/detail/detail",
-          "pathName": "pages/detail/detail",
-          "query": "postId=864377",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/test/test",
-          "pathName": "pages/test/test",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/user/userInfo",
-          "pathName": "pages/user/userInfo",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/message/message",
-          "pathName": "pages/message/message",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/user/userHome",
-          "pathName": "pages/user/userHome",
-          "query": "userId=133",
-          "scene": null
-        },
-        {
-          "id": 16,
-          "name": "pages/detail/detail",
-          "pathName": "moduleA/pages/detail/detail",
-          "query": "postId=316111",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/user/myattent",
-          "pathName": "pages/user/myattent",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": 18,
-          "name": "pages/years/years",
-          "pathName": "pages/years/years",
-          "query": "userId=2",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/forumList/forumList",
-          "pathName": "pages/forumList/forumList",
-          "query": "v=1&n=%E6%88%91%E7%9A%84%E5%8F%91%E5%B8%83",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/detail/detail",
-          "pathName": "pages/detail/detail",
-          "query": "postId=650635",
-          "scene": null
+        "miniprogram": {
+            "list": [
+                {
+                    "id": -1,
+                    "name": "pages/login/login",
+                    "pathName": "pages/login/login",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/user/user",
+                    "pathName": "pages/user/user",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 2,
+                    "name": "pages/detail/detail",
+                    "pathName": "pages/detail/detail",
+                    "query": "postId=949551",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/forum/forum",
+                    "pathName": "pages/forum/forum",
+                    "query": "postId=232272",
+                    "scene": null
+                },
+                {
+                    "id": 4,
+                    "name": "pages/forumList/forumList",
+                    "pathName": "pages/forumList/forumList",
+                    "query": "forumId=64",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/push/push",
+                    "pathName": "pages/push/push",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/chooseForum/chooseForum",
+                    "pathName": "pages/chooseForum/chooseForum",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/search/search",
+                    "pathName": "pages/search/search",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/chooseForum/chooseForum",
+                    "pathName": "pages/chooseForum/chooseForum",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/detail/detail",
+                    "pathName": "pages/detail/detail",
+                    "query": "postId=112026",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/list/list",
+                    "pathName": "pages/list/list",
+                    "query": "v=1&n=%E6%88%91%E7%9A%84%E5%8F%91%E5%B8%83",
+                    "scene": null
+                },
+                {
+                    "id": 11,
+                    "name": "pages/detail/detail",
+                    "pathName": "pages/detail/detail",
+                    "query": "postId=864377",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/test/test",
+                    "pathName": "pages/test/test",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/user/userInfo",
+                    "pathName": "pages/user/userInfo",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/message/message",
+                    "pathName": "pages/message/message",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/user/userHome",
+                    "pathName": "pages/user/userHome",
+                    "query": "userId=133",
+                    "scene": null
+                },
+                {
+                    "id": 16,
+                    "name": "pages/detail/detail",
+                    "pathName": "moduleA/pages/detail/detail",
+                    "query": "postId=316111",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/user/myattent",
+                    "pathName": "pages/user/myattent",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 18,
+                    "name": "pages/years/years",
+                    "pathName": "pages/years/years",
+                    "query": "userId=2",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/forumList/forumList",
+                    "pathName": "pages/forumList/forumList",
+                    "query": "v=1&n=%E6%88%91%E7%9A%84%E5%8F%91%E5%B8%83",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/detail/detail",
+                    "pathName": "pages/detail/detail",
+                    "query": "postId=650635",
+                    "scene": null
+                }
+            ]
         }
-      ]
     }
-  }
 }

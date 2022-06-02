@@ -12,19 +12,16 @@ Component({
    */
   lifetimes: {
     created: function(){
-      
       let article = this.data.item.article
-      WxParse.wxParse("intro", "html", article, this, 10);
-      this.setData({
-        intro: this.data.intro
-      })
+      // WxParse.wxParse("intro", "html", article, this, 10);
+      // this.setData({
+      //   intro: this.data.intro
+      // })
     },
     attached: function () {
       // 在组件实例进入页面节点树时执行
       let article = this.data.item.article
       let that = this;
-      
-      
       WxParse.wxParse("intro", "html", article, that, 10);
       
       this.setData({
