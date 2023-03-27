@@ -12,7 +12,7 @@ export function pickImage(callback,val,size){
   //       title: '上传中，请稍后',
   //     })
   //   wx.uploadFile({
-  //     url: 'https://chao.fun/api/upload_image', //此处换上你的接口地址
+  //     url: 'https://chao.fan/api/upload_image', //此处换上你的接口地址
   //     filePath: res.tempFiles[0].tempFilePath,
   //     name: 'file',
   //     header: {
@@ -50,7 +50,7 @@ export function pickImage(callback,val,size){
         })
         if(res.tempFiles[0].tempFilePath.endsWith('.mp4')){
           wx.uploadFile({
-            url: 'https://chao.fun/api/upload_image', //此处换上你的接口地址
+            url: 'https://chao.fan/api/upload_image', //此处换上你的接口地址
             filePath: res.tempFiles[0].tempFilePath,
             name: 'file',
             header: {
@@ -74,7 +74,7 @@ export function pickImage(callback,val,size){
           res.tempFiles.forEach(item=>{
             let imgName = item.path;
             wx.uploadFile({
-              url: 'https://chao.fun/api/upload_image', //此处换上你的接口地址
+              url: 'https://chao.fan/api/upload_image', //此处换上你的接口地址
               filePath: item.path,
               name: 'file',
               header: {
@@ -113,7 +113,7 @@ export function pickImage(callback,val,size){
         })
         if(res.tempFiles[0].tempFilePath.endsWith('.mp4')){
           wx.uploadFile({
-            url: 'https://chao.fun/api/upload_image', //此处换上你的接口地址
+            url: 'https://chao.fan/api/upload_image', //此处换上你的接口地址
             filePath: res.tempFiles[0].tempFilePath,
             name: 'file',
             header: {
@@ -137,7 +137,7 @@ export function pickImage(callback,val,size){
           res.tempFiles.forEach(item=>{
             let imgName = item.tempFilePath;
             wx.uploadFile({
-              url: 'https://chao.fun/api/upload_image', //此处换上你的接口地址
+              url: 'https://chao.fan/api/upload_image', //此处换上你的接口地址
               filePath: item.tempFilePath,
               name: 'file',
               header: {
@@ -181,7 +181,7 @@ export function uploadImage(callback,size){
       res.tempFiles.forEach(item=>{
         let imgName = item.path;
         wx.uploadFile({
-          url: 'https://chao.fun/api/upload_image', //此处换上你的接口地址
+          url: 'https://chao.fan/api/upload_image', //此处换上你的接口地址
           filePath: item.path,
           name: 'file',
           header: {

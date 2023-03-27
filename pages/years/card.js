@@ -1,6 +1,6 @@
 export default class LastMayday {
   palette(data,userInfo) {
-    var imgOrigin = 'https://i.chao.fun/';
+    var imgOrigin = 'https://i.chao-fan.com/';
     return ({
       width: '750rpx',
       height: '2200rpx',
@@ -149,7 +149,7 @@ export default class LastMayday {
         _desnew(`他浏览了我 ${data.most_be_like_user_shows||'0'} 条  ${data.most_be_like_user_upvotes?'点赞了'+data.most_be_like_user_upvotes+'次':''} ${data.most_be_like_user_comments?'评论了'+data.most_be_like_user_comments+'个':''} ${data.most_be_like_user_saves?'收藏了'+data.most_be_like_user_saves+'个':''}`,34),
         
 
-        _imagenew(`https://i.chao.fun/biz/1a36fc13fa5e65418595d4b09b5c1147.png`,340,340,36,200),
+        _imagenew(`https://i.chao-fan.com/biz/1a36fc13fa5e65418595d4b09b5c1147.png`,340,340,36,200),
         // _desnew(`快来看看你的炒饭2020年终总结吧`,32.8,350),
         {
           id: 'text-id-5',

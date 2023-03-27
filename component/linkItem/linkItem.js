@@ -53,11 +53,11 @@ Component({
       // }else{
         wx.showModal({
           title: '复制链接',
-          content: '复制链接，使用浏览器打开链接! \r\n 网址：https://chao.fun',
+          content: '复制链接，使用浏览器打开链接! \r\n 网址：https://chao.fan',
           confirmText: '复制',
           success(res) {
             if (res.confirm) {
-              let link = 'https://chao.fun/middles?type=1&url=' + encodeURIComponent(item.link)
+              let link = 'https://chao.fan/middles?type=1&url=' + encodeURIComponent(item.link)
               wx.setClipboardData({
                 data: link,
                 success: function (res) {

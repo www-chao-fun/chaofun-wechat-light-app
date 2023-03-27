@@ -105,7 +105,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    imgOrigin: 'https://i.chao.fun/',
+    imgOrigin: 'https://i.chao-fan.com/',
     statusBar: {},
     forumInfo:{},
     isLogin: false,

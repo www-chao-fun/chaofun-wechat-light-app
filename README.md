@@ -1,8 +1,8 @@
 # 前言
-欢迎各位大佬参与 [炒饭](https://chao.fun) 微信小程序开源项目，小程序名为 炒饭超Fun 本项目开源协议为 [CPAL 1.0](https://opensource.org/licenses/CPAL-1.0)
+欢迎各位大佬参与 [炒饭](https://chao.fan) 微信小程序开源项目，小程序名为 炒饭超Fun 本项目开源协议为 [CPAL 1.0](https://opensource.org/licenses/CPAL-1.0)
 
 # 关于炒饭
-[炒饭](https://chao.fun) 是一个鼓励优质内容的兴趣社区，Slogan是「世界那么大」，愿景是做中国最好的内容社区。
+[炒饭](https://chao.fan) 是一个鼓励优质内容的兴趣社区，Slogan是「世界那么大」，愿景是做中国最好的内容社区。
 
 
 # 如何参与
@@ -19,7 +19,7 @@
 从master分支Fork以后，修改后直接提PR到master分支。
 
 ## 接口
-[后端接口文档](https://chao.fun/swagger-ui/index.html)
+[后端接口文档](https://chao.fan/swagger-ui/index.html)
 
 # 其他
 每周日下午五点，奖励上周贡献最多的饭友炒饭 TShirt 一件

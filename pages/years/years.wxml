@@ -117,7 +117,7 @@
         </view>
 
         <view class="imgss">
-          <image src="https://i.chao.fun/biz/1a36fc13fa5e65418595d4b09b5c1147.png"></image>
+          <image src="https://i.chao-fan.com/biz/1a36fc13fa5e65418595d4b09b5c1147.png"></image>
           
         </view>
         <button wx:if="{{islogin}}" bindtap="toSave" class="btn" type="primary">保存海报</button>

@@ -88,7 +88,7 @@ Page({
   onShareAppMessage: function () {
     return {
       title: this.data.params.keyword,
-      imageUrl: `https://chao.fun/assets/images/b1.jpg`,
+      imageUrl: `https://chao.fan/assets/images/b1.jpg`,
       path: `/pages/search/searchResult?keyword=${encodeURIComponent(this.data.params.keyword)}`
     }
   }

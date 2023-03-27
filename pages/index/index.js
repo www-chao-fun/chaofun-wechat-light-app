@@ -95,7 +95,7 @@ Page({
   },
   getDateDiffs: app.util.getDateDiffs,
   inits(){
-    // app.globalData.wxMediaCheckAsync(2,'https://i.chao.fun/cover/6c17696c0b705b5e0649f7eb3eb2e449c0c9f931.png?x-oss-process=image/resize,h_100')
+    // app.globalData.wxMediaCheckAsync(2,'https://i.chao-fan.com/cover/6c17696c0b705b5e0649f7eb3eb2e449c0c9f931.png?x-oss-process=image/resize,h_100')
     // let a = app.globalData.wxMsgSecCheck('特3456书yuuo莞6543李zxcz蒜7782法fgnv级')
     var that = this;
     let order = wx.getStorageSync('indexOrder')||'hot'
