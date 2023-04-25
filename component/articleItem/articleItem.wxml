@@ -2,6 +2,7 @@
 <import src="../../wxParse/wxParse.wxml"/>
 <view bindtap="toDetail" data-item="{{item}}">
   <view class="real_title">
+    <text style="color: {{item.tags[0].backgroundColor?item.tags[0].backgroundColor:'#FF9300'}}" wx:if="{{item.tags.length}}">[{{item.tags[0].name}}]</text>
     {{item.title}}
   </view>
   <view class="main">
