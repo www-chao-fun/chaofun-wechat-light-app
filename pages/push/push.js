@@ -51,7 +51,17 @@ Page({
         datas: [],
         realDatas: [],
         ifImage: true,
+        forumTagList: [],
+        forumTagSelectedId: 0,
     },
+
+    forumTagSelectedChange(e) {
+        let tagid = e.target.dataset.tagid;
+        this.setData({
+            forumTagSelectedId: (this.data.forumTagSelectedId === tagid) ? 0 : tagid
+        });
+    },
+
     deletes(e) {
         if (this.data.voteList.length > 2) {
             let index = e.currentTarget.dataset.index;
@@ -287,6 +297,9 @@ Page({
                     title: this.data.forms.title,
                     // ossName: this.data.realDatas.join(',')
                 }
+                if (this.data.forumTagSelectedId) {
+                    params.tagId = this.data.forumTagSelectedId;
+                }
                 if (this.data.realDatas.length > 1) {
                     params.ossNames = this.data.realDatas.join(',')
                 } else {
@@ -335,6 +348,9 @@ Page({
                     title: this.data.forms.title,
                     link: this.data.forms.link
                 }
+                if (this.data.forumTagSelectedId) {
+                    params.tagId = this.data.forumTagSelectedId;
+                }
                 console.log('params', params)
                 let check = this.checkNull(params)
                 if (!check) {
@@ -379,6 +395,9 @@ Page({
                     articleType: 'richtext',
                     article: this.data.forms.article
                 }
+                if (this.data.forumTagSelectedId) {
+                    params.tagId = this.data.forumTagSelectedId;
+                }
                 let check = this.checkNull(params)
                 if (!check) {
                     this.setData({
@@ -420,6 +439,9 @@ Page({
                     forumId: this.data.forumInfo.forumId,
                     title: this.data.forms.title,
                     options: JSON.stringify(this.data.voteList)
+                }
+                if (this.data.forumTagSelectedId) {
+                    params.tagId = this.data.forumTagSelectedId;
                 }
                 let check = this.checkNull(params)
                 if (!check) {
@@ -551,6 +573,19 @@ Page({
             this.setData({
                 forumInfo: wx.getStorageSync('forumHistory')[0]
             })
+        }
+
+        // getForumTagList
+        if (this.data.forumInfo && this.data.forumInfo.forumId) {
+            req.getForumTagList({
+                forumId: this.data.forumInfo.forumId
+            }).then(res => {
+                if (res.success) {
+                    this.setData({
+                        forumTagList: res.data
+                    })
+                }
+            });
         }
 
     },

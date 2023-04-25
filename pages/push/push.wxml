@@ -18,6 +18,20 @@
         <view bindtap="toChooseForum" class="page-section-title bankuai"> {{forumInfo.name?forumInfo.name:'请选择'}} <view class="arrow_right"></view>
         </view>
     </view>
+
+    <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;">
+        <label wx:for="{{forumTagList}}" wx:key="index" class="forum-tag-item" style="{{tagStyleFunc.getStyle(item,forumTagSelectedId)}}" bindtap="forumTagSelectedChange" data-tagId="{{item.id}}">
+            {{item.name}}
+        </label>
+    </scroll-view>
+    <wxs module="tagStyleFunc">
+        module.exports = {
+            getStyle: function (item, forumTagSelectedId) {
+                return item.id === forumTagSelectedId ? ('color:#fff;background-color:' + item.backgroundColor) : '';
+            }
+        }
+    </wxs>
+
     <view class="page-section">
         <view class="page-section-title">帖子标题</view>
         <view class="title">
