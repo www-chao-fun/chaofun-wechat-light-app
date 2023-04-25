@@ -60,6 +60,7 @@ const indexapi = {
   submitVote: `${host}/api/v0/submit_vote`,
   weChatLightAppPhoneLogin: `${host}/api/v0/account/weChatLightAppPhoneLogin`,
   weChatLightAppRegister: `${host}/api/v0/account/weChatLightAppRegister`,
+  getForumTagList: `${host}/api/v0/forum/listTag`, // 版块标签列表
   
 }
 

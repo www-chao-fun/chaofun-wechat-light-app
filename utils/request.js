@@ -140,6 +140,9 @@ const indexapi = {
   submitVote: params => {
     return http.post(api.submitVote, params);
   },
+  getForumTagList: params => {
+    return http.get(api.getForumTagList, params);
+  },
   weChatLightAppPhoneLogin: params => {
     // return http.post(api.weChatLightAppPhoneLogin+'?'+json2Form(params), {},
     // {});
