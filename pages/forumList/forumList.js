@@ -70,7 +70,21 @@ Page({
         nsorts: '最热',
         range: '一天',
         onlyNew: false,
+        forumTagList: [],
+        forumTagSelectedId: 0,
     },
+
+    forumTagSelectedChange(e) {
+        let tagid = e.target.dataset.tagid;
+        this.setData({
+            datas: [],
+            'params.marker': '',
+            'params.key': '',
+            forumTagSelectedId: (this.data.forumTagSelectedId === tagid) ? 0 : tagid
+        });
+        this.getPosts()
+    },
+
     checkoutRange(e) {
         console.log(e)
         let params = e.detail;
@@ -111,6 +125,11 @@ Page({
     async getPosts(v) {
         let params = this.data.params;
         params.onlyNew = this.data.onlyNew;
+        if (this.data.forumTagSelectedId) {
+            params.tagId = this.data.forumTagSelectedId;
+        } else {
+            delete params.tagId;
+        }
         let res = await req.getPosts(params);
 
         let datas = res.data.posts;
@@ -225,6 +244,18 @@ Page({
         })
         this.getForumInfo()
         this.getPosts()
+
+        // getForumTagList
+        req.getForumTagList({
+            forumId: options.forumId
+        }).then(res => {
+            if (res.success) {
+                this.setData({
+                    forumTagList: res.data
+                })
+            }
+        });
+
     },
 
     onPageScroll: function (e) {

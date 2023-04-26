@@ -160,3 +160,11 @@
 .forum_desc .join3 {
     background: #07c160;
 }
+
+.forum-tag-item {
+    display: inline-block;
+    margin: 0 10rpx;
+    background-color: #e0e0e0;
+    padding: 4rpx 20rpx;
+    border-radius: 8rpx;
+}

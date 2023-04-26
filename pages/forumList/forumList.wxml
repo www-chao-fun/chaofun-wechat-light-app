@@ -20,6 +20,21 @@
             </view>
         </view>
     </view>
+
+    <!-- 标签列表 -->
+    <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;padding: 10rpx 0;background-color: #fff;">
+        <label wx:for="{{forumTagList}}" wx:key="index" class="forum-tag-item" style="{{tagStyleFunc.getStyle(item,forumTagSelectedId)}}" bindtap="forumTagSelectedChange" data-tagId="{{item.id}}">
+            {{item.name}}
+        </label>
+    </scroll-view>
+    <wxs module="tagStyleFunc">
+        module.exports = {
+            getStyle: function (item, forumTagSelectedId) {
+                return item.id === forumTagSelectedId ? ('color:#fff;background-color:' + item.backgroundColor) : '';
+            }
+        }
+    </wxs>
+
     <view>
         <orders bindcheckoutRange="checkoutRange" params="{{params}}" showOnlyNew="{{true}}"></orders>
         <!-- <picker wx:if="{{choose!='recommend'&&choose!='trends'}}" bindchange="bindOrderChange" value="{{orderIndex}}" range="{{orders}}" range-key="label">
