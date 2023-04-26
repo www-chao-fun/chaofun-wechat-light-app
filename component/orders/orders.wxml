@@ -1,9 +1,9 @@
 <!--component/orders/orders.wxml-->
 <view class="order">
-   <view bindtap="checkoutRange" data-item="{{item}}" class="item {{order==item.value?'item_active':''}}" wx:for="{{orders}}" wx:key="{{index}}">
-      <view wx:if="{{item.value!='ups'}}">{{item.label}}</view>
-      <picker wx:if="{{item.value=='ups'}}" bindchange="bindRangeChange" value="{{1}}" range="{{ranges}}" range-key="label">
-        <view class="sort">{{item.label}} <text wx:if="{{order=='ups'}}">· {{range.label}}</text></view>
-      </picker>
-   </view>
+    <view bindtap="checkoutRange" data-item="{{item}}" class="item {{order==item.value?'item_active':''}}" wx:for="{{orders}}" wx:key="{{index}}">
+        <view wx:if="{{item.value!='ups'}}">{{item.label}}</view>
+        <picker wx:if="{{item.value=='ups'}}" bindchange="bindRangeChange" value="{{1}}" range="{{ranges}}" range-key="label">
+            <view class="sort">{{item.label}} <text wx:if="{{order=='ups'}}">· {{range.label}}</text></view>
+        </picker>
+    </view>
 </view>

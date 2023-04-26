@@ -1,140 +1,162 @@
 /* pages/forumList/forumList.wxss */
 @keyframes go {
-    from {   /*0%*/
+    from {
+        /*0%*/
         opacity: 0;
     }
-    to {    /*100%*/
+
+    to {
+        /*100%*/
         opacity: 1;
     }
 }
-.pus{
-  /* width: 70rpx;
+
+.pus {
+    /* width: 70rpx;
   height: 70rpx; */
-  /* background: orangered; */
-  color: #fff;
-  text-align: center;
-  border-radius: 50%;
-  position: fixed;
-  right: 20rpx;
-  bottom: 150rpx;
-  font-size: 24rpx;
+    /* background: orangered; */
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    position: fixed;
+    right: 20rpx;
+    bottom: 150rpx;
+    font-size: 24rpx;
 }
-.pus image{
-  width: 64rpx;
-  height: 64rpx;
+
+.pus image {
+    width: 64rpx;
+    height: 64rpx;
 }
-.container{
-  min-height: 100vh;
-  background: #f1f1f1;
+
+.container {
+    min-height: 100vh;
+    background: #f1f1f1;
 }
-.forum_infos{
-  display: flex;
-  padding: 20rpx;
-  background: #fff;
+
+.forum_infos {
+    display: flex;
+    padding: 20rpx;
+    background: #fff;
 }
-.forum_info{
-  flex: 1;
+
+.forum_info {
+    flex: 1;
 }
-.forum_img{
-  flex: 0 0 140rpx;
-  margin-right: 20rpx;
+
+.forum_img {
+    flex: 0 0 140rpx;
+    margin-right: 20rpx;
 }
-.forum_img image{
-  width: 140rpx;
-  height: 140rpx;
-  vertical-align: middle;
+
+.forum_img image {
+    width: 140rpx;
+    height: 140rpx;
+    vertical-align: middle;
 }
-.forum_desc{
-  margin: 10rpx 0;
-  font-size: 28rpx;
-  color: #666;
+
+.forum_desc {
+    margin: 10rpx 0;
+    font-size: 28rpx;
+    color: #666;
 }
-.forum_name{
-  font-size: 32rpx;
+
+.forum_name {
+    font-size: 32rpx;
 }
-.infos{
-  display: flex;
+
+.infos {
+    display: flex;
 }
-.infos view{
-  font-size: 24rpx;
-  color: #333;
-  margin-right: 50rpx;
+
+.infos view {
+    font-size: 24rpx;
+    color: #333;
+    margin-right: 50rpx;
 }
-.join{
-  background: orangered;
-  color: #fff;
-  padding: 8rpx 20rpx;
-  font-size: 26rpx;
-  float: right;
-  border-radius: 30rpx;
+
+.join {
+    background: orangered;
+    color: #fff;
+    padding: 8rpx 20rpx;
+    font-size: 26rpx;
+    float: right;
+    border-radius: 30rpx;
 }
-.joined{
-  background: #ccc;
+
+.joined {
+    background: #ccc;
 }
-.sort{
-  padding: 20rpx;
-  margin-top: 10rpx;
-  background: #fff;
+
+.sort {
+    padding: 20rpx;
+    margin-top: 10rpx;
+    background: #fff;
 }
 
 
-.fixed_top{
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
-  background: #fff;
-  /* color: #fff; */
-  display: flex;
-  box-sizing: border-box;
-  padding: 10rpx 20rpx;
-  animation: go linear .3s;
-  z-index: 10;
-  border-bottom: 1rpx solid #ddd;
-  /* color: #fff; */
+.fixed_top {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: #fff;
+    /* color: #fff; */
+    display: flex;
+    box-sizing: border-box;
+    padding: 10rpx 20rpx;
+    animation: go linear .3s;
+    z-index: 10;
+    border-bottom: 1rpx solid #ddd;
+    /* color: #fff; */
 }
 
-.fixed_left_img{
-  flex: 0 0 80rpx;
-  margin-right: 20rpx;
-}
-.fixed_left_img image{
-  width: 80rpx;
-  height: 80rpx;
-}
-.fixed_right{
-  flex: 1;
-}
-.fixed_name .join{
-  padding: 6rpx 20rpx;
-  float: none;
-  margin-left: 20rpx;
+.fixed_left_img {
+    flex: 0 0 80rpx;
+    margin-right: 20rpx;
 }
 
-.fixed_top .sort{
-  background: transparent;
-  float: right;
-  padding: 0;
-  margin-top: 0;
-}
-.p_sort{
-  position: absolute;
-  right: 20rpx;
-  bottom: 30rpx;
-  font-size: 24rpx;
-}
-.fixed_top .join{
-  width: 110rpx;
-  height: 50rpx;
-  line-height: 50rpx;
-  border-radius: 10rpx;
-  padding: 0;
-  text-align: center;
-  position: fixed;
-  right: 20rpx;
-  top: 20rpx;
+.fixed_left_img image {
+    width: 80rpx;
+    height: 80rpx;
 }
 
-.forum_desc .join3{
-  background: #07c160;
+.fixed_right {
+    flex: 1;
+}
+
+.fixed_name .join {
+    padding: 6rpx 20rpx;
+    float: none;
+    margin-left: 20rpx;
+}
+
+.fixed_top .sort {
+    background: transparent;
+    float: right;
+    padding: 0;
+    margin-top: 0;
+}
+
+.p_sort {
+    position: absolute;
+    right: 20rpx;
+    bottom: 30rpx;
+    font-size: 24rpx;
+}
+
+.fixed_top .join {
+    width: 110rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    border-radius: 10rpx;
+    padding: 0;
+    text-align: center;
+    position: fixed;
+    right: 20rpx;
+    top: 20rpx;
+}
+
+.forum_desc .join3 {
+    background: #07c160;
 }

@@ -6,13 +6,13 @@
         </view>
         <view class="forum_info">
             <view class="forum_name">
-                {{forumInfo.name}} 
+                {{forumInfo.name}}
                 <text bindtap="joinForum" wx:if="{{!forumInfo.joined}}" class="join">+加入</text>
                 <text bindtap="leaveForum" wx:else class="join joined">已加入</text>
             </view>
             <view class="forum_desc">
-              {{forumInfo.desc||'Ta太懒了，啥也没有~'}}
-              <text bindtap="toPub" data-id="{{forumInfo.id}}" style="width:70rpx;text-align:center;" class="join join3">发帖</text>
+                {{forumInfo.desc||'Ta太懒了，啥也没有~'}}
+                <text bindtap="toPub" data-id="{{forumInfo.id}}" style="width:70rpx;text-align:center;" class="join join3">发帖</text>
             </view>
             <view class="infos">
                 <view>帖子 {{forumInfo.posts}}</view>
@@ -21,8 +21,8 @@
         </view>
     </view>
     <view>
-      <orders bindcheckoutRange="checkoutRange" params="{{params}}"></orders>
-      <!-- <picker wx:if="{{choose!='recommend'&&choose!='trends'}}" bindchange="bindOrderChange" value="{{orderIndex}}" range="{{orders}}" range-key="label">
+        <orders bindcheckoutRange="checkoutRange" params="{{params}}"></orders>
+        <!-- <picker wx:if="{{choose!='recommend'&&choose!='trends'}}" bindchange="bindOrderChange" value="{{orderIndex}}" range="{{orders}}" range-key="label">
         <view class="sort">排序： {{nsorts}} <view class="arrow_right"></view></view>
       </picker>
       <picker wx:if="{{choose!='recommend'&&choose!='trends'&&nsorts==='最赞'}}" bindchange="bindRangeChange" value="{{rangeIndex}}" range="{{ranges}}" range-key="label">
@@ -31,30 +31,30 @@
     </view>
 
     <view wx:if="{{showTop}}" class="fixed_top">
-      <view class="fixed_left_img">
-        <image src="{{imgOrigin+forumInfo.imageName}}"></image>
-      </view>
-      <view class="fixed_right">
-        <view class="fixed_name">
-          {{forumInfo.name}}
-            <text bindtap="joinForum" wx:if="{{!forumInfo.joined}}" class="join">+加入</text>
-            <text bindtap="leaveForum" wx:else class="join joined">已加入</text>
+        <view class="fixed_left_img">
+            <image src="{{imgOrigin+forumInfo.imageName}}"></image>
         </view>
-        <view class="infos">
-            <view>帖子 {{forumInfo.posts}}</view>
-            <view>关注 {{forumInfo.followers}}</view>
-            
+        <view class="fixed_right">
+            <view class="fixed_name">
+                {{forumInfo.name}}
+                <text bindtap="joinForum" wx:if="{{!forumInfo.joined}}" class="join">+加入</text>
+                <text bindtap="leaveForum" wx:else class="join joined">已加入</text>
+            </view>
+            <view class="infos">
+                <view>帖子 {{forumInfo.posts}}</view>
+                <view>关注 {{forumInfo.followers}}</view>
+
+            </view>
         </view>
-      </view>
-      <view class="p_sort">
-        <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key="label">
+        <view class="p_sort">
+            <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key="label">
           <view class="sort">排序： {{params.order=='new'?'最新':'最热'}} <view class="arrow_right"></view></view>
         </picker> -->
-        <!-- <view bindtap="toPub" data-id="{{forumInfo.id}}" class="join">发帖</view> -->
-        <view bindtap="toPub" data-id="{{forumInfo.id}}" class="pus">
-          <image mode="aspectFill" src="/assets/images/push.png"></image>
+            <!-- <view bindtap="toPub" data-id="{{forumInfo.id}}" class="join">发帖</view> -->
+            <view bindtap="toPub" data-id="{{forumInfo.id}}" class="pus">
+                <image mode="aspectFill" src="/assets/images/push.png"></image>
+            </view>
         </view>
-      </view>
     </view>
     <content pagedata="{{datas}}"></content>
 </view>

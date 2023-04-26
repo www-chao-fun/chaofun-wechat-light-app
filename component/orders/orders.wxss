@@ -1,22 +1,24 @@
 /* component/orders/orders.wxss */
-.order{
-  display: flex;
-  width: 100%;
-  padding: 10rpx 0;
+.order {
+    display: flex;
+    width: 100%;
+    padding: 10rpx 0;
 }
-.item{
-  /* flex: 0 0 110rpx; */
-  padding: 0 20rpx;
-  text-align: center;
-  /* background: blue; */
-  line-height: 54rpx;
-  margin: 10rpx;
-  /* border: 1rpx solid #ddd; */
-  font-size: 28rpx;
-  border-radius: 10rpx;
-  color: #666;
+
+.item {
+    /* flex: 0 0 110rpx; */
+    padding: 0 20rpx;
+    text-align: center;
+    /* background: blue; */
+    line-height: 54rpx;
+    margin: 10rpx;
+    /* border: 1rpx solid #ddd; */
+    font-size: 28rpx;
+    border-radius: 10rpx;
+    color: #666;
 }
-.item_active{
-  font-weight: bold;
-  color: #111;
+
+.item_active {
+    font-weight: bold;
+    color: #111;
 }
