@@ -41,10 +41,11 @@
         "showES6CompileOption": false,
         "useCompilerPlugins": false,
         "ignoreUploadUnusedFiles": true,
-        "useStaticServer": true
+        "useStaticServer": true,
+        "condition": false
     },
     "compileType": "miniprogram",
-    "libVersion": "2.10.3",
+    "libVersion": "2.18.1",
     "appid": "wxa6d675a8c6b78145",
     "projectname": "chaofun-wechat-light-app",
     "simulatorType": "wechat",
