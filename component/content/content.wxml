@@ -60,7 +60,7 @@
       </view>
 
     </view>
-    <!-- <web-view src="https://chao.fan"></web-view> -->
+    <!-- <web-view src="https://choa.fun"></web-view> -->
     <view bindtap="toTop" class="to_top">
       <image src="/assets/images/icon/to_top.png"></image>
     </view>

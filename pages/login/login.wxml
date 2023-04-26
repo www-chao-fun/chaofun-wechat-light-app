@@ -2,7 +2,7 @@
 <view class="container">
   <view wx:if="{{showWhich==1}}" class="shouquan">
     <view>
-      <image class="logo" src="https://chao.fan/img/chao.13437c59.jpeg"></image>
+      <image class="logo" src="https://choa.fun/img/chao.13437c59.jpeg"></image>
       <view class="descs">炒饭将获取你的微信头像、昵称等基本信息</view>
       <view>
         <button open-type="getUserInfo" bind:getuserinfo="getUserInfo" type="primary">授权登录</button>
