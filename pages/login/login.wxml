@@ -15,7 +15,7 @@
   <view wx:if="{{showWhich==2}}" class="shouquan shouquan2">
     <view class="cons"> 
       <view class="logos">
-        <image class="logo" src="/assets/images/chaofan.jpg"></image>
+        <image class="logo" src="/assets/images/chaofan.png"></image>
       </view>
       <view class="bindTitle">账号密码登录</view>
       <view class="item">
@@ -42,7 +42,7 @@
   <view wx:if="{{showWhich==3}}" class="shouquan shouquan2">
     <view class="cons">
       <view class="logos">
-        <image class="logo" src="/assets/images/chaofan.jpg"></image>
+        <image class="logo" src="/assets/images/chaofan.png"></image>
       </view>
       <view class="bindTitle">{{wechatAuth?'绑定账号-':''}}快速注册</view>
       <view class="item">
@@ -69,7 +69,7 @@
   <view wx:if="{{showWhich==4}}" class="shouquan shouquan2">
     <view class="cons"> 
       <view class="logos">
-        <image class="logo" src="/assets/images/chaofan.jpg"></image>
+        <image class="logo" src="/assets/images/chaofan.png"></image>
       </view>
       <view class="bindTitle">绑定炒饭账号</view>
       <view class="item">
