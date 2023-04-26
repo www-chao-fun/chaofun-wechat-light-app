@@ -60,10 +60,10 @@
           </view>
         </view>
         <view class="item">
-          <view class="title">我最喜欢的板块</view>
+          <view class="title">我最喜欢的版块</view>
           <view class="contents">
             <view class="line">
-              <view class="label">最喜欢的板块是----
+              <view class="label">最喜欢的版块是----
                 <image bindtap="toForum" data-id="{{pagedata.most_like_forum.id}}" class="hhh hhh2" mode="aspectFill" src="{{imgOrigin+pagedata.most_like_forum.imageName+'?x-oss-process=image/resize,h_100'}}"></image>
                 <text bindtap="toForum" data-id="{{pagedata.most_like_forum.id}}">{{pagedata.most_like_forum.name}}</text>
                 

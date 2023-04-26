@@ -8,7 +8,7 @@
     <view class="right">
         <view wx:if="{{chooseId==0}}" class="inputs">
           <view class="ii">
-            <input bindinput="searchForum" value="{{search}}" type="text" confirm-type="search" placeholder="请输入搜索板块"></input>
+            <input bindinput="searchForum" value="{{search}}" type="text" confirm-type="search" placeholder="请输入搜索版块"></input>
             <icon wx:if="{{search}}" bindtap="toClear" class="icon-box-img clear" type="clear" size="20"></icon>
           </view>
           
