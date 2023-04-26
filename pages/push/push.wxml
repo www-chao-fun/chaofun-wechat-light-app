@@ -27,7 +27,7 @@
     <wxs module="tagStyleFunc">
         module.exports = {
             getStyle: function (item, forumTagSelectedId) {
-                return item.id === forumTagSelectedId ? ('color:#fff;background-color:' + item.backgroundColor) : '';
+                return item.id === forumTagSelectedId ? ('color:#fff;background-color:' + (item.backgroundColor ? item.backgroundColor : '#FF9300')) : '';
             }
         }
     </wxs>
