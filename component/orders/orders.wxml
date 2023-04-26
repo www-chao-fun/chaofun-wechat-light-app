@@ -6,4 +6,5 @@
             <view class="sort">{{item.label}} <text wx:if="{{order=='ups'}}">· {{range.label}}</text></view>
         </picker>
     </view>
+    <label wx:if="{{showOnlyNew}}" class="only-new {{onlyNew?'only-new-selected':''}}" bindtap="onlyNewChange">没看过</label>
 </view>

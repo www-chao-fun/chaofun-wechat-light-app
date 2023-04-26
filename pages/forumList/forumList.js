@@ -69,6 +69,7 @@ Page({
         showTop: false,
         nsorts: '最热',
         range: '一天',
+        onlyNew: false,
     },
     checkoutRange(e) {
         console.log(e)
@@ -79,6 +80,7 @@ Page({
             'params.key': '',
             'params.order': params.order,
             'params.range': params.range || '',
+            onlyNew: params.onlyNew,
         })
         this.getPosts()
     },
@@ -108,6 +110,7 @@ Page({
     },
     async getPosts(v) {
         let params = this.data.params;
+        params.onlyNew = this.data.onlyNew;
         let res = await req.getPosts(params);
 
         let datas = res.data.posts;

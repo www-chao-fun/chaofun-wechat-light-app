@@ -7,7 +7,8 @@ Component({
         params: {
             type: Object,
             value: {}
-        }
+        },
+        showOnlyNew: false
     },
     lifetimes: {
         attached: function () {
@@ -80,6 +81,7 @@ Component({
                 value: 'all'
             },
         ],
+        onlyNew: false,
     },
 
     /**
@@ -96,7 +98,8 @@ Component({
                 })
                 wx.setStorageSync('order', item.value)
                 this.triggerEvent('checkoutRange', {
-                    order: item.value
+                    order: item.value,
+                    onlyNew: this.data.onlyNew,
                 })
             }
 
@@ -113,8 +116,26 @@ Component({
             wx.setStorageSync('range', item)
             this.triggerEvent('checkoutRange', {
                 order: 'ups',
-                range: item.value
+                range: item.value,
+                onlyNew: this.data.onlyNew,
             })
+        },
+
+        onlyNewChange(e) {
+            this.setData({
+                onlyNew: !this.data.onlyNew
+            });
+
+            // 分发事件
+            let eventParams = {
+                order: this.data.order,
+                onlyNew: this.data.onlyNew
+            }
+            if (this.data.order == 'ups') {
+                eventParams.range = this.data.range.value;
+            }
+            this.triggerEvent('checkoutRange', eventParams);
+
         },
     }
 })

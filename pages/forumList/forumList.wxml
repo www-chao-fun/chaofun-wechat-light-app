@@ -21,7 +21,7 @@
         </view>
     </view>
     <view>
-        <orders bindcheckoutRange="checkoutRange" params="{{params}}"></orders>
+        <orders bindcheckoutRange="checkoutRange" params="{{params}}" showOnlyNew="{{true}}"></orders>
         <!-- <picker wx:if="{{choose!='recommend'&&choose!='trends'}}" bindchange="bindOrderChange" value="{{orderIndex}}" range="{{orders}}" range-key="label">
         <view class="sort">排序： {{nsorts}} <view class="arrow_right"></view></view>
       </picker>
