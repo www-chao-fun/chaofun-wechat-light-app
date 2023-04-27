@@ -1,29 +1,29 @@
 <!--component/treeItem/treeItem.wxml-->
 <view class="child_item b_item">
-  <view wx:for="{{node}}" wx:key="id" >
+    <view wx:for="{{node}}" wx:key="id">
         <view class="item">
-          <view class="avatar">
-            <image mode="aspectFill" catchtap="toUser" data-info="{{item.userInfo}}" src="{{imgOrigin+item.userInfo.icon+'?x-oss-process=image/resize,h_80'}}"></image>
-          </view>
-          <view class="right">
-            <view class="username">
-              <view catchtap="toUser" data-info="{{item.userInfo}}">
-                {{item.userInfo.userName}}
-                <text wx:if="{{item.userInfo.userTag&&item.userInfo.userTag.type=='text'}}" class="userTag">{{item.userInfo.userTag.data}}</text>
-              </view>
-              <view class="time">
-                <!-- <image bindtap="toReplay" data-item="{{item}}" class="comment_icon" src="/assets/images/icon/comment.png"></image> -->
-                <text bindtap="toReplay" data-item="{{item}}"  class="comment_icon">回复</text>
-                {{item.rtime}}
-              </view>
+            <view class="avatar">
+                <image mode="aspectFill" catchtap="toUser" data-info="{{item.userInfo}}" src="{{imgOrigin+item.userInfo.icon+'?x-oss-process=image/resize,h_80'}}"></image>
             </view>
-            <view class="comment_content">{{item.text}}</view>
-            <view class="comImage" wx:if="{{item.imageNames}}">
-              <image bindtap="showImg" data-item="{{item}}" mode="aspectFill" src="{{imgOrigin+(item.imageNames[0])+'?x-oss-process=image/resize,h_300'}}"></image>
-              <text wx:if="{{item.imageNames.length>1}}" class="count">1/{{item.imageNames.length}}</text>
+            <view class="right">
+                <view class="username">
+                    <view catchtap="toUser" data-info="{{item.userInfo}}">
+                        {{item.userInfo.userName}}
+                        <text wx:if="{{item.userInfo.userTag&&item.userInfo.userTag.type=='text'}}" class="userTag">{{item.userInfo.userTag.data}}</text>
+                    </view>
+                    <view class="time">
+                        <!-- <image bindtap="toReplay" data-item="{{item}}" class="comment_icon" src="/assets/images/icon/comment.png"></image> -->
+                        <text bindtap="toReplay" data-item="{{item}}" class="comment_icon">回复</text>
+                        {{item.rtime}}
+                    </view>
+                </view>
+                <view class="comment_content">{{item.text}}</view>
+                <view class="comImage" wx:if="{{item.imageNames}}">
+                    <image bindtap="showImg" data-item="{{item}}" mode="aspectFill" src="{{imgOrigin+(item.imageNames[0])+'?x-oss-process=image/resize,h_300'}}"></image>
+                    <text wx:if="{{item.imageNames.length>1}}" class="count">1/{{item.imageNames.length}}</text>
+                </view>
             </view>
-          </view>
         </view>
-          <tree wx:if="{{item.children.length}}" bind:sendMsg="sendMsg" node="{{item.children}}"></tree>
-      </view>
+        <tree wx:if="{{item.children.length}}" bind:sendMsg="sendMsg" node="{{item.children}}"></tree>
+    </view>
 </view>
