@@ -167,4 +167,5 @@
     background-color: #e0e0e0;
     padding: 4rpx 20rpx;
     border-radius: 8rpx;
+    font-size: 26rpx;
 }
