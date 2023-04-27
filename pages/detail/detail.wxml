@@ -68,6 +68,11 @@
     <view class="comments">
         <view class="comment_title">
             评论
+            <view class="commentOption">
+                <label class="comment-order {{commentOrder=='hot'?'comment-order-selected':''}}" data-order="hot" catchtap="commentOrderChange">最热</label>
+                <label class="comment-order {{commentOrder=='new'?'comment-order-selected':''}}" data-order="new" catchtap="commentOrderChange">最新</label>
+                <label class="comment-order {{commentOrder=='old'?'comment-order-selected':''}}" data-order="old" catchtap="commentOrderChange">时间</label>
+            </view>
             <image src="/assets/images/icon/refresh.png" class="refresh" catchtap="refreshComment"></image>
         </view>
         <view wx:if="{{commentData.length}}" class="comment_con commentmain">

@@ -18,8 +18,21 @@ Page({
         isLogin: true,
         bottom: '',
         replays: {},
-        imageNames: ''
+        imageNames: '',
+        commentOrder: 'hot'
     },
+
+    commentOrderChange(e) {
+        let order = e.target.dataset.order;
+        if (order != this.data.commentOrder) {
+            wx.setStorageSync('commentListOrder', order)
+            this.setData({
+                commentOrder: order
+            });
+            this.listComments();
+        }
+    },
+
     playvideo(e) {
         console.log(e);
         console.log('执行程序');
@@ -246,7 +259,8 @@ Page({
         let res = await req.listComments({
             postId: this.data.postId,
             pageNum: 1,
-            pageSize: 80
+            pageSize: 80,
+            order: this.data.commentOrder
         });
         res.data.forEach(item => {
             item.rtime = app.util.getDateDiffs(item.gmtCreate);
@@ -345,6 +359,10 @@ Page({
             isPhoneX: app.globalData.isPhoneX
         })
         this.getPostInfo()
+
+        this.setData({
+            commentOrder: wx.getStorageSync('commentListOrder')
+        });
         this.listComments()
     },
 
