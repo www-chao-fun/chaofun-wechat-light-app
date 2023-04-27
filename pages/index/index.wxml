@@ -31,15 +31,15 @@
     <content bindchangeVoteData="changeVoteData" pagedata="{{pagedata}}"></content>
   </view>
   <view class="nothing" wx:if="{{choose=='home'&&hasJoin!==null&&choose!='trends'&&!pagedata.length}}">
-    {{!hasJoin?'还没有加入板块哦~':'请等待服务端计算排序（预计5分钟）' }}
-    <view bindtap="toForum" class="btn">添加板块</view>
+    {{!hasJoin?'还没有加入版块哦~':'请等待服务端计算排序（预计5分钟）' }}
+    <view bindtap="toForum" class="btn">添加版块</view>
   </view>
   <view wx:if="{{choose=='trends'&&userdata.length}}">
     <contentOther bindchangeVoteData="changeVoteData" pagedata="{{userdata}}"></contentOther>
   </view>
   <view class="nothing" wx:if="{{choose=='trends'&&!userdata.length}}">
     还没有添加关注哦~
-    <!-- {{!hasJoin?'还没有加入板块哦~':'请等待服务端计算排序（预计5分钟）' }} -->
-    <!-- <view bindtap="toForum" class="btn">添加板块</view> -->
+    <!-- {{!hasJoin?'还没有加入版块哦~':'请等待服务端计算排序（预计5分钟）' }} -->
+    <!-- <view bindtap="toForum" class="btn">添加版块</view> -->
   </view>
 </view>

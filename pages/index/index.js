@@ -296,7 +296,7 @@ Page({
           })
         }
         d.push(...item.menues)
-      } else if (item.name == '热门板块'){
+      } else if (item.name == '热门版块'){
         item.menues.forEach(i => {
           i.id = i.link.split('/')[2]
         })

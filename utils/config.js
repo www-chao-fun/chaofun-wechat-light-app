@@ -6,17 +6,17 @@ const env = 'dev';
 // api
 const api = {
   pro: {
-    host: 'https://chao.fan', // 开发服务
+    host: 'https://choa.fun', // 开发服务
     wxApi: 'https://api.weixin.qq.com',
     dev: '',
   },
   dev: {
-    host: 'https://chao.fan', // 开发服务
+    host: 'https://choa.fun', // 开发服务
     wxApi: 'https://api.weixin.qq.com',
     dev: '/dev',
   },
   deb: {
-    host: 'https://chao.fan', // 开发服务
+    host: 'https://choa.fun', // 开发服务
     wxApi: 'https://api.weixin.qq.com',
     dev: '/dev',
   }

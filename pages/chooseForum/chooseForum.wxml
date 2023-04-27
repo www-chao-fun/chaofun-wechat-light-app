@@ -1,7 +1,7 @@
 <!--pages/chooseForum/chooseForum.wxml-->
 <view class="container">
   <view class="search">
-    <input focus="{{true}}" bindinput="bindInput" confirm-type="search" bindconfirm="search" placeholder="搜索板块"></input>
+    <input focus="{{true}}" bindinput="bindInput" confirm-type="search" bindconfirm="search" placeholder="搜索版块"></input>
   </view>
   
   <view class="content">

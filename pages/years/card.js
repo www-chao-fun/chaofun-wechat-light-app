@@ -128,8 +128,8 @@ export default class LastMayday {
         _desnew(`2020年里，取得全站排名第${data.total_ups_rank}名的好成绩`,19.5),
         _desnew(`在2020年里，我收获了热情`,20.5),
 
-        _title(`我最喜欢的板块`,21.8),
-        _desnew(`最喜欢的板块是 ----`,23),
+        _title(`我最喜欢的版块`,21.8),
+        _desnew(`最喜欢的版块是 ----`,23),
         _imagenew(`${imgOrigin+data.most_like_forum.imageName}?x-oss-process=image/resize,h_100`,56,56,22.8,300),
         _desnew(`${data.most_like_forum.name}`,23.2,370),
         _desnew(`在这里，我浏览了${data.most_like_forum_shows}条  ${data.most_like_forum_upvotes?'点赞了'+data.most_like_forum_upvotes+'次':''} ${data.most_like_forum_comments?'评论了'+data.most_like_forum_comments+'个':''} ${data.most_like_forum_saves?'收藏了'+data.most_like_forum_saves+'个':''}`,24.2),

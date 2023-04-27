@@ -14,7 +14,7 @@
         </view>
     </view>
     <view class="page-section page-section2">
-        <view class="page-section-title">发布板块</view>
+        <view class="page-section-title">发布版块</view>
         <view bindtap="toChooseForum" class="page-section-title bankuai"> {{forumInfo.name?forumInfo.name:'请选择'}} <view class="arrow_right"></view>
         </view>
     </view>
@@ -27,7 +27,7 @@
     <wxs module="tagStyleFunc">
         module.exports = {
             getStyle: function (item, forumTagSelectedId) {
-                return item.id === forumTagSelectedId ? ('color:#fff;background-color:' + item.backgroundColor) : '';
+                return item.id === forumTagSelectedId ? ('color:#fff;background-color:' + (item.backgroundColor ? item.backgroundColor : '#FF9300')) : '';
             }
         }
     </wxs>

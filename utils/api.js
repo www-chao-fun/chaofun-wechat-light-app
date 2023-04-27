@@ -22,15 +22,15 @@ const indexapi = {
   getPostInfo: `${host}/api/get_post_info`,
   listComments: `${host}/api/v0/list_comments`,// 评论列表
   addComments: `${host}/api/comment`,// 添加评论
-  listTags: `${host}/api/v0/forum_tag/list_tags`,// 板块分类
+  listTags: `${host}/api/v0/forum_tag/list_tags`,// 版块分类
   listForumsByTag: `${host}/api/list_forums_by_tag`,
-  getForumInfo: `${host}/api/get_forum_info`,// 板块信息
-  joinForum: `${host}/api/join_forum`,// 加入板块
-  leaveForum: `${host}/api/leave_forum`,// 退出板块
+  getForumInfo: `${host}/api/get_forum_info`,// 版块信息
+  joinForum: `${host}/api/join_forum`,// 加入版块
+  leaveForum: `${host}/api/leave_forum`,// 退出版块
   search: `${host}/api/search`,// 搜索
   listSaved: `${host}/api/v0/me/list_saved`,// 我收藏的
   listUpvotes: `${host}/api/v0/me/list_upvotes`,// 我点赞的
-  searchForum: `${host}/api/search_forum`, // 板块搜索
+  searchForum: `${host}/api/search_forum`, // 版块搜索
   submitImage: `${host}/api/submit_image`,// 发布图片帖子
   submitArticle: `${host}/api/v0/submit_article`,// 发布文本帖子
   submitLink: `${host}/api/submit_link`,// 发布链接帖子

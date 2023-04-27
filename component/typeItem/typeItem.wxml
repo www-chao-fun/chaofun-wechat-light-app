@@ -1,7 +1,7 @@
 <!--component/typeItem/typeItem.wxml-->
 <view>
   <view bindtap="toDetail" data-item="{{item}}" class="real_title">
-    <text style="color: {{item.tags[0].backgroundColor}}" wx:if="{{item.tags.length}}">[{{item.tags[0].name}}]</text>
+    <text style="color: {{item.tags[0].backgroundColor?item.tags[0].backgroundColor:'#FF9300'}}" wx:if="{{item.tags.length}}">[{{item.tags[0].name}}]</text>
     {{item.title}}
   </view>
   <view class="main">
