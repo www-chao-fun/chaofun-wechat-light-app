@@ -360,9 +360,12 @@ Page({
         })
         this.getPostInfo()
 
-        this.setData({
-            commentOrder: wx.getStorageSync('commentListOrder')
-        });
+        let order = wx.getStorageSync('commentListOrder');
+        if (order) {
+            this.setData({
+                commentOrder: order
+            });
+        }
         this.listComments()
     },
 
