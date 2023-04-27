@@ -10,22 +10,22 @@
             <text class="time fr">{{postData.rtime}}</text>
         </view>
         <block wx:if="{{postData.type == undefined}}">
-          <view class="nothing">加载中......</view>
+            <view class="nothing">加载中......</view>
         </block>
         <block wx:else>
-          <view wx:if="{{postData.type!='link'&&postData.type!='forward'&&postData.type!='article'&&postData.type!='video'}}" style="padding:0 10rpx;">
-            <type-item detail="{{true}}" bindplayvideo="playvideo"  item="{{postData}}" dClass="{{true}}"></type-item>
-          </view>
-          <link-item detail="{{true}}" wx:if="{{postData.type=='link'||postData.type=='video'}}" item="{{postData}}"></link-item>
-          <article-item detail="{{true}}" wx:if="{{postData.type=='article'}}" item="{{postData}}"></article-item>
-          <forward-item wx:if="{{postData.type=='forward'}}" item="{{postData}}"></forward-item>
-          <vote-item wx:if="{{postData.type=='vote'}}" item="{{postData}}"></vote-item>
-          <view wx:if="{{postData.type!='link'&&postData.type!='forward'&&postData.type!='article'&&postData.type!='video'&&postData.type!='forward'&&postData.type!='image'&&postData.type!='gif'&&postData.type!='vote'&&postData.type!='inner_video'}}" class="nothing">
-            此版本暂不支持的帖子类型
-          </view>
+            <view wx:if="{{postData.type!='link'&&postData.type!='forward'&&postData.type!='article'&&postData.type!='video'}}" style="padding:0 10rpx;">
+                <type-item detail="{{true}}" bindplayvideo="playvideo" item="{{postData}}" dClass="{{true}}"></type-item>
+            </view>
+            <link-item detail="{{true}}" wx:if="{{postData.type=='link'||postData.type=='video'}}" item="{{postData}}"></link-item>
+            <article-item detail="{{true}}" wx:if="{{postData.type=='article'}}" item="{{postData}}"></article-item>
+            <forward-item wx:if="{{postData.type=='forward'}}" item="{{postData}}"></forward-item>
+            <vote-item wx:if="{{postData.type=='vote'}}" item="{{postData}}"></vote-item>
+            <view wx:if="{{postData.type!='link'&&postData.type!='forward'&&postData.type!='article'&&postData.type!='video'&&postData.type!='forward'&&postData.type!='image'&&postData.type!='gif'&&postData.type!='vote'&&postData.type!='inner_video'}}" class="nothing">
+                此版本暂不支持的帖子类型
+            </view>
         </block>
         <view wx:if="{{postData.postId}}" class="bottom_tool">
-          <!-- <view bindtap="upvotePost" data-item="{{postData}}" data-index="{{index}}" class="tool_item">
+            <!-- <view bindtap="upvotePost" data-item="{{postData}}" data-index="{{index}}" class="tool_item">
             <image wx:if="{{postData.vote!=1}}" src="/assets/images/icon/zan.png"></image>
             <image wx:if="{{postData.vote==1}}" src="/assets/images/icon/up_active.png"></image>
             <text>{{(postData.ups&&postData.ups>0?postData.ups:'赞')}}</text>
@@ -35,45 +35,45 @@
             <image wx:if="{{postData.vote==-1}}" src="/assets/images/icon/down_active.png"></image>
             <text>{{(item.downs&&item.downs>0?item.downs:'踩')}}</text>
           </view> -->
-          <view class="twos">
-            <view bindtap="upvotePost" data-item="{{postData}}" data-index="{{index}}" class="two_item">
-              <image wx:if="{{postData.vote!=1}}" src="/assets/images/icon/zan.png"></image>
-              <image wx:if="{{postData.vote==1}}" src="/assets/images/icon/up_active.png"></image>
-              <!-- <text>{{(item.ups&&item.ups>0?item.ups:'赞')}}</text> -->
+            <view class="twos">
+                <view bindtap="upvotePost" data-item="{{postData}}" data-index="{{index}}" class="two_item">
+                    <image wx:if="{{postData.vote!=1}}" src="/assets/images/icon/zan.png"></image>
+                    <image wx:if="{{postData.vote==1}}" src="/assets/images/icon/up_active.png"></image>
+                    <!-- <text>{{(item.ups&&item.ups>0?item.ups:'赞')}}</text> -->
+                </view>
+                <view class="val">{{postData.ups-postData.downs}}</view>
+                <view bindtap="downvotePost" data-item="{{postData}}" data-index="{{index}}" class="two_item">
+                    <image wx:if="{{postData.vote!=-1}}" src="/assets/images/icon/cai.png"></image>
+                    <image wx:if="{{postData.vote==-1}}" src="/assets/images/icon/down_active.png"></image>
+                    <!-- <text>{{(item.downs&&item.downs>0?item.downs:'踩')}}</text> -->
+                </view>
             </view>
-            <view class="val">{{postData.ups-postData.downs}}</view>
-            <view bindtap="downvotePost" data-item="{{postData}}" data-index="{{index}}" class="two_item">
-              <image wx:if="{{postData.vote!=-1}}" src="/assets/images/icon/cai.png"></image>
-              <image wx:if="{{postData.vote==-1}}" src="/assets/images/icon/down_active.png"></image>
-              <!-- <text>{{(item.downs&&item.downs>0?item.downs:'踩')}}</text> -->
+            <view bindtap="toDetail" data-item="{{item}}" class="tool_item">
+                <image src="/assets/images/icon/comment.png"></image>
+                <text>{{postData.comments||'评论'}}</text>
             </view>
-          </view>
-          <view bindtap="toDetail" data-item="{{item}}" class="tool_item">
-            <image src="/assets/images/icon/comment.png"></image>
-            <text>{{postData.comments||'评论'}}</text>
-          </view>
-          <view class="tool_item tool_item_a">
-            <image src="/assets/images/icon/share.png"></image>
-            <text>转发</text>
-            <button size="mini" open-type="share" class="btn_zhuanfa"></button>
-          </view>
-          <view bindtap="collects" data-item="{{postData}}" class="tool_item {{postData.save?'saves':''}}">
-            <image wx:if="{{postData.save}}" src="/assets/images/icon/shoucang.png"></image>
-            <image wx:if="{{!postData.save}}" src="/assets/images/icon/collect.png"></image>
-            <text>{{postData.save?'已收藏':'收藏'}}</text>
-          </view>
+            <view class="tool_item tool_item_a">
+                <image src="/assets/images/icon/share.png"></image>
+                <text>转发</text>
+                <button size="mini" open-type="share" class="btn_zhuanfa"></button>
+            </view>
+            <view bindtap="collects" data-item="{{postData}}" class="tool_item {{postData.save?'saves':''}}">
+                <image wx:if="{{postData.save}}" src="/assets/images/icon/shoucang.png"></image>
+                <image wx:if="{{!postData.save}}" src="/assets/images/icon/collect.png"></image>
+                <text>{{postData.save?'已收藏':'收藏'}}</text>
+            </view>
         </view>
     </view>
     <view style="height:10rpx;background:#f1f1f1;"></view>
     <view class="comments">
-      <view class="comment_title">
-      评论
-      <image src="/assets/images/icon/refresh.png" class="refresh" catchtap="refreshComment"></image>
-      </view>
-      <view wx:if="{{commentData.length}}" class="comment_con commentmain">
-        <!-- <commentdetail></commentdetail> -->
-        <tree class="par" bind:sendMsg="sendMsg" wx:if="{{commentData.length}}" node="{{commentData}}"></tree>
-        <!-- <view wx:for="{{commentData}}" wx:key="id" class="b_item">
+        <view class="comment_title">
+            评论
+            <image src="/assets/images/icon/refresh.png" class="refresh" catchtap="refreshComment"></image>
+        </view>
+        <view wx:if="{{commentData.length}}" class="comment_con commentmain">
+            <!-- <commentdetail></commentdetail> -->
+            <tree class="par" bind:sendMsg="sendMsg" wx:if="{{commentData.length}}" node="{{commentData}}"></tree>
+            <!-- <view wx:for="{{commentData}}" wx:key="id" class="b_item">
           <view class="item">
             <view class="avatar">
               <image mode="aspectFill" catchtap="toUser" data-info="{{item.userInfo}}" src="{{imgOrigin+item.userInfo.icon+'?x-oss-process=image/resize,h_80'}}"></image>
@@ -97,14 +97,14 @@
 
           <tree bind:sendMsg="sendMsg" wx:if="{{item.children.length}}" node="{{item.children}}"></tree>
         </view> -->
-      </view>
-      <view wx:if="{{!commentData.length}}" class="comment_con">
-        <view class="nothing">还没有评论哦，你的机会来了 ~</view>
-      </view>
+        </view>
+        <view wx:if="{{!commentData.length}}" class="comment_con">
+            <view class="nothing">还没有评论哦，你的机会来了 ~</view>
+        </view>
     </view>
     <view style="height:{{isPhoneX?68:''}}rpx"></view>
     <view bindtap="toPub" data-="" class="pus">
-      <image mode="aspectFill" src="/assets/images/push.png"></image>
+        <image mode="aspectFill" src="/assets/images/push.png"></image>
     </view>
     <view class="bottom" style="padding-bottom: {{isPhoneX?68:'30'}}rpx">
         <view class="bottom_con">
@@ -113,7 +113,7 @@
             <view class="b_btns"><text bindtap="toSend">发送</text></view>
         </view>
         <view>
-          <image mode="aspectFill" class="prevImg" wx:if="{{imageNames}}" src="{{imgOrigin+imageNames+'?x-oss-process=image/resize,h_300'}}"></image>
+            <image mode="aspectFill" class="prevImg" wx:if="{{imageNames}}" src="{{imgOrigin+imageNames+'?x-oss-process=image/resize,h_300'}}"></image>
         </view>
 
     </view>
