@@ -14,6 +14,7 @@ Component({
                 return []
             }
         },
+        postUserId: ''
     },
     lifetimes: {
         ready() {

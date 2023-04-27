@@ -97,3 +97,9 @@
     border-radius: 4rpx;
     font-size: 24rpx;
 }
+
+.op {
+    color: #00AEFF;
+    font-size: 20rpx;
+    font-weight: bold;
+}

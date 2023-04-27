@@ -77,7 +77,7 @@
         </view>
         <view wx:if="{{commentData.length}}" class="comment_con commentmain">
             <!-- <commentdetail></commentdetail> -->
-            <tree class="par" bind:sendMsg="sendMsg" wx:if="{{commentData.length}}" node="{{commentData}}"></tree>
+            <tree class="par" bind:sendMsg="sendMsg" wx:if="{{commentData.length}}" node="{{commentData}}" postUserId='{{postData.userInfo.userId}}'></tree>
             <!-- <view wx:for="{{commentData}}" wx:key="id" class="b_item">
           <view class="item">
             <view class="avatar">
