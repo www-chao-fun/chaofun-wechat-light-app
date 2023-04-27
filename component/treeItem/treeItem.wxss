@@ -77,3 +77,11 @@
   padding: 4rpx 10rpx;
   border-radius: 4rpx;
 }
+
+.userTag {
+    background: #ddd;
+    padding: 2rpx 10rpx;
+    margin-left: 10rpx;
+    border-radius: 4rpx;
+    font-size: 24rpx;
+}
