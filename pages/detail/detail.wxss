@@ -105,6 +105,9 @@
   margin-top: 20rpx;
 }
 .comment_title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20rpx;
 }
 .item{
@@ -261,3 +264,8 @@
 }
 
 .par .child_item {background:red;padding-left:0;}
+
+.refresh {
+    width: 34rpx;
+    height: 34rpx;   
+}

@@ -66,7 +66,10 @@
     </view>
     <view style="height:10rpx;background:#f1f1f1;"></view>
     <view class="comments">
-      <view class="comment_title">评论</view>
+      <view class="comment_title">
+      评论
+      <image src="/assets/images/icon/refresh.png" class="refresh" catchtap="refreshComment"></image>
+      </view>
       <view wx:if="{{commentData.length}}" class="comment_con commentmain">
         <!-- <commentdetail></commentdetail> -->
         <tree class="par" bind:sendMsg="sendMsg" wx:if="{{commentData.length}}" node="{{commentData}}"></tree>

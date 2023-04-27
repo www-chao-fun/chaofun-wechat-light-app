@@ -112,6 +112,9 @@ Page({
       url: '/pages/push/push?forumId=' + forumId,
     });
   },
+  refreshComment(e) {
+    this.listComments();
+  },
   toUser(e) {
     let info = e.currentTarget.dataset.info;
     wx.navigateTo({
