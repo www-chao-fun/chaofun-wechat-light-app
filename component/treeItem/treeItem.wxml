@@ -25,6 +25,6 @@
                 </view>
             </view>
         </view>
-        <tree wx:if="{{item.children.length}}" bind:sendMsg="sendMsg" node="{{item.children}}"></tree>
+        <tree wx:if="{{item.children.length}}" bind:sendMsg="sendMsg" node="{{item.children}}" postUserId="{{postUserId}}"></tree>
     </view>
 </view>
