@@ -83,12 +83,21 @@ Component({
             this.triggerEvent('sendMsg', item);
         },
 
-        deleteCommentEvent(e) {
+        deleteComment(e) {
             this.triggerEvent('deleteComment', e.detail);
         },
 
-        deleteComment(e) {
+        deleteCommentEvent(e) {
             this.triggerEvent('deleteComment', e.currentTarget.dataset.item);
         },
+
+        highlightComment(e) {
+            this.triggerEvent('highlightComment', e.detail);
+        },
+
+        highlightCommentEvent(e) {
+            this.triggerEvent('highlightComment', e.currentTarget.dataset.item);
+        },
+
     }
 })

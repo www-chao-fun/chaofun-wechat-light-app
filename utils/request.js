@@ -50,6 +50,12 @@ const indexapi = {
   deleteComment: params => {
     return http.get(api.deleteComment, params);
   },
+  highlightComment: params => {
+    return http.get(api.highlightComment, params);
+  },
+  unHighlightComment: params => {
+    return http.get(api.unHighlightComment, params);
+  },
   listTags: params => {
     return http.get(api.listTags, params);
   },

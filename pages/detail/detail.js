@@ -80,9 +80,24 @@ Page({
     deleteComment(e) {
         req.deleteComment({
             commentId: e.detail.id,
-        }).then((res) => {
+        }).then(() => {
             this.listComments();
         });
+    },
+
+    highlightComment(e) {
+        let reqParams = {
+            commentId: e.detail.id
+        };
+        if (e.detail.forumAdminHighlight) {
+            req.unHighlightComment(reqParams).then(() => {
+                this.listComments();
+            });
+        } else {
+            req.highlightComment(reqParams).then(() => {
+                this.listComments();
+            });
+        }
     },
 
     showImg(e) {

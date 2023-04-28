@@ -15,7 +15,8 @@
                     </view>
                     <view class="time">
                         <!-- <image bindtap="toReplay" data-item="{{item}}" class="comment_icon" src="/assets/images/icon/comment.png"></image> -->
-                        <text wx:if="{{item.canDeleted}}" bindtap="deleteComment" data-item="{{item}}" class="delete_comment">删除</text>
+                        <text wx:if="{{item.forumAdmin}}" bindtap="highlightCommentEvent" data-item="{{item}}" class="highlight_comment">{{item.forumAdminHighlight?'取消高亮':'高亮'}}</text>
+                        <text wx:if="{{item.canDeleted}}" bindtap="deleteCommentEvent" data-item="{{item}}" class="delete_comment">删除</text>
                         <text bindtap="toReplay" data-item="{{item}}" class="comment_icon">回复</text>
                         <text class="rtime">{{item.rtime}}</text>
                     </view>
@@ -27,6 +28,6 @@
                 </view>
             </view>
         </view>
-        <tree wx:if="{{item.children.length}}" bind:sendMsg="sendMsg" bind:deleteComment="deleteCommentEvent" node="{{item.children}}" postUserId="{{postUserId}}"></tree>
+        <tree wx:if="{{item.children.length}}" bind:sendMsg="sendMsg" bind:deleteComment="deleteComment" bind:highlightComment="highlightComment" node="{{item.children}}" postUserId="{{postUserId}}"></tree>
     </view>
 </view>
