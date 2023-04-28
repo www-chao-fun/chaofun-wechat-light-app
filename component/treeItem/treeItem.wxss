@@ -56,23 +56,18 @@
 }
 
 .comment_icon {
-    font-size: 22rpx;
-    padding: 0 6rpx;
+    font-size: 24rpx;
+    padding: 0 8rpx;
 }
 
 .delete_comment {
-    font-size: 22rpx;
-    padding: 0 6rpx;
+    font-size: 24rpx;
+    padding: 0 8rpx;
 }
 
 .highlight_comment {
-    font-size: 22rpx;
-    padding: 0 6rpx;
-}
-
-.rtime {
-    font-size: 20rpx;
-    padding-left: 6rpx;
+    font-size: 24rpx;
+    padding: 0 8rpx;
 }
 
 .comImage {
@@ -117,6 +112,11 @@
     color: #00AEFF;
     font-size: 20rpx;
     font-weight: bold;
+}
+
+.rtime {
+    margin: 0 5rpx;
+    font-size: 20rpx;
 }
 
 .forumAdminHighlight {
