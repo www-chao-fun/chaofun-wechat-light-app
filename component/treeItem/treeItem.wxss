@@ -99,7 +99,15 @@
 }
 
 .op {
+    margin: 0 5rpx;
     color: #00AEFF;
     font-size: 20rpx;
+    font-weight: bold;
+}
+
+.forumAdminHighlight {
+    margin: 0 5rpx;
+    color: #87F7CF;
+    font-size: 24rpx;
     font-weight: bold;
 }

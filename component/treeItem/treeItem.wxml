@@ -9,8 +9,9 @@
                 <view class="username">
                     <view catchtap="toUser" data-info="{{item.userInfo}}">
                         {{item.userInfo.userName}}
-                        <text wx:if="{{postUserId === item.userInfo.userId}}" class="op">OP</text>
                         <text wx:if="{{item.userInfo.userTag&&item.userInfo.userTag.type=='text'}}" class="userTag">{{item.userInfo.userTag.data}}</text>
+                        <text wx:if="{{postUserId === item.userInfo.userId}}" class="op">OP</text>
+                        <text wx:if="{{item.forumAdminHighlight}}" class="forumAdminHighlight">✔</text>
                     </view>
                     <view class="time">
                         <!-- <image bindtap="toReplay" data-item="{{item}}" class="comment_icon" src="/assets/images/icon/comment.png"></image> -->
