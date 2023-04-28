@@ -120,8 +120,8 @@
 }
 
 .forumAdminHighlight {
-    margin: 0 5rpx;
+    margin: 0 10rpx;
     color: #87F7CF;
-    font-size: 24rpx;
+    font-size: 26rpx;
     font-weight: bold;
 }
