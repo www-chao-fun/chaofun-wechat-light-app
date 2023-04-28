@@ -76,6 +76,15 @@ Page({
             replays: item.detail
         })
     },
+
+    deleteComment(e) {
+        req.deleteComment({
+            commentId: e.detail.id,
+        }).then((res) => {
+            this.listComments();
+        });
+    },
+
     showImg(e) {
         let item = e.currentTarget.dataset.item;
         wx.previewImage({

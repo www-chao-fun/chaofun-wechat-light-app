@@ -82,5 +82,13 @@ Component({
             let item = e.currentTarget.dataset.item;
             this.triggerEvent('sendMsg', item);
         },
+
+        deleteCommentEvent(e) {
+            this.triggerEvent('deleteComment', e.detail);
+        },
+
+        deleteComment(e) {
+            this.triggerEvent('deleteComment', e.currentTarget.dataset.item);
+        },
     }
 })

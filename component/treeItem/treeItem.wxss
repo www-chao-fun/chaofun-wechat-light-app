@@ -56,9 +56,18 @@
 }
 
 .comment_icon {
-    width: 30rpx;
-    height: 30rpx;
-    margin-right: 6rpx;
+    font-size: 22rpx;
+    padding: 0 6rpx;
+}
+
+.delete_comment {
+    font-size: 22rpx;
+    padding: 0 6rpx;
+}
+
+.rtime {
+    font-size: 20rpx;
+    padding-left: 6rpx;
 }
 
 .comImage {

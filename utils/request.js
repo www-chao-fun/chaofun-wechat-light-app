@@ -47,6 +47,9 @@ const indexapi = {
   addComments: params => {
     return http.get(api.addComments, params);
   },
+  deleteComment: params => {
+    return http.get(api.deleteComment, params);
+  },
   listTags: params => {
     return http.get(api.listTags, params);
   },
