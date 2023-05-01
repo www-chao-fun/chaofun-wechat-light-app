@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "rule": "/component/forumMore/forumMoreRule"
+    },
+    "navigationBarTitleText": "更多"
+}

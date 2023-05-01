@@ -88,6 +88,16 @@
     background: #ccc;
 }
 
+.forum-more {
+    background: #00AEFF;
+    color: #fff;
+    padding: 8rpx 20rpx;
+    font-size: 26rpx;
+    float: right;
+    border-radius: 30rpx;
+    margin: 0 10rpx;
+}
+
 .sort {
     padding: 20rpx;
     margin-top: 10rpx;

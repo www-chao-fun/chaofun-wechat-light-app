@@ -109,6 +109,13 @@ Page({
         });
 
     },
+    toForumMore(e) {
+        let forumId = e.currentTarget.dataset.id;
+        let forumName = e.currentTarget.dataset.name;
+        wx.navigateTo({
+            url: '/pages/forumMore/forumMore?forumId=' + forumId + "&forumName=" + forumName,
+        });
+    },
     async getForumInfo() {
         let res = await req.getForumInfo({
             forumId: this.data.options.forumId

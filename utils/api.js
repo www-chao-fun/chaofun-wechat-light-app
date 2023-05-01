@@ -25,6 +25,7 @@ const indexapi = {
   deleteComment: `${host}/api/v0/delete_comment`,// 删除评论
   highlightComment: `${host}/api/v0/highlightComment`,// 高亮评论
   unHighlightComment: `${host}/api/v0/unHighlightComment`,// 取消高亮评论
+  listRules: `${host}/api/v0/forum/listRules`,// 版块规范
   listTags: `${host}/api/v0/forum_tag/list_tags`,// 版块分类
   listForumsByTag: `${host}/api/list_forums_by_tag`,
   getForumInfo: `${host}/api/get_forum_info`,// 版块信息

@@ -1,0 +1,20 @@
+<!--pages/forumMore/forumMore.wxml-->
+<view style="margin: 0 10rpx;">
+    <view class="tabs">
+        <label class="tab {{activeTab=='rule'?'tab-active':''}}" data-tab='rule' catchtap="onTabTap">版块规范</label>
+        <label class="tab {{activeTab=='mod'?'tab-active':''}}" data-tab='mod' catchtap="onTabTap">版主</label>
+        <!-- <label class="tab {{activeTab=='badges'?'tab-active':''}}" data-tab='badges' catchtap="onTabTap">徽章</label>
+        <label class="tab {{activeTab=='donate'?'tab-active':''}}" data-tab='donate' catchtap="onTabTap">众筹</label> -->
+    </view>
+
+    <rule wx:if="{{activeTab=='rule'}}" forumId='{{forumId}}'></rule>
+    <view wx:elif="{{activeTab=='mod'}}">
+        版主
+    </view>
+    <!-- <view wx:elif="{{activeTab=='badges'}}">
+        徽章
+    </view>
+    <view wx:elif="{{activeTab=='donate'}}">
+        众筹
+    </view> -->
+</view>

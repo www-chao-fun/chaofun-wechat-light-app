@@ -56,6 +56,9 @@ const indexapi = {
   unHighlightComment: params => {
     return http.get(api.unHighlightComment, params);
   },
+  listRules: params => {
+    return http.get(api.listRules, params);
+  },
   listTags: params => {
     return http.get(api.listTags, params);
   },
