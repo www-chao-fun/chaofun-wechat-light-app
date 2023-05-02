@@ -1,5 +1,5 @@
 <!--component/forumMore/forumMoreRule.wxml-->
-<view style="margin-top: 10rpx;">
+<view style="margin: 10rpx 0;">
     <text wx:for="{{dataList}}" wx:key="index" space="nbsp" decode="{{true}}" class="text">&nbsp;&nbsp;{{index+1}}. {{item.rule}}</text>
     <text wx:if="{{!dataList.length}}" style="color: #999;">暂无版块规范</text>
 </view>

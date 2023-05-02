@@ -1,0 +1,12 @@
+/* component/forumMore/forumMoreBadges.wxss */
+.badges {
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    margin: 10rpx;
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+}

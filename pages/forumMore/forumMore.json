@@ -1,6 +1,8 @@
 {
     "usingComponents": {
-        "rule": "/component/forumMore/forumMoreRule"
+        "rule": "/component/forumMore/forumMoreRule",
+        "mod": "/component/forumMore/forumMoreMod",
+        "badges": "/component/forumMore/forumMoreBadges"
     },
     "navigationBarTitleText": "更多"
 }

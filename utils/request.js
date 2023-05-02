@@ -56,8 +56,14 @@ const indexapi = {
   unHighlightComment: params => {
     return http.get(api.unHighlightComment, params);
   },
+  listMod: params => {
+    return http.get(api.listMod, params);
+  },
   listRules: params => {
     return http.get(api.listRules, params);
+  },
+  listForumBadges: params => {
+    return http.get(api.listForumBadges, params);
   },
   listTags: params => {
     return http.get(api.listTags, params);

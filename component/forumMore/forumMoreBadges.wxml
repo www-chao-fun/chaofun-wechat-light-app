@@ -1,0 +1,8 @@
+<!--component/forumMore/forumMoreBadges.wxml-->
+<view style="margin: 10rpx 0;">
+    <view wx:for="{{dataList}}" wx:key="index" class="badges" catchtap="toBadgeDetail" data-item="{{item}}">
+        <image src="{{imgOrigin+item.icon}}" class="img"></image>
+        {{item.name}}
+    </view>
+    <text wx:if="{{!dataList.length}}" style="color: #999;">暂无徽章</text>
+</view>

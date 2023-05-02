@@ -277,6 +277,14 @@ Page({
         return true
 
     },
+    toForumMore() {
+        let fi = this.data.forumInfo;
+        if (fi && fi.forumId && fi.name) {
+            wx.navigateTo({
+                url: '/pages/forumMore/forumMore?forumId=' + fi.forumId + "&forumName=" + fi.name,
+            });
+        }
+    },
     async toSub() {
         this.setData({
             disablePush: true
