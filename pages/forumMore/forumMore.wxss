@@ -1,0 +1,21 @@
+/* pages/forumMore/forumMore.wxss */
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    border-radius: 4rpx;
+    border: 1rpx solid #eee;
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.tab-active {
+    background: #FF9300;
+    color: #fff;
+}

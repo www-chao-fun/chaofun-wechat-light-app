@@ -78,6 +78,9 @@
         </view>
     </view>
     <view style="padding-top:20rpx;">
+        <view style="margin: 0 0 10rpx 20rpx;color: #999;" wx:if="{{forumInfo&&forumInfo.forumId&&forumInfo.name}}">
+            发布即代表同意<text style="color: #359eff;" catchtap="toForumMore">《{{forumInfo.name}}版块 - 版块规范》</text>
+        </view>
         <button disabled="{{disablePush}}" bindtap="toSub" type="primary">发布</button>
     </view>
 </view>

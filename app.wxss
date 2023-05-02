@@ -26,8 +26,8 @@ image{
 
 .userTag{
   background: #ddd;
-  padding: 2rpx 10rpx;
-  margin-left: 10rpx;
+  padding: 2rpx 8rpx;
+  margin: 0 6rpx;
   border-radius: 4rpx;
   font-size: 24rpx;
 }

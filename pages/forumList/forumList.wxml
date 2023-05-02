@@ -9,6 +9,7 @@
                 {{forumInfo.name}}
                 <text bindtap="joinForum" wx:if="{{!forumInfo.joined}}" class="join">+加入</text>
                 <text bindtap="leaveForum" wx:else class="join joined">已加入</text>
+                <text bindtap="toForumMore" data-id="{{forumInfo.id}}" data-name="{{forumInfo.name}}" class="forum-more">更多</text>
             </view>
             <view class="forum_desc">
                 {{forumInfo.desc||'Ta太懒了，啥也没有~'}}

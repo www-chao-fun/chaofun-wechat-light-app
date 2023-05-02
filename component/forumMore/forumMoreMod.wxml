@@ -1,0 +1,5 @@
+<!--component/forumMore/forumMoreMod.wxml-->
+<view style="margin: 10rpx 0;">
+    <attentionItem wx:for="{{dataList}}" userId="{{userId}}" item="{{item}}" wx:key="index"></attentionItem>
+    <text wx:if="{{!dataList.length}}" style="color: #999;">暂无版主</text>
+</view>

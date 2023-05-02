@@ -47,6 +47,24 @@ const indexapi = {
   addComments: params => {
     return http.get(api.addComments, params);
   },
+  deleteComment: params => {
+    return http.get(api.deleteComment, params);
+  },
+  highlightComment: params => {
+    return http.get(api.highlightComment, params);
+  },
+  unHighlightComment: params => {
+    return http.get(api.unHighlightComment, params);
+  },
+  listMod: params => {
+    return http.get(api.listMod, params);
+  },
+  listRules: params => {
+    return http.get(api.listRules, params);
+  },
+  listForumBadges: params => {
+    return http.get(api.listForumBadges, params);
+  },
   listTags: params => {
     return http.get(api.listTags, params);
   },
