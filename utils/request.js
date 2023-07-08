@@ -161,6 +161,12 @@ const indexapi = {
   getForumTagList: params => {
     return http.get(api.getForumTagList, params);
   },
+  postAddTag: params => {
+    return http.get(api.postAddTag, params);
+  },
+  postRemoveTag: params => {
+    return http.get(api.postRemoveTag, params);
+  },
   weChatLightAppPhoneLogin: params => {
     // return http.post(api.weChatLightAppPhoneLogin+'?'+json2Form(params), {},
     // {});
