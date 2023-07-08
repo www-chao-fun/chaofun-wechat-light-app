@@ -1,67 +1,67 @@
 <!--component/content/content.wxml-->
 <view class="content">
     <view wx:for="{{pagedata}}" wx:key="item" class="item">
-      <view  class="f_title">
-        <view style="flex:1;" bindtap="toDetail" data-item="{{item}}">
-          <image catchtap="toForum" data-id="{{item.forum.id}}" src="{{imgOrigin+item.forum.imageName+'?x-oss-process=image/resize,h_80'}}" class="form_icon"></image>
-          <text catchtap="toForum" data-id="{{item.forum.id}}"  class="weight">{{item.forum.name}}</text>
-          <text> 来自</text> 
-          <text catchtap="toUser" data-info="{{item.userInfo}}" class="weight"> {{item.userInfo.userName}}</text>
-          <text wx:if="{{item.userInfo.userTag&&item.userInfo.userTag.type=='text'}}" class="userTag">{{item.userInfo.userTag.data}}</text>
+        <view class="f_title">
+            <view style="flex:1;" bindtap="toDetail" data-item="{{item}}">
+                <image catchtap="toForum" data-id="{{item.forum.id}}" src="{{imgOrigin+item.forum.imageName+'?x-oss-process=image/resize,h_80'}}" class="form_icon"></image>
+                <text catchtap="toForum" data-id="{{item.forum.id}}" class="weight">{{item.forum.name}}</text>
+                <text> 来自</text>
+                <text catchtap="toUser" data-info="{{item.userInfo}}" class="weight"> {{item.userInfo.userName}}</text>
+                <text wx:if="{{item.userInfo.userTag&&item.userInfo.userTag.type=='text'}}" class="userTag">{{item.userInfo.userTag.data}}</text>
+            </view>
+            <view>
+                <text class="time">{{item.rtime}}</text>
+                <image bindtap="toDelete" data-item="{{item}}" data-index="{{index}}" wx:if="{{item.canDeleted}}" class="more" src="/assets/images/icon/more.png"></image>
+            </view>
+
         </view>
-        <view>
-          <text class="time">{{item.rtime}}</text>
-          <image bindtap="toDelete" data-item="{{item}}" data-index="{{index}}" wx:if="{{item.canDeleted}}" class="more" src="/assets/images/icon/more.png"></image>
+        <type-item wx:if="{{item.type!='link'&&item.type!='forward'&&item.type!='article'&&item.type!='video'}}" bindplayvideo="playvideo" kindex="{{index}}" item="{{item}}"></type-item>
+        <link-item wx:if="{{item.type=='link'||item.type=='video'}}" item="{{item}}"></link-item>
+        <article-item wx:if="{{item.type=='article'}}" item="{{item}}"></article-item>
+        <forward-item wx:if="{{item.type=='forward'}}" item="{{item}}"></forward-item>
+        <vote-item wx:if="{{item.type=='vote'}}" item="{{item}}"></vote-item>
+
+        <view wx:if="{{item.type!='link'&&item.type!='forward'&&item.type!='article'&&item.type!='video'&&item.type!='forward'&&item.type!='image'&&item.type!='vote'&&item.type!='gif'&&item.type!='inner_video'}}" class="nothing">
+            此版本暂不支持的帖子类型
         </view>
-        
-      </view>
-      <type-item wx:if="{{item.type!='link'&&item.type!='forward'&&item.type!='article'&&item.type!='video'}}" bindplayvideo="playvideo" kindex="{{index}}" item="{{item}}"></type-item>
-      <link-item wx:if="{{item.type=='link'||item.type=='video'}}" item="{{item}}"></link-item>
-      <article-item wx:if="{{item.type=='article'}}" item="{{item}}"></article-item>
-      <forward-item wx:if="{{item.type=='forward'}}" item="{{item}}"></forward-item>
-      <vote-item wx:if="{{item.type=='vote'}}" item="{{item}}"></vote-item>
-      
-      <view wx:if="{{item.type!='link'&&item.type!='forward'&&item.type!='article'&&item.type!='video'&&item.type!='forward'&&item.type!='image'&&item.type!='vote'&&item.type!='gif'&&item.type!='inner_video'}}" class="nothing">
-        此版本暂不支持的帖子类型
-      </view>
-      <view class="bottom_tool">
-        <view class="twos">
-          <view bindtap="upvotePost" data-item="{{item}}" data-index="{{index}}" class="two_item">
-            <image wx:if="{{item.vote!=1}}" src="/assets/images/icon/zan.png"></image>
-            <image wx:if="{{item.vote==1}}" src="/assets/images/icon/up_active.png"></image>
-            <!-- <text>{{(item.ups&&item.ups>0?item.ups:'赞')}}</text> -->
-          </view>
-          <view class="val">{{item.ups-item.downs}}</view>
-          <view bindtap="downvotePost" data-item="{{item}}" data-index="{{index}}" class="two_item">
-            <image wx:if="{{item.vote!=-1}}" src="/assets/images/icon/cai.png"></image>
-            <image wx:if="{{item.vote==-1}}" src="/assets/images/icon/down_active.png"></image>
-            <!-- <text>{{(item.downs&&item.downs>0?item.downs:'踩')}}</text> -->
-          </view>
-        </view>
-        
-        <view bindtap="toDetail" data-item="{{item}}" class="tool_item">
-          <image src="/assets/images/icon/comment.png"></image>
-          <text>{{item.comments||'评论'}}</text>
-        </view>
-        <!-- <view class="tool_item">
+        <view class="bottom_tool">
+            <view class="twos">
+                <view bindtap="upvotePost" data-item="{{item}}" data-index="{{index}}" class="two_item">
+                    <image wx:if="{{item.vote!=1}}" src="/assets/images/icon/zan.png"></image>
+                    <image wx:if="{{item.vote==1}}" src="/assets/images/icon/up_active.png"></image>
+                    <!-- <text>{{(item.ups&&item.ups>0?item.ups:'赞')}}</text> -->
+                </view>
+                <view class="val">{{item.ups-item.downs}}</view>
+                <view bindtap="downvotePost" data-item="{{item}}" data-index="{{index}}" class="two_item">
+                    <image wx:if="{{item.vote!=-1}}" src="/assets/images/icon/cai.png"></image>
+                    <image wx:if="{{item.vote==-1}}" src="/assets/images/icon/down_active.png"></image>
+                    <!-- <text>{{(item.downs&&item.downs>0?item.downs:'踩')}}</text> -->
+                </view>
+            </view>
+
+            <view bindtap="toDetail" data-item="{{item}}" class="tool_item">
+                <image src="/assets/images/icon/comment.png"></image>
+                <text>{{item.comments||'评论'}}</text>
+            </view>
+            <!-- <view class="tool_item">
           <button size="mini" open-type="share" data-item="{{item}}" class="btn_zhuanfa"><image src="/assets/images/icon/share.png"></image><text>转发</text></button>
         </view> -->
-        <view data-item="{{item}}" data-item="{{item}}" class="tool_item tool_item_a">
-          <image src="/assets/images/icon/share.png"></image>
-          <text>分享</text>
-          <button size="mini" open-type="share" data-item="{{item}}" class="btn_zhuanfa"></button>
-          <!-- <view bindtap="showNoShare" class="btn_zhuanfa"></view> -->
+            <view data-item="{{item}}" data-item="{{item}}" class="tool_item tool_item_a">
+                <image src="/assets/images/icon/share.png"></image>
+                <text>分享</text>
+                <button size="mini" open-type="share" data-item="{{item}}" class="btn_zhuanfa"></button>
+                <!-- <view bindtap="showNoShare" class="btn_zhuanfa"></view> -->
+            </view>
+            <view bindtap="collects" data-item="{{item}}" data-index="{{index}}" class="tool_item {{item.save?'saves':''}}">
+                <image wx:if="{{item.save}}" src="/assets/images/icon/shoucang.png"></image>
+                <image wx:if="{{!item.save}}" src="/assets/images/icon/collect.png"></image>
+                <text>{{item.save?'已收藏':'收藏'}}</text>
+            </view>
         </view>
-        <view bindtap="collects" data-item="{{item}}" data-index="{{index}}" class="tool_item {{item.save?'saves':''}}">
-            <image wx:if="{{item.save}}" src="/assets/images/icon/shoucang.png"></image>
-            <image wx:if="{{!item.save}}" src="/assets/images/icon/collect.png"></image>
-            <text>{{item.save?'已收藏':'收藏'}}</text>
-        </view>
-      </view>
 
     </view>
     <!-- <web-view src="https://choa.fun"></web-view> -->
     <view bindtap="toTop" class="to_top">
-      <image src="/assets/images/icon/to_top.png"></image>
+        <image src="/assets/images/icon/to_top.png"></image>
     </view>
-  </view>
+</view>
