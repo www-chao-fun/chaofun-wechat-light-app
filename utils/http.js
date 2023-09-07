@@ -81,11 +81,23 @@ const http = {
                         // }
 
                         // console.log('-------',header['Set-Cookie'])
-                        if (header.storage)
+                        if (header.storage) {
                             wechat.api("setStorage", {
                                 key: header.storage,
                                 data
                             });
+                        }
+                        if (data.hintCode) {
+                            wx.showToast({
+                                icon: 'none',
+                                title: data.hintMessage
+                            })
+
+                            function sleep(time) {
+                                return new Promise(resolve => setTimeout(resolve, time));
+                            }
+                            await sleep(1500)
+                        }
                         // console.log('000000000000', header['Set-Cookie'])
                         // wx.setStorageSync('cookie', header['Set-Cookie'])
                         resolve(data);
