@@ -19,7 +19,10 @@ Page({
         bottom: '',
         replays: {},
         imageNames: '',
-        commentOrder: 'hot'
+        commentOrder: 'hot',
+        showSetTagPopup: false,
+        forumTagList: [],
+        forumTagSelectedId: 0,
     },
 
     commentOrderChange(e) {
@@ -476,4 +479,105 @@ Page({
             imageUrl: `${(imageUrl && !imageUrl.includes('.mp4')) ? (this.data.imgOrigin + imageUrl):'/assets/images/banner/b1.jpg'}`
         }
     },
+
+    async toMore(e) {
+        let _this = this;
+        wx.showActionSheet({
+            itemList: ['设置标签', '删除'],
+            async success(res) {
+                if (res.tapIndex == 0) {
+                    // 版块标签列表
+                    await _this.getForumTagList();
+
+                    // 选中已有标签
+                    if (_this.data.postData && _this.data.postData.tags && _this.data.postData.tags.length && _this.data.postData.tags[0]) {
+                        _this.setData({
+                            forumTagSelectedId: _this.data.postData.tags[0].id
+                        })
+                    } else {
+                        _this.setData({
+                            forumTagSelectedId: 0
+                        })
+                    }
+
+                    //
+                    _this.setData({
+                        showSetTagPopup: true
+                    })
+                } else if (res.tapIndex == 1) {
+                    _this.deletePost()
+                }
+            }
+        })
+    },
+
+    async getForumTagList() {
+        let res = await req.getForumTagList({
+            forumId: this.data.postData.forumId
+        });
+        this.setData({
+            forumTagList: res.data
+        })
+    },
+
+    forumTagSelectedChange(e) {
+        let tagid = e.target.dataset.tagid;
+        this.setData({
+            forumTagSelectedId: (this.data.forumTagSelectedId === tagid) ? 0 : tagid
+        });
+    },
+
+    async exitPopupAndSetTag() {
+        // 隐藏popup
+        this.setData({
+            showSetTagPopup: false
+        })
+
+        //
+        let tagId = this.data.forumTagSelectedId;
+        if (tagId) {
+            // addTag
+            let res = await req.postAddTag({
+                postId: this.data.postId,
+                tagId: tagId
+            });
+            if (res.success) {
+                this.data.postData.tags = [res.data]
+                this.setData({
+                    postData: this.data.postData
+                })
+            }
+        } else {
+            // removeTag
+            if (this.data.postData && this.data.postData.tags && this.data.postData.tags.length && this.data.postData.tags[0]) {
+                tagId = this.data.postData.tags[0].id
+                let res = await req.postRemoveTag({
+                    postId: this.data.postId,
+                    tagId: tagId
+                });
+                if (res.success) {
+                    this.data.postData.tags = []
+                    this.setData({
+                        postData: this.data.postData
+                    })
+                }
+            }
+        }
+    },
+
+    async deletePost() {
+        let res = await req.deletePost({
+            postId: this.data.postId
+        });
+        if (res.success) {
+            wx.showToast({
+                icon: 'none',
+                title: '删除成功',
+            })
+            setTimeout(() => {
+                wx.navigateBack()
+            }, 1500)
+        }
+    },
+
 })
