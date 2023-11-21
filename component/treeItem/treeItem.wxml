@@ -21,7 +21,8 @@
                         <text bindtap="toReplay" data-item="{{item}}" class="comment_icon">回复</text>
                     </view>
                 </view>
-                <view class="comment_content">{{item.text}}</view>
+                <!-- <view class="comment_content">{{item.text}}</view> -->
+                <rich-text nodes="{{item.text}}" user-select="true"></rich-text>
                 <view class="comImage" wx:if="{{item.imageNames}}">
                     <image bindtap="showImg" data-item="{{item}}" mode="aspectFill" src="{{imgOrigin+(item.imageNames[0])+'?x-oss-process=image/resize,h_300'}}"></image>
                     <text wx:if="{{item.imageNames.length>1}}" class="count">1/{{item.imageNames.length}}</text>

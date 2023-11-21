@@ -34,9 +34,9 @@
       <button bindtap="cancellogin" type="default">取消</button>
       <view bindtap="checkout" data-ins="register" class="lor">没有账号？点击注册</view>
     </view>
-    <button class="wxbtn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> 
-      <image class="icons" src="/assets/images/wechat.png"></image>
-     微信手机号登录
+    <button type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> 
+      <!-- <image class="icons" src="/assets/images/wechat.png"></image> -->
+      手机号快捷登录
     </button>
   </view>
   <view wx:if="{{showWhich==3}}" class="shouquan shouquan2">
