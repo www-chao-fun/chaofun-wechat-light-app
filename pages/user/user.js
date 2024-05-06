@@ -9,8 +9,7 @@ Page({
     logs: [],
     isLogin: true,
     userInfo: {},
-    ulData: [
-      {
+    ulData: [{
         label: '我的发布',
         value: 1,
         icon: '/assets/images/icon/fabu.png'
@@ -30,6 +29,11 @@ Page({
         value: 5,
         icon: '/assets/images/icon/gz.png'
       },
+      {
+        label: '关于炒饭',
+        value: 6,
+        icon: '/assets/images/icon/about.png'
+      },
     ],
     imgOrigin: app.globalData.imgOrigin,
     readMessage: {
@@ -37,13 +41,13 @@ Page({
       unreadMessage: 0
     }
   },
-  toYear(){
+  toYear() {
     wx.navigateTo({
-      url: '/pages/years/years?userId='+this.data.userInfo.userId,
+      url: '/pages/years/years?userId=' + this.data.userInfo.userId,
     })
   },
-  
-  onReady(){
+
+  onReady() {
     if (wx.getStorageSync('cookie')) {
       this.setData({
         isLogin: true
@@ -54,17 +58,17 @@ Page({
       })
     }
   },
-  toInfo(){
+  toInfo() {
     wx.navigateTo({
       url: '/pages/user/userInfo',
     })
   },
-  toLogin(){
+  toLogin() {
     wx.navigateTo({
       url: '/pages/login/login?from=/pages/user/user&id=111',
     })
   },
-  out(t){
+  out(t) {
     wx.removeStorageSync('cookie')
     this.setData({
       isLogin: false
@@ -72,10 +76,14 @@ Page({
     app.globalData.refresh = true;
     app.globalData.isLogin = false
   },
-  toList(e){
-    if(this.data.isLogin){
+  toList(e) {
+    if (this.data.isLogin) {
       let item = e.currentTarget.dataset.item;
-      if(item.value==4){
+      if (item.value == 6) {
+        wx.navigateTo({
+          url: '/pages/about/about',
+        })
+      } else if (item.value == 4) {
         // wx.showToast({
         //   icon: 'none',
         //   title: '功能开发中，敬请期待',
@@ -83,23 +91,23 @@ Page({
         wx.navigateTo({
           url: '/pages/message/message',
         })
-      }else if(item.value==5){
+      } else if (item.value == 5) {
         wx.navigateTo({
           url: '/pages/user/myattent',
         })
-      }else{
+      } else {
         wx.navigateTo({
           url: `/pages/list/list?v=${item.value}&n=${item.label}`,
         })
       }
-    }else{
+    } else {
       this.toLogin()
     }
-    
+
   },
-  async messageCheck(){
-    let res = await req.messageCheck(); 
-    if (res.data.unreadMessage != this.data.readMessage.unreadMessage){
+  async messageCheck() {
+    let res = await req.messageCheck();
+    if (res.data.unreadMessage != this.data.readMessage.unreadMessage) {
       this.setData({
         readMessage: res.data
       })
@@ -108,13 +116,13 @@ Page({
   async getProfile() {
     let res = await req.getProfile();
     console.log(res)
-    if (res.data){
+    if (res.data) {
       this.setData({
         isLogin: true,
         userInfo: res.data
       })
       wx.setStorageSync('userId', res.data.userId)
-    }else{
+    } else {
       wx.removeStorageSync('cookie')
       wx.removeStorageSync('userId')
       this.setData({
@@ -123,11 +131,11 @@ Page({
       app.globalData.isLogin = false
     }
   },
-  onShow(){
+  onShow() {
     this.getProfile();
     this.messageCheck();
   },
   onLoad: function () {
-    
+
   }
 })

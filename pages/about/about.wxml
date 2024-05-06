@@ -1,0 +1,7 @@
+<!--pages/about/about.wxml-->
+<view>
+  <image class="icon" src="/assets/images/chaofan.png"></image>
+  <text class="name">炒饭</text>
+  <text class="desc">兴趣聚合的优质内容社区，每个兴趣都值得被尊重，在这里，一起讨论问题、分享趣事、了解最新时事，世界-尽在眼下</text>
+  <text class="version">{{version}}</text>
+</view>
