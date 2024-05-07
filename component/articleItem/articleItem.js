@@ -22,7 +22,7 @@ Component({
       // 在组件实例进入页面节点树时执行
       let article = this.data.item.article
       let that = this;
-      WxParse.wxParse("intro", "html", article, that, 10);
+      WxParse.wxParse("intro", "html", article, that, 100);
       
       this.setData({
         intro: this.data.intro,
