@@ -19,7 +19,8 @@
         "pages/user/editDesc",
         "pages/user/myattent",
         "pages/years/years",
-        "pages/forumMore/forumMore"
+        "pages/forumMore/forumMore",
+        "pages/about/about"
     ],
     "window": {
         "backgroundTextStyle": "light",

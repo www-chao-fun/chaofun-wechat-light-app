@@ -1,0 +1,33 @@
+/* pages/about/about.wxss */
+
+.icon {
+  display: block;
+  margin: 0 auto;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.name {
+  display: block;
+  margin: -40rpx auto 0 auto;
+  font-size: x-large;
+  color: #FF8F00;
+  text-align: center;
+}
+
+.desc {
+  display: block;
+  margin: 0 auto;
+  padding: 20rpx;
+  font-size: medium;
+  color: #777;
+  text-indent: 2em
+}
+
+.version {
+  display: block;
+  margin: 50rpx auto;
+  font-size: medium;
+  color: #ccc;
+  text-align: center;
+}

@@ -7,6 +7,7 @@
             <text> 来自</text>
             <text catchtap="toUser" data-info="{{postData.userInfo}}" class="weight"> {{postData.userInfo.userName}}</text>
             <text wx:if="{{postData.userInfo.userTag&&postData.userInfo.userTag.type=='text'}}" class="userTag">{{postData.userInfo.userTag.data}}</text>
+            <image bindtap="toMore" wx:if="{{postData.canDeleted}}" class="more fr" src="/assets/images/icon/more.png"></image>
             <text class="time fr">{{postData.rtime}}</text>
         </view>
         <block wx:if="{{postData.type == undefined}}">
@@ -123,3 +124,26 @@
 
     </view>
 </view>
+
+<!-- round="{{round}}" overlay="{{overlay}}" duration="{{duration}}" position="{{position}}"  -->
+<!-- close-on-slide-down="{{false}}" -->
+<!-- custom-style="{{customStyle}}" overlay-style="{{overlayStyle}}" -->
+<!-- bindbeforeenter="onBeforeEnter" bindenter="onEnter" bindafterenter="onAfterEnter" bindbeforeleave="onBeforeLeave" bindleave="onLeave" bindafterleave="onAfterLeave" bindclickoverlay="onClickOverlay" -->
+<page-container show="{{showSetTagPopup}}">
+    <view class="detail-page">
+        <view wx:if="{{forumTagList && forumTagList.length}}" class="tags">
+            <label wx:for="{{forumTagList}}" wx:key="index" class="forum-tag-item" style="{{tagStyleFunc.getStyle(item,forumTagSelectedId)}}" bindtap="forumTagSelectedChange" data-tagId="{{item.id}}">
+                {{item.name}}
+            </label>
+        </view>
+        <view wx:else class="no-tag">该版块暂无标签</view>
+        <button type="primary" bindtap="exitPopupAndSetTag">确定</button>
+    </view>
+</page-container>
+<wxs module="tagStyleFunc">
+    module.exports = {
+        getStyle: function (item, forumTagSelectedId) {
+            return item.id === forumTagSelectedId ? ('color:#fff;background-color:' + (item.backgroundColor ? item.backgroundColor : '#FF9300')) : '';
+        }
+    }
+</wxs>

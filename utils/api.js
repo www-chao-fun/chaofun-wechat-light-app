@@ -67,6 +67,8 @@ const indexapi = {
   weChatLightAppPhoneLogin: `${host}/api/v0/account/weChatLightAppPhoneLogin`,
   weChatLightAppRegister: `${host}/api/v0/account/weChatLightAppRegister`,
   getForumTagList: `${host}/api/v0/forum/listTag`, // 版块标签列表
+  postAddTag: `${host}/api/v0/post/addTag`, // 帖子添加标签
+  postRemoveTag: `${host}/api/v0/post/removeTag`, // 帖子删除标签
   
 }
 

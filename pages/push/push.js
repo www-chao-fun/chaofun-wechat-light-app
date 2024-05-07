@@ -439,7 +439,7 @@ Page({
                 } else {
                     wx.showToast({
                         icon: 'none',
-                        title: '很抱歉，您上传的内容未通过内容安全检测',
+                        title: res.errorMessage,
                     })
                 }
             } else if (this.data.checked == 4) {
@@ -490,7 +490,7 @@ Page({
                 } else {
                     wx.showToast({
                         icon: 'none',
-                        title: '很抱歉，您上传的内容未通过内容安全检测',
+                        title: res.errorMessage,
                     })
                 }
             }
