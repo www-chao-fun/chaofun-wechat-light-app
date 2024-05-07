@@ -5,7 +5,7 @@
       <image class="logo" src="https://choa.fun/img/chao.13437c59.jpeg"></image>
       <view class="descs">炒饭将获取你的微信头像、昵称等基本信息</view>
       <view>
-        <button open-type="getUserInfo" bind:getuserinfo="getUserInfo" type="primary">授权登录</button>
+        <button open-type="getUserInfo" bind:getuserinfo="getUserInfo" type="primary">手机号快捷登录</button>
       </view>
       <view>
         <button class="cancel" type="default">取消</button>
@@ -35,8 +35,7 @@
       <view bindtap="checkout" data-ins="register" class="lor">没有账号？点击注册</view>
     </view>
     <button class="wxbtn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> 
-      <image class="icons" src="/assets/images/wechat.png"></image>
-     微信手机号登录
+        手机号快捷登录
     </button>
   </view>
   <view wx:if="{{showWhich==3}}" class="shouquan shouquan2">
